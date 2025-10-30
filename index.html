@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VisibleMX — Catálogo de Servicios</title>
+  <meta name="description" content="Páginas web rápidas, útiles y con QR para negocios locales en Tijuana. Catálogo VisibleMX con paquetes, precios y contacto." />
+  <meta name="theme-color" content="#0ea5a4" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="VisibleMX — Catálogo de Servicios" />
+  <meta property="og:description" content="Páginas web rápidas, útiles y con QR para negocios locales en Tijuana. Catálogo VisibleMX con paquetes y contacto." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="img/favicon.png" type="image/png" />
+  <meta name="format-detection" content="telephone=no" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --bg-alt: #f5f7fb;
+      --ink: #0f172a;
+      --muted: #5b6476;
+      --accent: #17b3b0;
+      --accent-600: #0ea5a4;
+      --card: #ffffff;
+      --border: #e5e7ee;
+      --shadow: 0 12px 30px rgba(2, 12, 27, .08);
+      --radius: 18px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b1220;
+        --bg-alt: #0f192b;
+        --ink: #e5e7ee;
+        --muted: #a5adbd;
+        --card: #0f192b;
+        --border: #1e293b;
+        --shadow: 0 16px 40px rgba(0, 0, 0, .35);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--ink); font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; line-height: 1.6; }
+    img { max-width: 100%; display: block; }
+    a { color: var(--accent-600); text-decoration: none; }
+    a:focus, button:focus { outline: 3px solid var(--accent); outline-offset: 2px; }
+    .container { max-width: 1120px; margin: auto; padding: 0 20px; }
+
+    header {
+      position: sticky; top: 0; z-index: 99;
+      background: rgba(15, 25, 43, 0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+      transition: all 0.3s ease;
+    }
+    header.scrolled { background: rgba(15,25,43,0.9); box-shadow: 0 6px 24px rgba(0,0,0,0.4); }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+    .brand { display: flex; gap: 12px; align-items: center; }
+    .brand img { height: 68px; width: auto; max-width: 260px; border-radius: 8px; object-fit: contain; transition: transform 0.3s ease; }
+    @media (max-width: 860px) { .brand img { height: 54px; max-width: 200px; } }
+    .menu { display: flex; gap: 18px; align-items: center; }
+    .menu a { font-weight: 500; color: var(--muted); transition: color .3s; }
+    .menu a:hover { color: var(--accent-600); }
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      border: none; border-radius: 12px; padding: 12px 16px;
+      background: var(--accent); color: white; font-weight: 600;
+      box-shadow: var(--shadow); cursor: pointer; transition: all .3s ease;
+    }
+    .btn:hover { transform: translateY(-2px); opacity: .9; }
+    .btn.secondary { background: #111827; color: #fff; }
+    .btn.ghost { background: transparent; color: var(--accent-600); border: 1px solid var(--accent-600); }
+
+    .burger { display: none; }
+    @media (max-width:860px){
+      .menu { display: none; }
+      .burger { display: inline-flex; gap: 8px; align-items: center; }
+      .mobile { display: none; position: fixed; inset: 60px 0 auto 0; background: var(--bg); border-bottom: 1px solid var(--border); padding: 12px 20px; }
+      .mobile a { display: block; padding: 14px 6px; color: var(--muted); }
+      .mobile .cta { margin-top: 6px; }
+    }
+
+    .hero {
+      padding: 90px 0 70px;
+      background: radial-gradient(circle at 20% 40%, rgba(14,165,164,0.12), transparent 50%), linear-gradient(180deg, var(--bg-alt), var(--bg));
+      position: relative; overflow: hidden;
+    }
+    .hero::after {
+      content: ""; position: absolute; top: -20%; right: -20%;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(14,165,164,0.15) 0%, transparent 70%);
+      border-radius: 50%; filter: blur(80px); z-index: 0;
+    }
+    .hero .container { position: relative; z-index: 1; }
+    .hero .grid { display: grid; gap: 28px; grid-template-columns: 1.2fr .8fr; align-items: center; }
+    @media (max-width:860px){ .hero .grid { grid-template-columns: 1fr; } }
+    .h1 { font-size: clamp(28px, 4vw, 44px); line-height: 1.15; margin: 0 0 10px; }
+    .lead { font-size: clamp(15px, 1.6vw, 18px); color: var(--muted); margin: 0 0 22px; }
+    .hero-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 18px; }
+
+    .section { padding: 70px 0; }
+    .section h2 { font-size: clamp(22px,3vw,32px); margin: 0 0 10px; }
+    .section p.top { color: var(--muted); max-width: 760px; }
+
+    .features { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 24px; }
+    @media (max-width:860px){ .features { grid-template-columns: 1fr; } }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow); }
+
+    .pricing { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; margin-top: 26px; }
+    @media (max-width:1100px){ .pricing { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width:640px){ .pricing { grid-template-columns: 1fr; } }
+    .price-card { position: relative; transition: all .3s ease; }
+    .price-badge { position: absolute; top: 14px; right: 14px; background: var(--bg-alt); border: 1px solid var(--border); padding: 6px 10px; border-radius: 999px; font-size: 12px; color: var(--muted); }
+    .price { font-size: 28px; font-weight: 700; margin: 8px 0; }
+    .list { display: grid; gap: 8px; margin: 12px 0; }
+    .list li { display: flex; gap: 10px; align-items: flex-start; color: var(--muted); }
+    .list svg { flex: none; margin-top: 2px; }
+    .price-card:hover { transform: translateY(-6px); }
+    .price-card:nth-child(2) { border: 2px solid var(--accent-600); transform: scale(1.03); }
+    .price-card:nth-child(2):hover { box-shadow: 0 0 25px rgba(14,165,164,0.4); }
+
+    .table { width: 100%; border-collapse: separate; border-spacing: 0; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+    .table th, .table td { padding: 12px 14px; text-align: center; border-bottom: 1px solid var(--border); }
+    .table th { background: var(--bg-alt); text-align: center; }
+    .table tr:last-child td { border-bottom: none; }
+
+    .steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; margin-top: 20px; }
+    @media (max-width:860px){ .steps { grid-template-columns: 1fr 1fr; } }
+    .step-num { width: 34px; height: 34px; border-radius: 10px; background: var(--accent-600); color: #fff; display: inline-grid; place-items: center; font-weight: 700; }
+
+    footer { padding: 40px 0; background: var(--bg-alt); border-top: 1px solid var(--border); }
+    footer .container { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    footer small { color: var(--muted); }
+
+    .fade-up { opacity: 0; transform: translateY(12px); transition: all .6s ease; }
+    .fade-up.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+
+<body>
+  <a class="skip" href="#contenido" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden">Saltar al contenido</a>
+
+  <header>
+    <div class="container nav" role="navigation" aria-label="Principal">
+      <div class="brand">
+        <a href="#contenido" aria-label="Inicio VisibleMX">
+          <img src="img/logo.png" alt="VisibleMX — Presencia digital rápida y útil" />
+        </a>
+      </div>
+      <nav class="menu" aria-label="Secciones">
+        <a href="#por-que">Por qué</a>
+        <a href="#paquetes">Paquetes</a>
+        <a href="#comparativa">Comparativa</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#contacto">Contacto</a>
+        <a class="btn" href="https://wa.me/5216633634237?text=Hola%20VisibleMX%2C%20quiero%20mi%20p%C3%A1gina" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+      </nav>
+      <button class="burger btn ghost" aria-expanded="false" aria-controls="menu-mobile">Menú</button>
+    </div>
+
+    <div class="mobile container" id="menu-mobile" hidden>
+      <a href="#por-que">Por qué</a>
+      <a href="#paquetes">Paquetes</a>
+      <a href="#comparativa">Comparativa</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#contacto">Contacto</a>
+      <div class="cta">
+        <a class="btn" href="https://wa.me/5216633634237?text=Hola%20VisibleMX%2C%20quiero%20mi%20p%C3%A1gina" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="hero">
+      <div class="container grid">
+        <div>
+          <h1 class="h1 fade-up">Presencia digital <span style="color:var(--accent-600)">rápida</span> y <span style="color:var(--accent)">útil</span> para negocios locales</h1>
+          <p class="lead fade-up" style="transition-delay:.06s">Diseño web moderno, accesible y con QR integrado. Hecho en Tijuana para cafeterías, estéticas, tiendas y consultorios.</p>
+          <div class="fade-up" style="display:flex;gap:12px;transition-delay:.12s">
+            <a class="btn" href="#paquetes">Ver paquetes</a>
+            <a class="btn ghost" href="https://instagram.com/visiblemx_" target="_blank" rel="noopener">Instagram</a>
+          </div>
+        </div>
+        <aside class="hero-card fade-up" style="transition-delay:.18s" aria-label="Resumen de valor">
+          <strong>Lo que obtienes</strong>
+          <ul class="list" style="margin-top:10px">
+            <li>✅ Diseño responsive listo para móvil</li>
+            <li>✅ Códigos QR profesionales (web, mapa, redes)</li>
+            <li>✅ SEO básico y accesibilidad</li>
+            <li>✅ Entrega rápida con soporte</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="por-que" class="section">
+      <div class="container">
+        <h2>¿Por qué elegir VisibleMX?</h2>
+        <p class="top">Porque combinamos método UX con ejecución ágil. No usamos plantillas genéricas; diseñamos experiencias claras que convierten visitas en clientes.</p>
+        <div class="features">
+          <div class="card"><h3>UX con propósito</h3><p>Breve diagnóstico del negocio y público. Cada sitio tiene objetivos claros y una historia visual coherente.</p></div>
+          <div class="card"><h3>Diseño limpio y rápido</h3><p>Paleta blanco / gris / azul-verde, tipografías legibles y microanimaciones sutiles. Rendimiento y claridad ante todo.</p></div>
+          <div class="card"><h3>QR que sí funcionan</h3><p>QR para web, ubicación y redes. Listos para imprimir en menús, mostradores o tarjetas.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="paquetes" class="section">
+      <div class="container">
+        <h2>Paquetes</h2>
+        <p class="top">Precios pensados para negocios locales que quieren empezar bien y crecer.</p>
+        <div class="pricing">
+          <article class="card price-card">
+            <div class="price-badge">Entrada</div>
+            <h3>🟢 Básico</h3>
+            <div class="price">$29 USD</div>
+            <ul class="list">
+              <li>1 página tipo tarjeta digital</li>
+              <li>1 QR profesional personalizado</li>
+              <li>Hosting gratuito (Netlify/GitHub)</li>
+            </ul>
+            <a class="btn" href="https://wa.me/5216633634237?text=Hola%20VisibleMX%2C%20quiero%20el%20Paquete%20B%C3%A1sico" target="_blank" rel="noopener">Quiero este</a>
+          </article>
+
+          <article class="card price-card">
+            <div class="price-badge">Popular</div>
+            <h3>🔵 Profesional</h3>
+            <div class="price">$59 USD</div>
+            <ul class="list">
+              <li>Hasta 4 secciones (Inicio, Servicios, Galería, Contacto)</li>
+              <li>2 QR (web y ubicación)</li>
+              <li>Formulario de contacto + SEO básico</li>
+            </ul>
+            <a class="btn" href="https://wa.me/5216633634237?text=Hola%20VisibleMX%2C%20quiero%20el%20Paquete%20Profesional" target="_blank" rel="noopener">Quiero este</a>
+          </article>
+
+          <article class="card price-card">
+            <div class="price-badge">Diseño UX</div>
+            <h3>🟣 Premium</h3>
+            <div class="price">$89 USD</div>
+            <ul class="list">
+              <li>Hasta 6 secciones + animaciones sutiles</li>
+              <li>Mini UX: moodboard y guía visual</li>
+              <li>3 QR + pruebas de accesibilidad</li>
+            </ul>
+            <a class="btn" href="https://wa.me/5216633634237?text=Hola%20VisibleMX%2C%20quiero%20el%20Paquete%20Premium" target="_blank" rel="noopener">Quiero este</a>
+          </article>
+
+          <article class="card price-card">
+            <div class="price-badge">Completo</div>
+            <h3>🔴 Business</h3>
+            <div class="price">$129 USD</div>
+            <ul class="list">
+              <li>Todo lo del Premium + CMS simple (Sheets/Notion)</li>
+              <li>Analytics + Pixel + dominio gestionado</li>
+              <li>1 mes de soporte</li>
+            </ul>
+            <a class="btn" href="https://wa.me/5216633634237?text=Hola%20VisibleMX%2C%20quiero%20el%20Paquete%20Business" target="_blank" rel="noopener">Quiero este</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="comparativa" class="section">
+      <div class="container">
+        <h2>Comparativa rápida</h2>
+        <p class="top">Todo claro y transparente. Elige el nivel que mejor se ajuste a tu negocio.</p>
+        <div style="overflow:auto">
+          <table class="table">
+            <thead><tr><th>Característica</th><th>Básico</th><th>Profesional</th><th>Premium</th><th>Business</th></tr></thead>
+            <tbody>
+              <tr><td>Secciones</td><td>1</td><td>4</td><td>6</td><td>6+</td></tr>
+              <tr><td>QR incluidos</td><td>1</td><td>2</td><td>3</td><td>3+</td></tr>
+              <tr><td>Formulario contacto</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td></tr>
+              <tr><td>Dominio gestionado</td><td>❌</td><td>Opcional</td><td>Opcional</td><td>✅</td></tr>
+              <tr><td>Soporte</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td></tr>
+              <tr><td>Precio</td><td><strong>$29</strong></td><td><strong>$59</strong></td><td><strong>$89</strong></td><td><strong>$129</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="proceso" class="section">
+      <div class="container">
+        <h2>Cómo trabajamos</h2>
+        <p class="top">Proceso VisibleMX basado en buenas prácticas de UX: empatizar, idear, prototipar, construir y validar.</p>
+        <div class="steps">
+          <div class="card"><span class="step-num">1</span><h3>Brief</h3><p>Mini diagnóstico del negocio y objetivos. Definimos público, tono y metas.</p></div>
+          <div class="card"><span class="step-num">2</span><h3>Diseño</h3><p>Moodboard, esquema rápido y propuesta visual. Paleta, tipografía e iconos.</p></div>
+          <div class="card"><span class="step-num">3</span><h3>Desarrollo</h3><p>Implementación responsive, SEO básico, accesibilidad y QR.</p></div>
+          <div class="card"><span class="step-num">4</span><h3>Entrega</h3><p>Revisión final, soporte y archivos listos para crecer.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="section">
+      <div class="container">
+        <h2>Hablemos de tu proyecto</h2>
+        <p class="top">Estamos en Tijuana, Baja California. Respuesta rápida por Instagram o WhatsApp.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:10px">
+          <a class="btn" href="https://wa.me/5216633634237?text=Hola%20VisibleMX%2C%20quiero%20informaci%C3%B3n%20sobre%20una%20p%C3%A1gina%20web" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn secondary" href="https://instagram.com/visiblemx_" target="_blank" rel="noopener">Instagram @visiblemx_</a>
+        </div>
+        <p class="top" style="margin-top:16px">¿Prefieres PDF? <a href="catalogo.pdf" target="_blank" rel="noopener">Descargar catálogo</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div style="display:flex;align-items:center;gap:10px">
+        <img src="img/logo.png" alt="VisibleMX" style="height:32px;border-radius:8px;opacity:0.9">
+        <small>© <span id="year"></span> VisibleMX — Presencia digital rápida y útil.</small>
+      </div>
+      <div style="display:flex;gap:12px">
+        <a href="https://instagram.com/visiblemx_" target="_blank" rel="noopener" aria-label="Instagram">
+          <img src="img/icon-instagram.svg" alt="Instagram" style="height:20px;opacity:0.8">
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const burger = document.querySelector('.burger');
+    const mobile = document.getElementById('menu-mobile');
+    if (burger) {
+      burger.addEventListener('click', () => {
+        const open = burger.getAttribute('aria-expanded') === 'true';
+        burger.setAttribute('aria-expanded', String(!open));
+        mobile.hidden = open;
+        mobile.style.display = open ? 'none' : 'block';
+      });
+    }
+
+    const reveal = () => {
+      const els = document.querySelectorAll('.fade-up');
+      const vh = window.innerHeight;
+      els.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < vh - 60) el.classList.add('visible');
+      });
+    };
+    window.addEventListener('scroll', reveal, { passive: true });
+    window.addEventListener('load', reveal);
+
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      header.classList.toggle('scrolled', window.scrollY > 20);
+    });
+  </script>
+</body>
+</html>
