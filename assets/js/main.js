@@ -122,6 +122,9 @@ function initSmoothScroll() {
 // ==========================================
 // 5. VALIDACIÓN DE FORMULARIO
 // ==========================================
+// ==========================================
+// 5. VALIDACIÓN Y ENVÍO DE FORMULARIO CON MODAL (CORREGIDO)
+// ==========================================
 function initFormValidation() {
   const contactForm = document.getElementById('contact-form');
   
@@ -133,7 +136,7 @@ function initFormValidation() {
     const nombre = document.getElementById('nombre');
     const email = document.getElementById('email');
     const mensaje = document.getElementById('mensaje');
-    const submitBtn = document.getElementById('submit-btn');
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
     
     // Validación básica
     if (nombre && nombre.value.trim().length < 2) {
@@ -154,8 +157,10 @@ function initFormValidation() {
       return false;
     }
     
+    // Guardar texto original del botón
+    const originalBtnHTML = submitBtn.innerHTML;
+    
     // Mostrar loading en botón
-    const originalText = submitBtn.innerHTML;
     submitBtn.innerHTML = `
       <span style="display: inline-flex; align-items: center; gap: 8px;">
         <span class="spinner" style="width: 16px; height: 16px; border-width: 2px;"></span> 
@@ -165,9 +170,10 @@ function initFormValidation() {
     submitBtn.disabled = true;
     
     try {
-      // Enviar formulario a Netlify
+      // Preparar datos del formulario
       const formData = new FormData(contactForm);
       
+      // Enviar formulario a Netlify
       const response = await fetch('/', {
         method: 'POST',
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -183,21 +189,29 @@ function initFormValidation() {
         
         // Track en Analytics
         if (typeof gtag !== 'undefined') {
-          gtag('event', 'form_submit', {
+          gtag('event', 'form_submit_success', {
             'event_category': 'conversion',
-            'event_label': 'contacto_exitoso'
+            'event_label': 'contacto'
           });
         }
       } else {
-        throw new Error('Error al enviar');
+        throw new Error('Error en la respuesta del servidor');
       }
       
     } catch (error) {
-      console.error('Error:', error);
+      console.error('Error al enviar formulario:', error);
       alert('Hubo un error al enviar el mensaje. Por favor intenta de nuevo o contáctanos por WhatsApp.');
+      
+      // Track error en Analytics
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'form_submit_error', {
+          'event_category': 'error',
+          'event_label': error.message
+        });
+      }
     } finally {
       // Restaurar botón
-      submitBtn.innerHTML = originalText;
+      submitBtn.innerHTML = originalBtnHTML;
       submitBtn.disabled = false;
     }
   });
@@ -213,6 +227,11 @@ function showSuccessModal() {
   if (modal) {
     modal.style.display = 'flex';
     document.body.style.overflow = 'hidden'; // Prevenir scroll
+    
+    // Auto-cerrar después de 5 segundos
+    setTimeout(() => {
+      closeSuccessModal();
+    }, 5000);
   }
 }
 
@@ -225,8 +244,9 @@ function closeSuccessModal() {
   }
 }
 
-// Hacer función global para que funcione desde el HTML
+// Hacer funciones globales
 window.closeSuccessModal = closeSuccessModal;
+window.showSuccessModal = showSuccessModal;
 
 // ==========================================
 // 6. INTERSECTION OBSERVER PARA ANIMACIONES

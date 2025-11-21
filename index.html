@@ -535,37 +535,23 @@
       </div>
 
       <!-- Contact Form -->
-      <div class="contact-form-wrapper">
- <!-- Contact Form - VERSIÓN CORREGIDA PARA NETLIFY -->
+<!-- Contact Form - CON MODAL DE CONFIRMACIÓN -->
 <div class="contact-form-wrapper">
-  <!-- Formulario oculto para Netlify (IMPORTANTE) -->
-  <form name="contacto" netlify netlify-honeypot="bot-field" hidden>
-    <input type="text" name="nombre" />
-    <input type="email" name="email" />
-    <input type="tel" name="telefono" />
-    <select name="paquete">
-      <option value="profesional">Profesional</option>
-      <option value="premium">Premium</option>
-      <option value="business">Business</option>
-    </select>
-    <textarea name="mensaje"></textarea>
-  </form>
-
-  <!-- Formulario visible -->
- <form 
-  name="contacto" 
-  method="POST" 
-  data-netlify="true" 
-  netlify-honeypot="bot-field"
-  action="/gracias.html"
-  class="contact-form" 
-  id="contact-form"
->
-    <!-- Campo anti-spam oculto -->
-    <input type="hidden" name="form-name" value="contacto" />
-    <div style="display: none;">
-      <label>No llenar si eres humano: <input name="bot-field" /></label>
-    </div>
+  <form 
+    name="contacto" 
+    method="POST" 
+    data-netlify="true" 
+    netlify-honeypot="bot-field"
+    class="contact-form" 
+    id="contact-form"
+  >
+    <!-- Campos ocultos necesarios para Netlify -->
+    <input type="hidden" name="form-name" value="contacto">
+    
+    <!-- Honeypot anti-spam (invisible) -->
+    <p style="display: none;">
+      <label>No llenar esto: <input name="bot-field" /></label>
+    </p>
     
     <h3>Envíanos un mensaje</h3>
     
@@ -623,7 +609,7 @@
         placeholder="Describe brevemente qué necesitas..."></textarea>
     </div>
 
-    <button class="btn btn-primary btn-block" type="submit">
+    <button class="btn btn-primary btn-block" type="submit" id="submit-btn">
       Enviar mensaje
     </button>
 
@@ -632,8 +618,22 @@
       Responderemos en menos de 24 horas.
     </p>
   </form>
-</div>
+
+  <!-- MODAL DE CONFIRMACIÓN (se muestra después de enviar) -->
+  <div id="success-modal" class="success-modal" style="display: none;">
+    <div class="success-modal-content">
+      <div class="success-icon">✅</div>
+      <h2>¡Mensaje enviado!</h2>
+      <p>
+        Gracias por contactarnos. Hemos recibido tu mensaje y te 
+        responderemos en menos de 24 horas.
+      </p>
+      <button class="btn btn-primary" onclick="closeSuccessModal()">
+        Entendido
+      </button>
     </div>
+  </div>
+</div>
   </div>
 </section>
 
