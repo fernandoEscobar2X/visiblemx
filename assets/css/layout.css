@@ -140,7 +140,9 @@ header.scrolled {
   display: none;
   flex-direction: column;
   gap: var(--space-2);
-  padding: var(--space-6) 0;
+  padding: var(--space-4) var(--space-5); /* 16px 20px */
+  margin: var(--space-2) 0; /* Separación */
+  font-size: var(--text-base);
   background: var(--bg);
   border-top: 1px solid var(--border);
   animation: slideDown 0.3s ease-out;

@@ -127,55 +127,106 @@ function initFormValidation() {
   
   if (!contactForm) return;
   
-  contactForm.addEventListener('submit', function(e) {
+  contactForm.addEventListener('submit', async function(e) {
+    e.preventDefault(); // Prevenir envío normal
+    
     const nombre = document.getElementById('nombre');
     const email = document.getElementById('email');
     const mensaje = document.getElementById('mensaje');
+    const submitBtn = document.getElementById('submit-btn');
     
     // Validación básica
     if (nombre && nombre.value.trim().length < 2) {
       alert('Por favor ingresa tu nombre completo');
       nombre.focus();
-      e.preventDefault();
       return false;
     }
     
     if (email && !isValidEmail(email.value)) {
       alert('Por favor ingresa un email válido');
       email.focus();
-      e.preventDefault();
       return false;
     }
     
     if (mensaje && mensaje.value.trim().length < 10) {
       alert('Por favor describe tu proyecto con más detalle (mínimo 10 caracteres)');
       mensaje.focus();
-      e.preventDefault();
       return false;
     }
     
-    // Track en Analytics
-    if (typeof gtag !== 'undefined') {
-      gtag('event', 'form_submit', {
-        'event_category': 'conversion',
-        'event_label': 'contacto'
-      });
-    }
-    
     // Mostrar loading en botón
-    const submitBtn = contactForm.querySelector('button[type="submit"]');
-    if (submitBtn) {
-      submitBtn.innerHTML = '<span style="display: inline-flex; align-items: center; gap: 8px;"><span class="spinner" style="width: 16px; height: 16px; border-width: 2px;"></span> Enviando...</span>';
-      submitBtn.disabled = true;
-    }
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = `
+      <span style="display: inline-flex; align-items: center; gap: 8px;">
+        <span class="spinner" style="width: 16px; height: 16px; border-width: 2px;"></span> 
+        Enviando...
+      </span>
+    `;
+    submitBtn.disabled = true;
     
-    // Netlify se encarga del resto, no prevenir default
+    try {
+      // Enviar formulario a Netlify
+      const formData = new FormData(contactForm);
+      
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString()
+      });
+      
+      if (response.ok) {
+        // Éxito: Mostrar modal
+        showSuccessModal();
+        
+        // Limpiar formulario
+        contactForm.reset();
+        
+        // Track en Analytics
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'form_submit', {
+            'event_category': 'conversion',
+            'event_label': 'contacto_exitoso'
+          });
+        }
+      } else {
+        throw new Error('Error al enviar');
+      }
+      
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Hubo un error al enviar el mensaje. Por favor intenta de nuevo o contáctanos por WhatsApp.');
+    } finally {
+      // Restaurar botón
+      submitBtn.innerHTML = originalText;
+      submitBtn.disabled = false;
+    }
   });
   
   function isValidEmail(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   }
 }
+
+// Función para mostrar el modal de éxito
+function showSuccessModal() {
+  const modal = document.getElementById('success-modal');
+  if (modal) {
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // Prevenir scroll
+  }
+}
+
+// Función para cerrar el modal
+function closeSuccessModal() {
+  const modal = document.getElementById('success-modal');
+  if (modal) {
+    modal.style.display = 'none';
+    document.body.style.overflow = ''; // Restaurar scroll
+  }
+}
+
+// Hacer función global para que funcione desde el HTML
+window.closeSuccessModal = closeSuccessModal;
 
 // ==========================================
 // 6. INTERSECTION OBSERVER PARA ANIMACIONES
