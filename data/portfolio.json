@@ -13,7 +13,7 @@
         "lighthouse": "98"
       },
       "technologies": ["HTML5", "CSS3", "JavaScript", "QR"],
-      "url": "demo-cafe-local.html",
+      "url": "assets/demos/demo-cafe-local.html",
       "package": "profesional",
       "packagePrice": "$59 USD",
       "features": [
@@ -39,7 +39,7 @@
         "lighthouse": "96"
       },
       "technologies": ["HTML5", "CSS3", "Forms", "Animations"],
-      "url": "demo-estetica.html",
+      "url": "assets/demos/demo-estetica.html",
       "package": "premium",
       "packagePrice": "$89 USD",
       "features": [
@@ -65,7 +65,7 @@
         "lighthouse": "99"
       },
       "technologies": ["HTML5", "CSS3", "CMS", "Analytics"],
-      "url": "demo-consultorio.html",
+      "url": "assets/demos/demo-consultorio.html",
       "package": "business",
       "packagePrice": "$129 USD",
       "features": [
