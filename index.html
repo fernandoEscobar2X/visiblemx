@@ -1,361 +1,671 @@
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>VisibleMX — Catálogo de Servicios</title>
-  <meta name="description" content="Páginas web rápidas, útiles y con QR para negocios locales en Tijuana. Catálogo VisibleMX con paquetes, precios y contacto." />
-  <meta name="theme-color" content="#0ea5a4" />
-  <meta name="robots" content="index, follow" />
-  <meta property="og:title" content="VisibleMX — Catálogo de Servicios" />
-  <meta property="og:description" content="Páginas web rápidas, útiles y con QR para negocios locales en Tijuana. Catálogo VisibleMX con paquetes y contacto." />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="es_MX" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <link rel="icon" href="img/favicon.png" type="image/png" />
-  <meta name="format-detection" content="telephone=no" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VisibleMX — Páginas Web Profesionales para Negocios en Tijuana</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- SEO -->
+  <meta name="description" content="Impulsa tu negocio con una página web profesional, rápida y optimizada. Diseño moderno con QR, SEO y entrega en 7 días. Desde $59 USD.">
+  <meta name="keywords" content="páginas web Tijuana, diseño web, sitios profesionales, desarrollo web México, QR códigos">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0ea5a4">
+  <meta name="author" content="VisibleMX">
 
-  <style>
-    :root {
-      --bg: #ffffff;
-      --bg-alt: #f5f7fb;
-      --ink: #0f172a;
-      --muted: #5b6476;
-      --accent: #17b3b0;
-      --accent-600: #0ea5a4;
-      --card: #ffffff;
-      --border: #e5e7ee;
-      --shadow: 0 12px 30px rgba(2, 12, 27, .08);
-      --radius: 18px;
+  <!-- Open Graph -->
+  <meta property="og:title" content="VisibleMX — Páginas Web Profesionales para Negocios">
+  <meta property="og:description" content="Sitios modernos, rápidos y optimizados para móvil. Diseño profesional desde $59 USD con entrega en 7 días.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://visiblemx.com">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:site_name" content="VisibleMX">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="VisibleMX — Páginas Web Profesionales">
+  <meta name="twitter:description" content="Impulsa tu negocio con una página web profesional. Desde $59 USD.">
+
+  <!-- Icons & Manifest -->
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- CSS Files - ORDEN IMPORTANTE -->
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/utilities.css">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "VisibleMX",
+    "description": "Agencia de diseño y desarrollo web para negocios locales en Tijuana",
+    "url": "https://visiblemx.com",
+    "logo": "https://visiblemx.com/assets/img/logo.png",
+    "image": "https://visiblemx.com/assets/img/og-image.jpg",
+    "priceRange": "$59-$129",
+    "telephone": "+52-663-363-4237",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Tijuana",
+      "addressRegion": "Baja California",
+      "addressCountry": "MX"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "32.5149",
+      "longitude": "-117.0382"
+    },
+    "sameAs": [
+      "https://instagram.com/visiblemx_"
+    ],
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "USD",
+      "lowPrice": "59",
+      "highPrice": "129"
     }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0b1220;
-        --bg-alt: #0f192b;
-        --ink: #e5e7ee;
-        --muted: #a5adbd;
-        --card: #0f192b;
-        --border: #1e293b;
-        --shadow: 0 16px 40px rgba(0, 0, 0, .35);
-      }
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { background: var(--bg); color: var(--ink); font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; line-height: 1.6; }
-    img { max-width: 100%; display: block; }
-    a { color: var(--accent-600); text-decoration: none; }
-    a:focus, button:focus { outline: 3px solid var(--accent); outline-offset: 2px; }
-    .container { max-width: 1120px; margin: auto; padding: 0 20px; }
+  }
+  </script>
 
-    header {
-      position: sticky; top: 0; z-index: 99;
-      background: rgba(15, 25, 43, 0.85);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      box-shadow: 0 4px 18px rgba(0,0,0,0.25);
-      transition: all 0.3s ease;
-    }
-    header.scrolled { background: rgba(15,25,43,0.9); box-shadow: 0 6px 24px rgba(0,0,0,0.4); }
-    .nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
-    .brand { display: flex; gap: 12px; align-items: center; }
-    .brand img { height: 68px; width: auto; max-width: 260px; border-radius: 8px; object-fit: contain; transition: transform 0.3s ease; }
-    @media (max-width: 860px) { .brand img { height: 54px; max-width: 200px; } }
-    .menu { display: flex; gap: 18px; align-items: center; }
-    .menu a { font-weight: 500; color: var(--muted); transition: color .3s; }
-    .menu a:hover { color: var(--accent-600); }
-    .btn {
-      display: inline-flex; align-items: center; gap: 10px;
-      border: none; border-radius: 12px; padding: 12px 16px;
-      background: var(--accent); color: white; font-weight: 600;
-      box-shadow: var(--shadow); cursor: pointer; transition: all .3s ease;
-    }
-    .btn:hover { transform: translateY(-2px); opacity: .9; }
-    .btn.secondary { background: #111827; color: #fff; }
-    .btn.ghost { background: transparent; color: var(--accent-600); border: 1px solid var(--accent-600); }
-
-    .burger { display: none; }
-    @media (max-width:860px){
-      .menu { display: none; }
-      .burger { display: inline-flex; gap: 8px; align-items: center; }
-      .mobile { display: none; position: fixed; inset: 60px 0 auto 0; background: var(--bg); border-bottom: 1px solid var(--border); padding: 12px 20px; }
-      .mobile a { display: block; padding: 14px 6px; color: var(--muted); }
-      .mobile .cta { margin-top: 6px; }
-    }
-
-    .hero {
-      padding: 90px 0 70px;
-      background: radial-gradient(circle at 20% 40%, rgba(14,165,164,0.12), transparent 50%), linear-gradient(180deg, var(--bg-alt), var(--bg));
-      position: relative; overflow: hidden;
-    }
-    .hero::after {
-      content: ""; position: absolute; top: -20%; right: -20%;
-      width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(14,165,164,0.15) 0%, transparent 70%);
-      border-radius: 50%; filter: blur(80px); z-index: 0;
-    }
-    .hero .container { position: relative; z-index: 1; }
-    .hero .grid { display: grid; gap: 28px; grid-template-columns: 1.2fr .8fr; align-items: center; }
-    @media (max-width:860px){ .hero .grid { grid-template-columns: 1fr; } }
-    .h1 { font-size: clamp(28px, 4vw, 44px); line-height: 1.15; margin: 0 0 10px; }
-    .lead { font-size: clamp(15px, 1.6vw, 18px); color: var(--muted); margin: 0 0 22px; }
-    .hero-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 18px; }
-
-    .section { padding: 70px 0; }
-    .section h2 { font-size: clamp(22px,3vw,32px); margin: 0 0 10px; }
-    .section p.top { color: var(--muted); max-width: 760px; }
-
-    .features { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 24px; }
-    @media (max-width:860px){ .features { grid-template-columns: 1fr; } }
-    .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow); }
-
-    .pricing { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; margin-top: 26px; }
-    @media (max-width:1100px){ .pricing { grid-template-columns: repeat(2,1fr); } }
-    @media (max-width:640px){ .pricing { grid-template-columns: 1fr; } }
-    .price-card { position: relative; transition: all .3s ease; }
-    .price-badge { position: absolute; top: 14px; right: 14px; background: var(--bg-alt); border: 1px solid var(--border); padding: 6px 10px; border-radius: 999px; font-size: 12px; color: var(--muted); }
-    .price { font-size: 28px; font-weight: 700; margin: 8px 0; }
-    .list { display: grid; gap: 8px; margin: 12px 0; }
-    .list li { display: flex; gap: 10px; align-items: flex-start; color: var(--muted); }
-    .list svg { flex: none; margin-top: 2px; }
-    .price-card:hover { transform: translateY(-6px); }
-    .price-card:nth-child(2) { border: 2px solid var(--accent-600); transform: scale(1.03); }
-    .price-card:nth-child(2):hover { box-shadow: 0 0 25px rgba(14,165,164,0.4); }
-
-    .table { width: 100%; border-collapse: separate; border-spacing: 0; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
-    .table th, .table td { padding: 12px 14px; text-align: center; border-bottom: 1px solid var(--border); }
-    .table th { background: var(--bg-alt); text-align: center; }
-    .table tr:last-child td { border-bottom: none; }
-
-    .steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; margin-top: 20px; }
-    @media (max-width:860px){ .steps { grid-template-columns: 1fr 1fr; } }
-    .step-num { width: 34px; height: 34px; border-radius: 10px; background: var(--accent-600); color: #fff; display: inline-grid; place-items: center; font-weight: 700; }
-
-    footer { padding: 40px 0; background: var(--bg-alt); border-top: 1px solid var(--border); }
-    footer .container { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-    footer small { color: var(--muted); }
-
-    .fade-up { opacity: 0; transform: translateY(12px); transition: all .6s ease; }
-    .fade-up.visible { opacity: 1; transform: none; }
-  </style>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
 
 <body>
-  <a class="skip" href="#contenido" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden">Saltar al contenido</a>
 
-  <header>
-    <div class="container nav" role="navigation" aria-label="Principal">
-      <div class="brand">
-        <a href="#contenido" aria-label="Inicio VisibleMX">
-          <img src="img/logo.png" alt="VisibleMX — Presencia digital rápida y útil" />
-        </a>
-      </div>
-      <nav class="menu" aria-label="Secciones">
-        <a href="#por-que">Por qué</a>
-        <a href="#paquetes">Paquetes</a>
-        <a href="#comparativa">Comparativa</a>
-        <a href="#proceso">Proceso</a>
-        <a href="#contacto">Contacto</a>
-        <a class="btn" href="https://wa.me/5216633634237?text=Hola%20VisibleMX%2C%20quiero%20mi%20p%C3%A1gina" target="_blank" rel="noopener">Hablar por WhatsApp</a>
-      </nav>
-      <button class="burger btn ghost" aria-expanded="false" aria-controls="menu-mobile">Menú</button>
+<!-- Skip to content (Accesibilidad) -->
+<a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+<!-- HEADER -->
+<header id="header">
+  <div class="container nav">
+    <div class="brand">
+      <a href="#contenido" aria-label="Inicio VisibleMX">
+        <img src="assets/img/logo.png" alt="VisibleMX" width="260" height="68">
+      </a>
     </div>
 
-    <div class="mobile container" id="menu-mobile" hidden>
+    <nav class="menu" aria-label="Navegación principal">
+      <a href="#portfolio">Proyectos</a>
       <a href="#por-que">Por qué</a>
       <a href="#paquetes">Paquetes</a>
-      <a href="#comparativa">Comparativa</a>
       <a href="#proceso">Proceso</a>
       <a href="#contacto">Contacto</a>
-      <div class="cta">
-        <a class="btn" href="https://wa.me/5216633634237?text=Hola%20VisibleMX%2C%20quiero%20mi%20p%C3%A1gina" target="_blank" rel="noopener">WhatsApp</a>
-      </div>
-    </div>
-  </header>
+      <button id="theme-toggle" class="btn-ghost" aria-label="Cambiar tema">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <a class="btn" href="https://wa.me/5216633634237?text=Hola%20VisibleMX%2C%20quiero%20mi%20página" target="_blank" rel="noopener" onclick="gtag('event', 'clic_whatsapp', {'event_category': 'engagement', 'event_label': 'header'})">
+        WhatsApp
+      </a>
+    </nav>
 
-  <main id="contenido">
-    <section class="hero">
-      <div class="container grid">
-        <div>
-          <h1 class="h1 fade-up">Presencia digital <span style="color:var(--accent-600)">rápida</span> y <span style="color:var(--accent)">útil</span> para negocios locales</h1>
-          <p class="lead fade-up" style="transition-delay:.06s">Diseño web moderno, accesible y con QR integrado. Hecho en Tijuana para cafeterías, estéticas, tiendas y consultorios.</p>
-          <div class="fade-up" style="display:flex;gap:12px;transition-delay:.12s">
-            <a class="btn" href="#paquetes">Ver paquetes</a>
-            <a class="btn ghost" href="https://instagram.com/visiblemx_" target="_blank" rel="noopener">Instagram</a>
+    <button class="burger btn-ghost" aria-expanded="false" aria-controls="menu-mobile" aria-label="Menú de navegación">
+      <span class="burger-icon"></span>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu container" id="menu-mobile" hidden>
+    <a href="#portfolio">Proyectos</a>
+    <a href="#por-que">Por qué</a>
+    <a href="#paquetes">Paquetes</a>
+    <a href="#proceso">Proceso</a>
+    <a href="#contacto">Contacto</a>
+
+    <div class="mobile-actions">
+      <button id="theme-toggle-mobile" class="btn-ghost" aria-label="Cambiar tema">
+        <span class="theme-icon">🌙</span> Cambiar tema
+      </button>
+      <a class="btn btn-block" href="https://wa.me/5216633634237?text=Hola%20VisibleMX%2C%20quiero%20mi%20página" target="_blank" rel="noopener">
+        WhatsApp
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="contenido">
+
+<!-- HERO SECTION -->
+<section class="hero" id="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <!-- Contenido principal -->
+      <div class="hero-content fade-up">
+        <!-- Badge de credibilidad -->
+        <div class="hero-badge">
+          <span class="pulse-dot"></span>
+          Disponibles para nuevos proyectos
+        </div>
+
+        <h1 class="hero-title">
+          Páginas web que generan 
+          <span class="text-gradient">clientes reales</span>
+          para tu negocio en Tijuana
+        </h1>
+
+        <p class="hero-description">
+          Sitios modernos, optimizados para móvil y pensados para convertir. 
+          Diseño profesional con QR integrado, SEO y accesibilidad. 
+          Perfecto para cafeterías, estéticas, consultorios y servicios locales.
+        </p>
+
+        <!-- Social Proof -->
+        <div class="social-proof">
+          <div class="avatars">
+            <img src="assets/img/clients/avatar-1.jpg" alt="Cliente 1" loading="lazy" width="40" height="40">
+            <img src="assets/img/clients/avatar-2.jpg" alt="Cliente 2" loading="lazy" width="40" height="40">
+            <img src="assets/img/clients/avatar-3.jpg" alt="Cliente 3" loading="lazy" width="40" height="40">
+            <img src="assets/img/clients/avatar-4.jpg" alt="Cliente 4" loading="lazy" width="40" height="40">
+          </div>
+          <div class="social-text">
+            <strong>12+ negocios locales</strong>
+            <span>confían en VisibleMX</span>
           </div>
         </div>
-        <aside class="hero-card fade-up" style="transition-delay:.18s" aria-label="Resumen de valor">
-          <strong>Lo que obtienes</strong>
-          <ul class="list" style="margin-top:10px">
-            <li>✅ Diseño responsive listo para móvil</li>
-            <li>✅ Códigos QR profesionales (web, mapa, redes)</li>
-            <li>✅ SEO básico y accesibilidad</li>
-            <li>✅ Entrega rápida con soporte</li>
+
+        <!-- CTA Group -->
+        <div class="cta-group">
+          <a class="btn btn-primary" href="#paquetes" onclick="gtag('event', 'clic_ver_paquetes', {'event_category': 'engagement', 'event_label': 'hero'})">
+            Ver paquetes
+          </a>
+          <a class="btn btn-secondary" href="#portfolio">
+            Ver proyectos →
+          </a>
+        </div>
+
+        <!-- Trust badges -->
+        <div class="trust-badges">
+          <div class="badge-item">
+            <span class="badge-icon">⚡</span>
+            <span>Entrega en 7 días</span>
+          </div>
+          <div class="badge-item">
+            <span class="badge-icon">✅</span>
+            <span>Garantía 30 días</span>
+          </div>
+          <div class="badge-item">
+            <span class="badge-icon">🎨</span>
+            <span>Diseño único</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual -->
+      <aside class="hero-visual fade-up">
+        <div class="feature-card glass">
+          <h3>Incluye en todos los paquetes</h3>
+          <ul class="feature-list">
+            <li>
+              <span class="feature-icon">📱</span>
+              Diseño responsive listo para móvil
+            </li>
+            <li>
+              <span class="feature-icon">🔗</span>
+              Códigos QR profesionales integrados
+            </li>
+            <li>
+              <span class="feature-icon">🚀</span>
+              SEO básico + accesibilidad WCAG AA
+            </li>
+            <li>
+              <span class="feature-icon">⚡</span>
+              Optimización de velocidad (95+ Lighthouse)
+            </li>
+            <li>
+              <span class="feature-icon">💬</span>
+              Soporte y revisiones incluidas
+            </li>
           </ul>
-        </aside>
-      </div>
-    </section>
 
-    <section id="por-que" class="section">
-      <div class="container">
-        <h2>¿Por qué elegir VisibleMX?</h2>
-        <p class="top">Porque combinamos método UX con ejecución ágil. No usamos plantillas genéricas; diseñamos experiencias claras que convierten visitas en clientes.</p>
-        <div class="features">
-          <div class="card"><h3>UX con propósito</h3><p>Breve diagnóstico del negocio y público. Cada sitio tiene objetivos claros y una historia visual coherente.</p></div>
-          <div class="card"><h3>Diseño limpio y rápido</h3><p>Paleta blanco / gris / azul-verde, tipografías legibles y microanimaciones sutiles. Rendimiento y claridad ante todo.</p></div>
-          <div class="card"><h3>QR que sí funcionan</h3><p>QR para web, ubicación y redes. Listos para imprimir en menús, mostradores o tarjetas.</p></div>
+          <div class="feature-cta">
+            <a href="#paquetes" class="link-arrow">
+              Explorar paquetes <span>→</span>
+            </a>
+          </div>
         </div>
-      </div>
-    </section>
+      </aside>
+    </div>
+  </div>
 
-    <section id="paquetes" class="section">
-      <div class="container">
-        <h2>Paquetes</h2>
-        <p class="top">Precios pensados para negocios locales que quieren empezar bien y crecer.</p>
-        <div class="pricing">
-          <article class="card price-card">
-            <div class="price-badge">Entrada</div>
-            <h3>🟢 Básico</h3>
-            <div class="price">$29 USD</div>
-            <ul class="list">
-              <li>1 página tipo tarjeta digital</li>
-              <li>1 QR profesional personalizado</li>
-              <li>Hosting gratuito (Netlify/GitHub)</li>
-            </ul>
-            <a class="btn" href="https://wa.me/5216633634237?text=Hola%20VisibleMX%2C%20quiero%20el%20Paquete%20B%C3%A1sico" target="_blank" rel="noopener">Quiero este</a>
-          </article>
+  <!-- Background decorations -->
+  <div class="hero-bg-decoration"></div>
+</section>
 
-          <article class="card price-card">
-            <div class="price-badge">Popular</div>
-            <h3>🔵 Profesional</h3>
-            <div class="price">$59 USD</div>
-            <ul class="list">
-              <li>Hasta 4 secciones (Inicio, Servicios, Galería, Contacto)</li>
-              <li>2 QR (web y ubicación)</li>
-              <li>Formulario de contacto + SEO básico</li>
-            </ul>
-            <a class="btn" href="https://wa.me/5216633634237?text=Hola%20VisibleMX%2C%20quiero%20el%20Paquete%20Profesional" target="_blank" rel="noopener">Quiero este</a>
-          </article>
+<!-- PORTFOLIO SECTION (NUEVO) -->
+<section id="portfolio" class="section portfolio-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">Proyectos</span>
+      <h2>Casos de éxito que impulsan negocios</h2>
+      <p class="section-description">
+        Páginas web que generan resultados reales para negocios locales en Tijuana
+      </p>
+    </div>
 
-          <article class="card price-card">
-            <div class="price-badge">Diseño UX</div>
-            <h3>🟣 Premium</h3>
-            <div class="price">$89 USD</div>
-            <ul class="list">
-              <li>Hasta 6 secciones + animaciones sutiles</li>
-              <li>Mini UX: moodboard y guía visual</li>
-              <li>3 QR + pruebas de accesibilidad</li>
-            </ul>
-            <a class="btn" href="https://wa.me/5216633634237?text=Hola%20VisibleMX%2C%20quiero%20el%20Paquete%20Premium" target="_blank" rel="noopener">Quiero este</a>
-          </article>
-
-          <article class="card price-card">
-            <div class="price-badge">Completo</div>
-            <h3>🔴 Business</h3>
-            <div class="price">$129 USD</div>
-            <ul class="list">
-              <li>Todo lo del Premium + CMS simple (Sheets/Notion)</li>
-              <li>Analytics + Pixel + dominio gestionado</li>
-              <li>1 mes de soporte</li>
-            </ul>
-            <a class="btn" href="https://wa.me/5216633634237?text=Hola%20VisibleMX%2C%20quiero%20el%20Paquete%20Business" target="_blank" rel="noopener">Quiero este</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="comparativa" class="section">
-      <div class="container">
-        <h2>Comparativa rápida</h2>
-        <p class="top">Todo claro y transparente. Elige el nivel que mejor se ajuste a tu negocio.</p>
-        <div style="overflow:auto">
-          <table class="table">
-            <thead><tr><th>Característica</th><th>Básico</th><th>Profesional</th><th>Premium</th><th>Business</th></tr></thead>
-            <tbody>
-              <tr><td>Secciones</td><td>1</td><td>4</td><td>6</td><td>6+</td></tr>
-              <tr><td>QR incluidos</td><td>1</td><td>2</td><td>3</td><td>3+</td></tr>
-              <tr><td>Formulario contacto</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td></tr>
-              <tr><td>Dominio gestionado</td><td>❌</td><td>Opcional</td><td>Opcional</td><td>✅</td></tr>
-              <tr><td>Soporte</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td></tr>
-              <tr><td>Precio</td><td><strong>$29</strong></td><td><strong>$59</strong></td><td><strong>$89</strong></td><td><strong>$129</strong></td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <section id="proceso" class="section">
-      <div class="container">
-        <h2>Cómo trabajamos</h2>
-        <p class="top">Proceso VisibleMX basado en buenas prácticas de UX: empatizar, idear, prototipar, construir y validar.</p>
-        <div class="steps">
-          <div class="card"><span class="step-num">1</span><h3>Brief</h3><p>Mini diagnóstico del negocio y objetivos. Definimos público, tono y metas.</p></div>
-          <div class="card"><span class="step-num">2</span><h3>Diseño</h3><p>Moodboard, esquema rápido y propuesta visual. Paleta, tipografía e iconos.</p></div>
-          <div class="card"><span class="step-num">3</span><h3>Desarrollo</h3><p>Implementación responsive, SEO básico, accesibilidad y QR.</p></div>
-          <div class="card"><span class="step-num">4</span><h3>Entrega</h3><p>Revisión final, soporte y archivos listos para crecer.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contacto" class="section">
-      <div class="container">
-        <h2>Hablemos de tu proyecto</h2>
-        <p class="top">Estamos en Tijuana, Baja California. Respuesta rápida por Instagram o WhatsApp.</p>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:10px">
-          <a class="btn" href="https://wa.me/5216633634237?text=Hola%20VisibleMX%2C%20quiero%20informaci%C3%B3n%20sobre%20una%20p%C3%A1gina%20web" target="_blank" rel="noopener">WhatsApp</a>
-          <a class="btn secondary" href="https://instagram.com/visiblemx_" target="_blank" rel="noopener">Instagram @visiblemx_</a>
-        </div>
-        <p class="top" style="margin-top:16px">¿Prefieres PDF? <a href="Catálogo_VisibleMX.pdf" target="_blank" rel="noopener">Descargar catálogo</a></p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <div style="display:flex;align-items:center;gap:10px">
-        <img src="img/logo.png" alt="VisibleMX" style="height:32px;border-radius:8px;opacity:0.9">
-        <small>© <span id="year"></span> VisibleMX — Presencia digital rápida y útil.</small>
-      </div>
-      <div style="display:flex;gap:12px">
-        <a href="https://instagram.com/visiblemx_" target="_blank" rel="noopener" aria-label="Instagram">
-          <img src="img/icon-instagram.svg" alt="Instagram" style="height:20px;opacity:0.8">
-        </a>
+    <!-- Portfolio Grid -->
+    <div id="portfolio-grid" class="portfolio-grid">
+      <!-- Los proyectos se cargarán dinámicamente desde portfolio.json -->
+      <div class="portfolio-loading">
+        <div class="spinner"></div>
+        <p>Cargando proyectos...</p>
       </div>
     </div>
-  </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    <div class="portfolio-cta">
+      <p>¿Listo para tener tu propio caso de éxito?</p>
+      <a href="#contacto" class="btn btn-primary">Empezar mi proyecto</a>
+    </div>
+  </div>
+</section>
 
-    const burger = document.querySelector('.burger');
-    const mobile = document.getElementById('menu-mobile');
-    if (burger) {
-      burger.addEventListener('click', () => {
-        const open = burger.getAttribute('aria-expanded') === 'true';
-        burger.setAttribute('aria-expanded', String(!open));
-        mobile.hidden = open;
-        mobile.style.display = open ? 'none' : 'block';
-      });
-    }
+<!-- POR QUÉ SECTION -->
+<section id="por-que" class="section why-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">Diferenciadores</span>
+      <h2>¿Por qué elegir VisibleMX?</h2>
+      <p class="section-description">
+        Combinamos metodología UX con ejecución técnica de primer nivel
+      </p>
+    </div>
 
-    const reveal = () => {
-      const els = document.querySelectorAll('.fade-up');
-      const vh = window.innerHeight;
-      els.forEach(el => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < vh - 60) el.classList.add('visible');
-      });
-    };
-    window.addEventListener('scroll', reveal, { passive: true });
-    window.addEventListener('load', reveal);
+    <div class="features-grid">
+      <article class="feature-card fade-up">
+        <div class="feature-icon-lg">🎯</div>
+        <h3>UX con propósito</h3>
+        <p>Diagnóstico rápido de tu negocio seguido de diseño estratégico enfocado en objetivos claros y conversión real.</p>
+      </article>
 
-    window.addEventListener('scroll', () => {
-      const header = document.querySelector('header');
-      header.classList.toggle('scrolled', window.scrollY > 20);
-    });
-  </script>
+      <article class="feature-card fade-up">
+        <div class="feature-icon-lg">⚡</div>
+        <h3>Velocidad extrema</h3>
+        <p>Sitios optimizados que cargan en menos de 2 segundos. Score 95+ en Google Lighthouse garantizado.</p>
+      </article>
+
+      <article class="feature-card fade-up">
+        <div class="feature-icon-lg">📱</div>
+        <h3>QR que funcionan</h3>
+        <p>Códigos QR profesionales listos para imprimir en menús, tarjetas, mostradores y material promocional.</p>
+      </article>
+
+      <article class="feature-card fade-up">
+        <div class="feature-icon-lg">🎨</div>
+        <h3>Diseño moderno</h3>
+        <p>Paletas cuidadas, microanimaciones sutiles y claridad visual que refleja profesionalismo.</p>
+      </article>
+
+      <article class="feature-card fade-up">
+        <div class="feature-icon-lg">♿</div>
+        <h3>Accesibilidad real</h3>
+        <p>Cumplimiento WCAG 2.1 nivel AA. Tu sitio será usable para todos tus clientes potenciales.</p>
+      </article>
+
+      <article class="feature-card fade-up">
+        <div class="feature-icon-lg">📊</div>
+        <h3>Métricas claras</h3>
+        <p>Analytics integrado desde día 1 para que veas el impacto real de tu inversión.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PAQUETES SECTION -->
+<section id="paquetes" class="section pricing-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">Inversión</span>
+      <h2>Paquetes diseñados para cada etapa</h2>
+      <p class="section-description">
+        Precios transparentes, sin sorpresas. Garantía de satisfacción 30 días.
+      </p>
+    </div>
+
+    <!-- Pricing Grid -->
+    <div id="pricing-grid" class="pricing-grid">
+      <!-- Los paquetes se cargarán dinámicamente desde pricing.json -->
+    </div>
+
+    <!-- Garantía -->
+    <div class="guarantee-box">
+      <div class="guarantee-icon">✅</div>
+      <div class="guarantee-content">
+        <h3>Garantía de satisfacción total</h3>
+        <p>Si no estás 100% satisfecho con tu página web en los primeros 30 días, te devolvemos tu dinero sin preguntas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARATIVA SECTION -->
+<section id="comparativa" class="section comparison-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Comparativa rápida de paquetes</h2>
+    </div>
+
+    <div class="table-wrapper">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Característica</th>
+            <th>Profesional</th>
+            <th>Premium</th>
+            <th>Business</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Secciones</td>
+            <td>Hasta 4</td>
+            <td>Hasta 6</td>
+            <td>6+ ilimitadas</td>
+          </tr>
+          <tr>
+            <td>Códigos QR</td>
+            <td>2 incluidos</td>
+            <td>3 incluidos</td>
+            <td>3+ personalizados</td>
+          </tr>
+          <tr>
+            <td>Formulario contacto</td>
+            <td>✅ Básico</td>
+            <td>✅ Avanzado</td>
+            <td>✅ Con CRM</td>
+          </tr>
+          <tr>
+            <td>Moodboard diseño</td>
+            <td>❌</td>
+            <td>✅</td>
+            <td>✅</td>
+          </tr>
+          <tr>
+            <td>Animaciones</td>
+            <td>Básicas</td>
+            <td>✅ Avanzadas</td>
+            <td>✅ Premium</td>
+          </tr>
+          <tr>
+            <td>Dominio propio</td>
+            <td>Opcional (+$15/año)</td>
+            <td>Opcional (+$15/año)</td>
+            <td>✅ Incluido 1 año</td>
+          </tr>
+          <tr>
+            <td>CMS Editor</td>
+            <td>❌</td>
+            <td>❌</td>
+            <td>✅ Incluido</td>
+          </tr>
+          <tr>
+            <td>Soporte post-entrega</td>
+            <td>7 días</td>
+            <td>30 días</td>
+            <td>90 días</td>
+          </tr>
+          <tr>
+            <td>Revisiones incluidas</td>
+            <td>2 rondas</td>
+            <td>3 rondas</td>
+            <td>Ilimitadas</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO SECTION -->
+<section id="proceso" class="section process-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">Metodología</span>
+      <h2>Cómo trabajamos juntos</h2>
+      <p class="section-description">
+        Proceso transparente y colaborativo de principio a fin
+      </p>
+    </div>
+
+    <div class="process-grid">
+      <article class="process-step fade-up">
+        <div class="step-number">01</div>
+        <div class="step-content">
+          <h3>Brief & Diagnóstico</h3>
+          <p>Entendemos tu negocio, objetivos y audiencia. Definimos alcance y expectativas claras.</p>
+          <span class="step-time">⏱️ 1 día</span>
+        </div>
+      </article>
+
+      <article class="process-step fade-up">
+        <div class="step-number">02</div>
+        <div class="step-content">
+          <h3>Diseño & Propuesta</h3>
+          <p>Creamos moodboard, paleta de colores y propuesta visual inicial para tu aprobación.</p>
+          <span class="step-time">⏱️ 2-3 días</span>
+        </div>
+      </article>
+
+      <article class="process-step fade-up">
+        <div class="step-number">03</div>
+        <div class="step-content">
+          <h3>Desarrollo & Optimización</h3>
+          <p>Construimos tu sitio con código limpio, responsive design, SEO y accesibilidad integrados.</p>
+          <span class="step-time">⏱️ 3-4 días</span>
+        </div>
+      </article>
+
+      <article class="process-step fade-up">
+        <div class="step-number">04</div>
+        <div class="step-content">
+          <h3>Revisión & Entrega</h3>
+          <p>Refinamos detalles, realizamos pruebas exhaustivas y entregamos todo listo para lanzar.</p>
+          <span class="step-time">⏱️ 1 día</span>
+        </div>
+      </article>
+    </div>
+
+    <div class="process-footer">
+      <div class="process-total">
+        <strong>Tiempo total:</strong> 7-10 días hábiles
+      </div>
+      <a href="#contacto" class="btn btn-primary">Empezar ahora</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO SECTION -->
+<section id="contacto" class="section contact-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">Hablemos</span>
+      <h2>¿Listo para impulsar tu negocio?</h2>
+      <p class="section-description">
+        Respuesta en menos de 2 horas por WhatsApp o Instagram
+      </p>
+    </div>
+
+    <div class="contact-grid">
+      <!-- Contact Options -->
+      <div class="contact-options">
+        <div class="contact-card glass">
+          <div class="contact-icon">💬</div>
+          <h3>WhatsApp</h3>
+          <p>Respuesta inmediata de lunes a viernes 9am - 7pm</p>
+          <a class="btn btn-primary btn-block" href="https://wa.me/5216633634237?text=Hola%20VisibleMX%2C%20quiero%20información" target="_blank" rel="noopener" onclick="gtag('event', 'clic_whatsapp', {'event_category': 'engagement', 'event_label': 'contacto'})">
+            Abrir WhatsApp
+          </a>
+        </div>
+
+        <div class="contact-card glass">
+          <div class="contact-icon">📸</div>
+          <h3>Instagram</h3>
+          <p>Síguenos para ver proyectos, tips y novedades</p>
+          <a class="btn btn-secondary btn-block" href="https://instagram.com/visiblemx_" target="_blank" rel="noopener">
+            @visiblemx_
+          </a>
+        </div>
+
+        <div class="contact-card glass">
+          <div class="contact-icon">📄</div>
+          <h3>Catálogo PDF</h3>
+          <p>Descarga información completa para compartir</p>
+          <a class="btn btn-ghost btn-block" href="Catálogo_VisibleMX.pdf" target="_blank" download>
+            Descargar PDF
+          </a>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form-wrapper">
+        <form name="contacto" method="POST" data-netlify="true" class="contact-form" id="contact-form">
+          <input type="hidden" name="form-name" value="contacto">
+          
+          <h3>Envíanos un mensaje</h3>
+          
+          <div class="form-group">
+            <label for="nombre">Nombre completo</label>
+            <input 
+              class="form-input" 
+              type="text" 
+              id="nombre" 
+              name="nombre" 
+              required 
+              placeholder="Tu nombre">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input 
+              class="form-input" 
+              type="email" 
+              id="email" 
+              name="email" 
+              required 
+              placeholder="tu@email.com">
+          </div>
+
+          <div class="form-group">
+            <label for="telefono">Teléfono (opcional)</label>
+            <input 
+              class="form-input" 
+              type="tel" 
+              id="telefono" 
+              name="telefono" 
+              placeholder="+52 123 456 7890">
+          </div>
+
+          <div class="form-group">
+            <label for="paquete">Paquete de interés</label>
+            <select class="form-input" id="paquete" name="paquete">
+              <option value="">Seleccionar...</option>
+              <option value="profesional">Profesional - $59 USD</option>
+              <option value="premium">Premium - $89 USD</option>
+              <option value="business">Business - $129 USD</option>
+              <option value="personalizado">Proyecto personalizado</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="mensaje">Cuéntanos sobre tu proyecto</label>
+            <textarea 
+              class="form-input" 
+              id="mensaje" 
+              name="mensaje" 
+              rows="4" 
+              required 
+              placeholder="Describe brevemente qué necesitas..."></textarea>
+          </div>
+
+          <button class="btn btn-primary btn-block" type="submit">
+            Enviar mensaje
+          </button>
+
+          <p class="form-note">
+            Al enviar este formulario aceptas nuestra política de privacidad.
+            Responderemos en menos de 24 horas.
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <img src="assets/img/logo.png" alt="VisibleMX" width="180" height="48">
+        <p>Presencia digital rápida, profesional y efectiva para negocios locales.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/visiblemx_" target="_blank" rel="noopener" aria-label="Instagram">
+            <img src="assets/img/icon-instagram.svg" alt="Instagram" width="24" height="24">
+          </a>
+          <a href="https://wa.me/5216633634237" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4>Servicios</h4>
+          <a href="#paquetes">Paquetes</a>
+          <a href="#portfolio">Proyectos</a>
+          <a href="#proceso">Proceso</a>
+        </div>
+
+        <div class="footer-column">
+          <h4>Recursos</h4>
+          <a href="Catálogo_VisibleMX.pdf" target="_blank">Catálogo PDF</a>
+          <a href="#comparativa">Comparativa</a>
+          <a href="#contacto">Contacto</a>
+        </div>
+
+        <div class="footer-column">
+          <h4>Legal</h4>
+          <a href="/privacidad.html">Privacidad</a>
+          <a href="/terminos.html">Términos</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <small>© <span id="year"></span> VisibleMX — Presencia digital rápida y útil. Hecho con ❤️ en Tijuana, México.</small>
+    </div>
+  </div>
+</footer>
+
+<!-- JavaScript Files -->
+<script src="assets/js/utils/analytics.js"></script>
+<script src="assets/js/components/PricingCard.js"></script>
+<script src="assets/js/components/Portfolio.js"></script>
+<script src="assets/js/components/Modal.js"></script>
+<script src="assets/js/menu.js"></script>
+<script src="assets/js/scrollreveal.js"></script>
+<script src="assets/js/main.js"></script>
+
 </body>
 </html>

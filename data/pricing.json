@@ -1,0 +1,95 @@
+{
+  "packages": [
+    {
+      "id": "profesional",
+      "name": "Profesional",
+      "icon": "🔵",
+      "badge": "Popular",
+      "price": "$59",
+      "period": "pago único",
+      "description": "Perfecto para negocios que inician su presencia digital",
+      "features": [
+        "Hasta 4 secciones personalizadas",
+        "2 códigos QR profesionales",
+        "Formulario de contacto integrado",
+        "SEO básico optimizado",
+        "Responsive design (móvil/tablet/desktop)",
+        "Hosting gratuito por 1 año",
+        "2 rondas de revisiones",
+        "Soporte 7 días post-entrega"
+      ],
+      "cta": "Quiero este paquete",
+      "whatsappText": "Hola VisibleMX, quiero el paquete Profesional",
+      "featured": true,
+      "deliveryTime": "7-10 días"
+    },
+    {
+      "id": "premium",
+      "name": "Premium",
+      "icon": "🟣",
+      "badge": "Diseño UX",
+      "price": "$89",
+      "period": "pago único",
+      "description": "Para negocios que buscan destacar con diseño profesional",
+      "features": [
+        "Todo lo del Profesional +",
+        "Hasta 6 secciones con animaciones",
+        "Moodboard y guía de estilo visual",
+        "3 códigos QR personalizados",
+        "Microanimaciones avanzadas",
+        "Accesibilidad WCAG 2.1 AA",
+        "3 rondas de revisiones",
+        "Soporte 30 días post-entrega"
+      ],
+      "cta": "Quiero este paquete",
+      "whatsappText": "Hola VisibleMX, quiero el paquete Premium",
+      "featured": false,
+      "deliveryTime": "10-14 días"
+    },
+    {
+      "id": "business",
+      "name": "Business",
+      "icon": "🔴",
+      "badge": "Completo",
+      "price": "$129",
+      "period": "pago único",
+      "description": "Solución completa con CMS para gestionar tu contenido",
+      "features": [
+        "Todo lo del Premium +",
+        "Secciones ilimitadas",
+        "CMS simple para editar contenido",
+        "Google Analytics 4 integrado",
+        "Dominio propio incluido (1 año)",
+        "Sistema de blog opcional",
+        "Revisiones ilimitadas",
+        "Soporte 90 días post-entrega"
+      ],
+      "cta": "Quiero este paquete",
+      "whatsappText": "Hola VisibleMX, quiero el paquete Business",
+      "featured": false,
+      "deliveryTime": "14-21 días"
+    }
+  ],
+  "addons": [
+    {
+      "name": "Dominio propio",
+      "price": "$15",
+      "period": "anual"
+    },
+    {
+      "name": "Mantenimiento mensual",
+      "price": "$29",
+      "period": "mensual"
+    },
+    {
+      "name": "QR adicional",
+      "price": "$10",
+      "period": "pago único"
+    },
+    {
+      "name": "Sección extra",
+      "price": "$25",
+      "period": "pago único"
+    }
+  ]
+}
