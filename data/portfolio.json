@@ -1,94 +1,63 @@
 {
   "projects": [
     {
-      "id": "cafe-nube",
-      "title": "Café Nube",
+      "id": "cafe-nube-demo",
+      "title": "Café Local",
       "category": "Cafetería",
-      "description": "Landing page moderna con menú digital y sistema de reservas QR. Diseño minimalista que refleja la experiencia premium del café.",
-      "image": "img/portfolio/cafe-nube.jpg",
+      "description": "Landing page moderna con menú digital y sistema de reservas. Diseño optimizado para móvil con códigos QR.",
+      "image": null,
+      "gradient": "linear-gradient(135deg, #14b8a6 0%, #0f766e 100%)",
       "stats": {
-        "conversion": "+180%",
-        "traffic": "+240%",
+        "conversion": "Optimizado",
+        "traffic": "SEO Ready",
         "lighthouse": "98"
       },
-      "technologies": ["HTML5", "CSS3", "JavaScript", "QR Codes"],
-      "url": "https://cafenube-demo.netlify.app",
+      "technologies": ["HTML5", "CSS3", "JavaScript", "QR"],
+      "url": null,
       "package": "premium",
-      "featured": true
+      "featured": true,
+      "isDemo": true
     },
     {
-      "id": "estetica-luna",
-      "title": "Estética Luna",
+      "id": "estetica-demo",
+      "title": "Estética",
       "category": "Belleza",
-      "description": "Sitio elegante con galería de servicios, precios y sistema de citas por WhatsApp. Optimizado para conversión mobile.",
-      "image": "img/portfolio/estetica-luna.jpg",
+      "description": "Sitio elegante con galería y sistema de citas. Optimizado para conversión mobile y WhatsApp Business.",
+      "image": null,
+      "gradient": "linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%)",
       "stats": {
-        "conversion": "+150%",
-        "traffic": "+200%",
+        "conversion": "Conversión+",
+        "traffic": "Mobile First",
         "lighthouse": "96"
       },
-      "technologies": ["HTML5", "CSS3", "JavaScript", "Forms"],
-      "url": "https://estetica-luna-demo.netlify.app",
+      "technologies": ["HTML5", "CSS3", "Forms"],
+      "url": null,
       "package": "profesional",
-      "featured": true
+      "featured": true,
+      "isDemo": true
     },
     {
-      "id": "consultorio-vital",
-      "title": "Consultorio Vital",
+      "id": "consultorio-demo",
+      "title": "Consultorio",
       "category": "Salud",
-      "description": "Página profesional para consultorio médico con información de servicios, horarios y formulario de contacto seguro.",
-      "image": "img/portfolio/consultorio-vital.jpg",
+      "description": "Página profesional con información de servicios y formulario de contacto seguro. Diseño confiable y accesible.",
+      "image": null,
+      "gradient": "linear-gradient(135deg, #ef4444 0%, #dc2626 100%)",
       "stats": {
-        "conversion": "+220%",
-        "traffic": "+300%",
+        "conversion": "Profesional",
+        "traffic": "Accesible",
         "lighthouse": "99"
       },
-      "technologies": ["HTML5", "CSS3", "JavaScript", "Analytics"],
-      "url": "https://consultorio-vital-demo.netlify.app",
+      "technologies": ["HTML5", "CSS3", "Analytics"],
+      "url": null,
       "package": "business",
-      "featured": true
-    },
-    {
-      "id": "tienda-artesanal",
-      "title": "Tienda Artesanal",
-      "category": "Comercio",
-      "description": "Catálogo online con galería de productos, QR para WhatsApp Business y sistema de pedidos simplificado.",
-      "image": "img/portfolio/tienda-artesanal.jpg",
-      "stats": {
-        "conversion": "+190%",
-        "traffic": "+280%",
-        "lighthouse": "97"
-      },
-      "technologies": ["HTML5", "CSS3", "JavaScript", "CMS"],
-      "url": "https://tienda-artesanal-demo.netlify.app",
-      "package": "business",
-      "featured": false
+      "featured": true,
+      "isDemo": true
     }
   ],
-  "testimonials": [
-    {
-      "name": "María López",
-      "business": "Café Nube",
-      "avatar": "img/clients/maria-lopez.jpg",
-      "text": "VisibleMX duplicó mis ventas en 2 meses. El QR en las mesas funciona perfecto y los clientes aman el menú digital.",
-      "rating": 5,
-      "date": "2024-11"
-    },
-    {
-      "name": "Carlos Mendoza",
-      "business": "Consultorio Vital",
-      "avatar": "img/clients/carlos-mendoza.jpg",
-      "text": "Profesionalismo total. Entregaron antes de tiempo y el sitio es exactamente lo que necesitaba para mi consultorio.",
-      "rating": 5,
-      "date": "2024-10"
-    },
-    {
-      "name": "Ana Ramírez",
-      "business": "Estética Luna",
-      "avatar": "img/clients/ana-ramirez.jpg",
-      "text": "Excelente servicio. Mis clientas ahora pueden ver mis trabajos y agendar citas desde el celular. ¡Súper recomendado!",
-      "rating": 5,
-      "date": "2024-11"
-    }
-  ]
+  "showcase": {
+    "title": "Ejemplos de nuestro trabajo",
+    "description": "Proyectos conceptuales que demuestran nuestro estilo y capacidades de diseño. Cada proyecto está optimizado para conversión y experiencia de usuario.",
+    "note": "Estos son ejemplos de diseño. Cuando trabajes con nosotros, crearemos tu página única y personalizada."
+  }
 }
