@@ -1,7 +1,7 @@
 {
   "projects": [
     {
-      "id": "cafe-nube-demo",
+      "id": "cafe-local-profesional",
       "title": "Café Local",
       "category": "Cafetería",
       "description": "Landing page moderna con menú digital y sistema de reservas. Diseño optimizado para móvil con códigos QR.",
@@ -14,12 +14,20 @@
       },
       "technologies": ["HTML5", "CSS3", "JavaScript", "QR"],
       "url": null,
-      "package": "premium",
+      "package": "profesional",
+      "packagePrice": "$59 USD",
+      "features": [
+        "Hasta 4 secciones",
+        "2 códigos QR profesionales",
+        "Formulario de contacto básico",
+        "SEO básico optimizado",
+        "Responsive design"
+      ],
       "featured": true,
       "isDemo": true
     },
     {
-      "id": "estetica-demo",
+      "id": "estetica-premium",
       "title": "Estética",
       "category": "Belleza",
       "description": "Sitio elegante con galería y sistema de citas. Optimizado para conversión mobile y WhatsApp Business.",
@@ -30,14 +38,22 @@
         "traffic": "Mobile First",
         "lighthouse": "96"
       },
-      "technologies": ["HTML5", "CSS3", "Forms"],
+      "technologies": ["HTML5", "CSS3", "Forms", "Animations"],
       "url": null,
-      "package": "profesional",
+      "package": "premium",
+      "packagePrice": "$89 USD",
+      "features": [
+        "Hasta 6 secciones con animaciones",
+        "3 códigos QR personalizados",
+        "Moodboard y guía visual",
+        "Microanimaciones avanzadas",
+        "Accesibilidad WCAG 2.1 AA"
+      ],
       "featured": true,
       "isDemo": true
     },
     {
-      "id": "consultorio-demo",
+      "id": "consultorio-business",
       "title": "Consultorio",
       "category": "Salud",
       "description": "Página profesional con información de servicios y formulario de contacto seguro. Diseño confiable y accesible.",
@@ -48,16 +64,24 @@
         "traffic": "Accesible",
         "lighthouse": "99"
       },
-      "technologies": ["HTML5", "CSS3", "Analytics"],
+      "technologies": ["HTML5", "CSS3", "CMS", "Analytics"],
       "url": null,
       "package": "business",
+      "packagePrice": "$129 USD",
+      "features": [
+        "Secciones ilimitadas",
+        "CMS simple para editar contenido",
+        "Google Analytics 4 integrado",
+        "Dominio propio incluido (1 año)",
+        "Sistema de blog opcional"
+      ],
       "featured": true,
       "isDemo": true
     }
   ],
   "showcase": {
-    "title": "Ejemplos de nuestro trabajo",
-    "description": "Proyectos conceptuales que demuestran nuestro estilo y capacidades de diseño. Cada proyecto está optimizado para conversión y experiencia de usuario.",
-    "note": "Estos son ejemplos de diseño. Cuando trabajes con nosotros, crearemos tu página única y personalizada."
+    "title": "Ejemplos por paquete",
+    "description": "Cada proyecto muestra las capacidades de su paquete correspondiente. Diseños optimizados para conversión y experiencia de usuario.",
+    "note": "Estos son ejemplos de diseño que demuestran nuestro estilo. Cuando trabajes con nosotros, crearemos tu página única y personalizada."
   }
 }

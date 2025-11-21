@@ -1,6 +1,6 @@
 /**
- * Portfolio.js - Componente para proyectos showcase/demo
- * Versión actualizada que soporta gradientes y proyectos conceptuales
+ * Portfolio.js - Componente para proyectos showcase por paquete
+ * Versión actualizada que mapea cada proyecto a su paquete
  */
 
 class PortfolioCard {
@@ -13,7 +13,19 @@ class PortfolioCard {
    * @returns {string} HTML de la tarjeta
    */
   render() {
-    const { title, category, description, image, gradient, stats, url, isDemo } = this.project;
+    const { 
+      title, 
+      category, 
+      description, 
+      image, 
+      gradient, 
+      stats, 
+      url, 
+      isDemo,
+      package: packageType,
+      packagePrice,
+      features
+    } = this.project;
     
     // Si es demo y tiene gradient, usar gradient en lugar de imagen
     const visualContent = image ? 
@@ -28,14 +40,19 @@ class PortfolioCard {
         ${title}
       </div>`;
     
+    // Capitalizar nombre del paquete
+    const packageName = packageType ? 
+      packageType.charAt(0).toUpperCase() + packageType.slice(1) : 
+      '';
+    
     return `
-      <article class="portfolio-card ${isDemo ? 'portfolio-demo' : ''}" data-category="${category.toLowerCase()}">
+      <article class="portfolio-card ${isDemo ? 'portfolio-demo' : ''}" data-category="${category.toLowerCase()}" data-package="${packageType}">
         <div style="overflow: hidden; border-radius: var(--radius-xl) var(--radius-xl) 0 0;">
           ${visualContent}
         </div>
         
         <div class="portfolio-content">
-          <span class="portfolio-category">${category}</span>
+          <span class="portfolio-category">${category.toUpperCase()}</span>
           
           <h3>${title}</h3>
           
@@ -66,6 +83,29 @@ class PortfolioCard {
             </div>
           ` : ''}
           
+          ${packageType ? `
+            <div style="margin-top: var(--space-4); padding: var(--space-4); background: linear-gradient(135deg, rgba(20, 184, 166, 0.1) 0%, transparent 100%); border-radius: var(--radius); border: 1px solid var(--accent);">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2);">
+                <span style="font-size: var(--text-sm); font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em;">
+                  Paquete ${packageName}
+                </span>
+                <span style="font-size: var(--text-lg); font-weight: 700; color: var(--accent);">
+                  ${packagePrice}
+                </span>
+              </div>
+              ${features ? `
+                <ul style="list-style: none; padding: 0; margin: var(--space-3) 0 0 0; display: flex; flex-direction: column; gap: var(--space-2);">
+                  ${features.slice(0, 3).map(feature => `
+                    <li style="font-size: var(--text-xs); color: var(--ink-muted); display: flex; align-items: flex-start; gap: var(--space-2);">
+                      <span style="color: var(--accent); flex-shrink: 0;">✓</span>
+                      <span>${feature}</span>
+                    </li>
+                  `).join('')}
+                </ul>
+              ` : ''}
+            </div>
+          ` : ''}
+          
           ${url ? `
             <a 
               href="${url}" 
@@ -82,15 +122,17 @@ class PortfolioCard {
             </a>
           ` : `
             <a 
-              href="#contacto" 
+              href="#paquetes" 
               class="btn btn-primary btn-block"
               style="margin-top: var(--space-4);"
-              onclick="gtag('event', 'solicitar_similar', {
+              onclick="gtag('event', 'solicitar_paquete', {
                 'event_category': 'conversion',
-                'event_label': '${title}'
-              })"
+                'event_label': '${packageType}_desde_${title}'
+              }); 
+              // Scroll suave a paquetes
+              document.getElementById('paquetes').scrollIntoView({ behavior: 'smooth' });"
             >
-              Quiero uno así →
+              Quiero el paquete ${packageName} →
             </a>
           `}
         </div>
@@ -169,14 +211,14 @@ async function initPortfolio() {
     
     // Fallback mejorado con gradientes
     portfolioGrid.innerHTML = `
-      <article class="portfolio-card portfolio-demo">
+      <article class="portfolio-card portfolio-demo" data-package="profesional">
         <div style="overflow: hidden; border-radius: var(--radius-xl) var(--radius-xl) 0 0;">
           <div style="width: 100%; height: 240px; background: linear-gradient(135deg, #14b8a6 0%, #0f766e 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--text-2xl); font-weight: 700;">
             Café Local
           </div>
         </div>
         <div class="portfolio-content">
-          <span class="portfolio-category">Cafetería</span>
+          <span class="portfolio-category">CAFETERÍA</span>
           <h3>Proyecto Ejemplo</h3>
           <p class="portfolio-description">Landing page moderna con menú digital y sistema de reservas. Diseño optimizado para móvil.</p>
           <div class="portfolio-stats">
@@ -198,20 +240,20 @@ async function initPortfolio() {
               💡 <strong>Proyecto conceptual</strong> - Muestra nuestro estilo de diseño
             </p>
           </div>
-          <a href="#contacto" class="btn btn-primary btn-block" style="margin-top: var(--space-4);">
-            Quiero uno así →
+          <a href="#paquetes" class="btn btn-primary btn-block" style="margin-top: var(--space-4);">
+            Quiero el paquete Profesional →
           </a>
         </div>
       </article>
       
-      <article class="portfolio-card portfolio-demo">
+      <article class="portfolio-card portfolio-demo" data-package="premium">
         <div style="overflow: hidden; border-radius: var(--radius-xl) var(--radius-xl) 0 0;">
           <div style="width: 100%; height: 240px; background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--text-2xl); font-weight: 700;">
             Estética
           </div>
         </div>
         <div class="portfolio-content">
-          <span class="portfolio-category">Belleza</span>
+          <span class="portfolio-category">BELLEZA</span>
           <h3>Proyecto Ejemplo</h3>
           <p class="portfolio-description">Sitio elegante con galería y sistema de citas. Optimizado para conversión mobile.</p>
           <div class="portfolio-stats">
@@ -233,20 +275,20 @@ async function initPortfolio() {
               💡 <strong>Proyecto conceptual</strong> - Muestra nuestro estilo de diseño
             </p>
           </div>
-          <a href="#contacto" class="btn btn-primary btn-block" style="margin-top: var(--space-4);">
-            Quiero uno así →
+          <a href="#paquetes" class="btn btn-primary btn-block" style="margin-top: var(--space-4);">
+            Quiero el paquete Premium →
           </a>
         </div>
       </article>
       
-      <article class="portfolio-card portfolio-demo">
+      <article class="portfolio-card portfolio-demo" data-package="business">
         <div style="overflow: hidden; border-radius: var(--radius-xl) var(--radius-xl) 0 0;">
           <div style="width: 100%; height: 240px; background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--text-2xl); font-weight: 700;">
             Consultorio
           </div>
         </div>
         <div class="portfolio-content">
-          <span class="portfolio-category">Salud</span>
+          <span class="portfolio-category">SALUD</span>
           <h3>Proyecto Ejemplo</h3>
           <p class="portfolio-description">Página profesional con información de servicios y formulario de contacto seguro.</p>
           <div class="portfolio-stats">
@@ -268,8 +310,8 @@ async function initPortfolio() {
               💡 <strong>Proyecto conceptual</strong> - Muestra nuestro estilo de diseño
             </p>
           </div>
-          <a href="#contacto" class="btn btn-primary btn-block" style="margin-top: var(--space-4);">
-            Quiero uno así →
+          <a href="#paquetes" class="btn btn-primary btn-block" style="margin-top: var(--space-4);">
+            Quiero el paquete Business →
           </a>
         </div>
       </article>
