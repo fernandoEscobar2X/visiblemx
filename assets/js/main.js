@@ -128,12 +128,9 @@ function initFormValidation() {
   if (!contactForm) return;
   
   contactForm.addEventListener('submit', function(e) {
-    // Netlify se encarga del envío, solo validamos antes
     const nombre = document.getElementById('nombre');
     const email = document.getElementById('email');
     const mensaje = document.getElementById('mensaje');
-    
-    let isValid = true;
     
     // Validación básica
     if (nombre && nombre.value.trim().length < 2) {
@@ -168,9 +165,11 @@ function initFormValidation() {
     // Mostrar loading en botón
     const submitBtn = contactForm.querySelector('button[type="submit"]');
     if (submitBtn) {
-      submitBtn.textContent = 'Enviando...';
+      submitBtn.innerHTML = '<span style="display: inline-flex; align-items: center; gap: 8px;"><span class="spinner" style="width: 16px; height: 16px; border-width: 2px;"></span> Enviando...</span>';
       submitBtn.disabled = true;
     }
+    
+    // Netlify se encarga del resto, no prevenir default
   });
   
   function isValidEmail(email) {

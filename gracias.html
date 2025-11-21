@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mensaje Enviado - VisibleMX</title>
+  
+  <!-- CSS Files -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/utilities.css">
+  
+  <style>
+    .thank-you-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-8);
+      background: linear-gradient(180deg, var(--bg-alt) 0%, var(--bg) 100%);
+    }
+    
+    .thank-you-card {
+      max-width: 600px;
+      width: 100%;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: var(--space-12);
+      text-align: center;
+      box-shadow: var(--shadow-xl);
+      animation: slideUp 0.5s ease-out;
+    }
+    
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .success-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--color-teal-400) 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto var(--space-6);
+      font-size: 3rem;
+      animation: scaleIn 0.5s ease-out 0.2s both;
+    }
+    
+    @keyframes scaleIn {
+      from {
+        transform: scale(0);
+      }
+      to {
+        transform: scale(1);
+      }
+    }
+    
+    .thank-you-card h1 {
+      font-size: var(--text-3xl);
+      margin-bottom: var(--space-4);
+      color: var(--ink);
+    }
+    
+    .thank-you-card p {
+      font-size: var(--text-lg);
+      color: var(--ink-muted);
+      line-height: 1.7;
+      margin-bottom: var(--space-8);
+    }
+    
+    .action-buttons {
+      display: flex;
+      gap: var(--space-4);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    @media (max-width: 640px) {
+      .action-buttons {
+        flex-direction: column;
+      }
+      
+      .action-buttons .btn {
+        width: 100%;
+      }
+    }
+    
+    .info-box {
+      margin-top: var(--space-8);
+      padding: var(--space-6);
+      background: var(--bg-alt);
+      border-radius: var(--radius-lg);
+      border-left: 4px solid var(--accent);
+    }
+    
+    .info-box p {
+      margin: 0;
+      font-size: var(--text-sm);
+      color: var(--ink-muted);
+    }
+    
+    .info-box strong {
+      color: var(--ink);
+    }
+  </style>
+</head>
+
+<body>
+  <section class="thank-you-section">
+    <div class="thank-you-card">
+      <div class="success-icon">
+        ✓
+      </div>
+      
+      <h1>¡Mensaje enviado con éxito!</h1>
+      
+      <p>
+        Gracias por contactarnos. Hemos recibido tu mensaje y te responderemos 
+        en menos de 24 horas (generalmente mucho antes).
+      </p>
+      
+      <div class="action-buttons">
+        <a href="/" class="btn btn-primary">
+          Volver al inicio
+        </a>
+        <a href="https://wa.me/5216633634237?text=Hola%20VisibleMX%2C%20acabo%20de%20enviar%20un%20formulario" 
+           class="btn btn-secondary" 
+           target="_blank" 
+           rel="noopener">
+          Contactar por WhatsApp
+        </a>
+      </div>
+      
+      <div class="info-box">
+        <p>
+          <strong>💡 Mientras tanto:</strong><br>
+          Puedes seguirnos en <a href="https://instagram.com/visiblemx_" target="_blank" style="color: var(--accent); font-weight: 600;">Instagram @visiblemx_</a> 
+          para ver más ejemplos de nuestro trabajo y tips de diseño web.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <script>
+    // Redirigir automáticamente después de 10 segundos
+    setTimeout(() => {
+      window.location.href = '/';
+    }, 10000);
+    
+    // Track en Analytics
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'form_submission_success', {
+        'event_category': 'conversion',
+        'event_label': 'thank_you_page'
+      });
+    }
+  </script>
+</body>
+</html>

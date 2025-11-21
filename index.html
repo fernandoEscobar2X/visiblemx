@@ -119,8 +119,10 @@
     </nav>
 
     <button class="burger btn-ghost" aria-expanded="false" aria-controls="menu-mobile" aria-label="Menú de navegación">
-      <span class="burger-icon"></span>
-    </button>
+  <span class="burger-icon"></span>
+  <span class="burger-icon"></span>
+  <span class="burger-icon"></span>
+</button>
   </div>
 
   <!-- Mobile menu -->
@@ -534,75 +536,103 @@
 
       <!-- Contact Form -->
       <div class="contact-form-wrapper">
-        <form name="contacto" method="POST" data-netlify="true" class="contact-form" id="contact-form">
-          <input type="hidden" name="form-name" value="contacto">
-          
-          <h3>Envíanos un mensaje</h3>
-          
-          <div class="form-group">
-            <label for="nombre">Nombre completo</label>
-            <input 
-              class="form-input" 
-              type="text" 
-              id="nombre" 
-              name="nombre" 
-              required 
-              placeholder="Tu nombre">
-          </div>
+ <!-- Contact Form - VERSIÓN CORREGIDA PARA NETLIFY -->
+<div class="contact-form-wrapper">
+  <!-- Formulario oculto para Netlify (IMPORTANTE) -->
+  <form name="contacto" netlify netlify-honeypot="bot-field" hidden>
+    <input type="text" name="nombre" />
+    <input type="email" name="email" />
+    <input type="tel" name="telefono" />
+    <select name="paquete">
+      <option value="profesional">Profesional</option>
+      <option value="premium">Premium</option>
+      <option value="business">Business</option>
+    </select>
+    <textarea name="mensaje"></textarea>
+  </form>
 
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input 
-              class="form-input" 
-              type="email" 
-              id="email" 
-              name="email" 
-              required 
-              placeholder="tu@email.com">
-          </div>
+  <!-- Formulario visible -->
+  <form 
+    name="contacto" 
+    method="POST" 
+    action="/thank-you.html"
+    netlify 
+    netlify-honeypot="bot-field"
+    class="contact-form" 
+    id="contact-form"
+  >
+    <!-- Campo anti-spam oculto -->
+    <input type="hidden" name="form-name" value="contacto" />
+    <div style="display: none;">
+      <label>No llenar si eres humano: <input name="bot-field" /></label>
+    </div>
+    
+    <h3>Envíanos un mensaje</h3>
+    
+    <div class="form-group">
+      <label for="nombre">Nombre completo</label>
+      <input 
+        class="form-input" 
+        type="text" 
+        id="nombre" 
+        name="nombre" 
+        required 
+        placeholder="Tu nombre">
+    </div>
 
-          <div class="form-group">
-            <label for="telefono">Teléfono (opcional)</label>
-            <input 
-              class="form-input" 
-              type="tel" 
-              id="telefono" 
-              name="telefono" 
-              placeholder="+52 123 456 7890">
-          </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input 
+        class="form-input" 
+        type="email" 
+        id="email" 
+        name="email" 
+        required 
+        placeholder="tu@email.com">
+    </div>
 
-          <div class="form-group">
-            <label for="paquete">Paquete de interés</label>
-            <select class="form-input" id="paquete" name="paquete">
-              <option value="">Seleccionar...</option>
-              <option value="profesional">Profesional - $59 USD</option>
-              <option value="premium">Premium - $89 USD</option>
-              <option value="business">Business - $129 USD</option>
-              <option value="personalizado">Proyecto personalizado</option>
-            </select>
-          </div>
+    <div class="form-group">
+      <label for="telefono">Teléfono (opcional)</label>
+      <input 
+        class="form-input" 
+        type="tel" 
+        id="telefono" 
+        name="telefono" 
+        placeholder="+52 123 456 7890">
+    </div>
 
-          <div class="form-group">
-            <label for="mensaje">Cuéntanos sobre tu proyecto</label>
-            <textarea 
-              class="form-input" 
-              id="mensaje" 
-              name="mensaje" 
-              rows="4" 
-              required 
-              placeholder="Describe brevemente qué necesitas..."></textarea>
-          </div>
+    <div class="form-group">
+      <label for="paquete">Paquete de interés</label>
+      <select class="form-input" id="paquete" name="paquete">
+        <option value="">Seleccionar...</option>
+        <option value="profesional">Profesional - $59 USD</option>
+        <option value="premium">Premium - $89 USD</option>
+        <option value="business">Business - $129 USD</option>
+        <option value="personalizado">Proyecto personalizado</option>
+      </select>
+    </div>
 
-          <button class="btn btn-primary btn-block" type="submit">
-            Enviar mensaje
-          </button>
+    <div class="form-group">
+      <label for="mensaje">Cuéntanos sobre tu proyecto</label>
+      <textarea 
+        class="form-input" 
+        id="mensaje" 
+        name="mensaje" 
+        rows="4" 
+        required 
+        placeholder="Describe brevemente qué necesitas..."></textarea>
+    </div>
 
-          <p class="form-note">
-            Al enviar este formulario aceptas nuestra política de privacidad.
-            Responderemos en menos de 24 horas.
-          </p>
-        </form>
-      </div>
+    <button class="btn btn-primary btn-block" type="submit">
+      Enviar mensaje
+    </button>
+
+    <p class="form-note">
+      Al enviar este formulario aceptas nuestra política de privacidad.
+      Responderemos en menos de 24 horas.
+    </p>
+  </form>
+</div>
     </div>
   </div>
 </section>
