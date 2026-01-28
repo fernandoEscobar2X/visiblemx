@@ -1,36 +1,43 @@
 {
   "projects": [
     {
-      "id": "cafe-local-profesional",
+      "id": "cafe-local-negocio",
       "title": "Café Local",
       "category": "Cafetería",
-      "description": "Landing page moderna con menú digital y sistema de reservas. Diseño optimizado para móvil con códigos QR.",
+      "description": "Landing moderna con menú digital, sistema de reservas y códigos QR. Diseño optimizado para móvil que convierte visitas en clientes.",
       "image": null,
       "gradient": "linear-gradient(135deg, #14b8a6 0%, #0f766e 100%)",
       "stats": {
         "conversion": "Optimizado",
-        "traffic": "SEO Ready",
+        "traffic": "SEO Local",
         "lighthouse": "98"
       },
-      "technologies": ["HTML5", "CSS3", "JavaScript", "QR"],
+      "technologies": ["HTML5", "CSS3", "JavaScript", "QR Codes", "Calendly"],
       "url": "assets/demos/demo-cafe-local.html",
-      "package": "profesional",
-      "packagePrice": "$59 USD",
+      "package": "negocio-local",
+      "packagePrice": "$2,799 MXN",
+      "packageName": "Negocio Local",
       "features": [
-        "Hasta 4 secciones",
-        "2 códigos QR profesionales",
-        "Formulario de contacto básico",
-        "SEO básico optimizado",
-        "Responsive design"
+        "4 secciones personalizadas (menú, horarios, reservas, contacto)",
+        "2 códigos QR profesionales incluidos",
+        "Integración WhatsApp Business",
+        "100 stickers + 2 acrílicos de mesa",
+        "SEO local optimizado"
+      ],
+      "physicalItems": [
+        "100 stickers premium para menús y mostrador",
+        "2 acrílicos de mesa con QR",
+        "Diseño de menú digital con QR"
       ],
       "featured": true,
-      "isDemo": true
+      "isDemo": true,
+      "demoDisclaimer": "Proyecto conceptual creado para demostrar capacidades de diseño. Tu café tendrá diseño único y personalizado."
     },
     {
-      "id": "estetica-premium",
-      "title": "Estética",
+      "id": "estetica-negocio",
+      "title": "Estética Urbana",
       "category": "Belleza",
-      "description": "Sitio elegante con galería y sistema de citas. Optimizado para conversión mobile y WhatsApp Business.",
+      "description": "Sitio elegante con galería de trabajos, moodboard de marca y sistema de citas por WhatsApp. Optimizado para conversión mobile.",
       "image": null,
       "gradient": "linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%)",
       "stats": {
@@ -38,25 +45,32 @@
         "traffic": "Mobile First",
         "lighthouse": "96"
       },
-      "technologies": ["HTML5", "CSS3", "Forms", "Animations"],
+      "technologies": ["HTML5", "CSS3", "Animaciones", "Forms", "Instagram API"],
       "url": "assets/demos/demo-estetica.html",
-      "package": "premium",
-      "packagePrice": "$89 USD",
+      "package": "negocio-local",
+      "packagePrice": "$2,799 MXN",
+      "packageName": "Negocio Local",
       "features": [
-        "Hasta 6 secciones con animaciones",
-        "3 códigos QR personalizados",
-        "Moodboard y guía visual",
-        "Microanimaciones avanzadas",
-        "Accesibilidad WCAG 2.1 AA"
+        "5 secciones con animaciones suaves",
+        "Galería de resultados antes/después",
+        "Moodboard y guía visual de marca",
+        "3 QR personalizados (citas, ubicación, portafolio)",
+        "WhatsApp flotante integrado"
+      ],
+      "physicalItems": [
+        "100 stickers premium para espejos y recepción",
+        "2 acrílicos de mesa personalizados",
+        "Diseño de carta de servicios con QR"
       ],
       "featured": true,
-      "isDemo": true
+      "isDemo": true,
+      "demoDisclaimer": "Ejemplo de diseño UX premium. Tu estética tendrá identidad visual única adaptada a tu marca."
     },
     {
-      "id": "consultorio-business",
-      "title": "Consultorio",
+      "id": "consultorio-empresarial",
+      "title": "Consultorio Integral",
       "category": "Salud",
-      "description": "Página profesional con información de servicios y formulario de contacto seguro. Diseño confiable y accesible.",
+      "description": "Sitio profesional con información de servicios, equipo médico, FAQ y formulario seguro. Diseño que transmite confianza y profesionalismo.",
       "image": null,
       "gradient": "linear-gradient(135deg, #ef4444 0%, #dc2626 100%)",
       "stats": {
@@ -64,24 +78,124 @@
         "traffic": "Accesible",
         "lighthouse": "99"
       },
-      "technologies": ["HTML5", "CSS3", "CMS", "Analytics"],
+      "technologies": ["HTML5", "CSS3", "CMS", "Analytics", "WCAG AA"],
       "url": "assets/demos/demo-consultorio.html",
-      "package": "business",
-      "packagePrice": "$129 USD",
+      "package": "empresarial",
+      "packagePrice": "$4,999 MXN",
+      "packageName": "Empresarial",
       "features": [
-        "Secciones ilimitadas",
-        "CMS simple para editar contenido",
-        "Google Analytics 4 integrado",
-        "Dominio propio incluido (1 año)",
-        "Sistema de blog opcional"
+        "7+ secciones ilimitadas",
+        "CMS simple para actualizar avisos y contenido",
+        "Blog integrado con 5 posts iniciales",
+        "Google Analytics 4 + reportes mensuales (3 meses)",
+        "Sistema de citas avanzado",
+        "Accesibilidad WCAG 2.1 AA certificada"
+      ],
+      "physicalItems": [
+        "200 stickers premium para consultorio y material informativo",
+        "5 acrílicos personalizados (sala de espera, recepción)",
+        "Diseño de menú de servicios con QR",
+        "Roll-up banner 85x200cm (arte digital para imprenta)",
+        "Tarjetas de presentación (diseño para 500 unidades)"
+      ],
+      "bonuses": [
+        "Sesión de fotos del consultorio y equipo médico",
+        "Video promocional 30 segundos para redes sociales"
       ],
       "featured": true,
-      "isDemo": true
+      "isDemo": true,
+      "demoDisclaimer": "Proyecto ejemplo del paquete Empresarial. Tu consultorio tendrá diseño y contenido 100% personalizado."
+    },
+    {
+      "id": "restaurante-empresarial",
+      "title": "Restaurante Gourmet",
+      "category": "Restaurante",
+      "description": "Sitio completo con menú digital interactivo, sistema de reservas, galería de platillos y blog de recetas. Optimizado para delivery.",
+      "image": null,
+      "gradient": "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)",
+      "stats": {
+        "conversion": "Delivery+",
+        "traffic": "Google Maps",
+        "lighthouse": "97"
+      },
+      "technologies": ["HTML5", "CSS3", "CMS", "Uber Eats API", "Analytics"],
+      "url": null,
+      "package": "empresarial",
+      "packagePrice": "$4,999 MXN",
+      "packageName": "Empresarial",
+      "features": [
+        "Catálogo de menú dinámico editable",
+        "Integración con plataformas de delivery",
+        "Blog de recetas (SEO)",
+        "Sistema de reservas online avanzado",
+        "Google Analytics + Facebook Pixel"
+      ],
+      "physicalItems": [
+        "200 stickers para mesas y delivery",
+        "5 acrílicos (menú de mesa, promociones)",
+        "Menú impreso QR (diseño listo imprenta)",
+        "Roll-up banner para entrada",
+        "Tarjetas de presentación con QR"
+      ],
+      "bonuses": [
+        "Sesión de fotos de platillos",
+        "Video promocional para Instagram/TikTok"
+      ],
+      "featured": false,
+      "isDemo": true,
+      "demoDisclaimer": "Demo próximamente disponible. Muestra las capacidades del paquete Empresarial para restaurantes."
     }
   ],
   "showcase": {
     "title": "Ejemplos por paquete",
-    "description": "Cada proyecto muestra las capacidades de su paquete correspondiente. Diseños optimizados para conversión y experiencia de usuario.",
-    "note": "Estos son ejemplos de diseño que demuestran nuestro estilo. Cuando trabajes con nosotros, crearemos tu página única y personalizada."
+    "description": "Proyectos conceptuales que demuestran nuestro estilo y capacidades técnicas. Cada proyecto está optimizado para conversión, SEO y experiencia de usuario.",
+    "note": "💡 Estos son ejemplos de diseño profesional creados por VisibleMX. Cuando trabajes con nosotros, crearemos tu página web única y completamente personalizada para tu negocio específico.",
+    "disclaimer": "Los proyectos mostrados son demos conceptuales para ilustrar calidad de diseño, funcionalidades y materiales físicos incluidos en cada paquete. No son sitios de clientes reales (aún). Tu proyecto será 100% original."
+  },
+  "physicalShowcase": {
+    "title": "Materiales Físicos Profesionales",
+    "description": "Todos nuestros paquetes (excepto Digital Puro) incluyen materiales físicos de alta calidad que complementan tu presencia digital.",
+    "items": [
+      {
+        "name": "Stickers Premium",
+        "description": "Papel couché brillante, resistentes al agua, varios tamaños disponibles",
+        "sizes": ["5x5cm", "7x7cm", "10x10cm"],
+        "uses": ["Menús", "Mostrador", "Delivery", "Ventanas", "Material promocional"]
+      },
+      {
+        "name": "Acrílicos de Mesa",
+        "description": "Acrílico transparente 3mm, impresión UV full color, base incluida",
+        "sizes": ["10x15cm", "15x20cm", "20x25cm"],
+        "uses": ["Menú de mesa", "Promociones", "QR codes", "Información de contacto"]
+      },
+      {
+        "name": "Códigos QR Profesionales",
+        "description": "Diseño personalizado, analytics integrados, archivos alta resolución",
+        "formats": ["Digital (PNG, SVG)", "Impreso en stickers", "Impreso en acrílicos"],
+        "tracking": "Dashboard con escaneos, ubicación, dispositivo, hora"
+      },
+      {
+        "name": "Diseños para Imprenta",
+        "description": "Archivos listos para imprimir en cualquier imprenta local",
+        "includes": ["Menús", "Catálogos", "Tarjetas de presentación", "Roll-up banners"],
+        "specs": "CMYK, alta resolución, con líneas de corte y sangrado"
+      }
+    ]
+  },
+  "testimonials": {
+    "note": "Testimonios reales próximamente. Actualmente en fase de lanzamiento con primeros clientes.",
+    "comingSoon": true,
+    "earlyAdopters": [
+      {
+        "business": "Café en Zona Río",
+        "status": "En desarrollo - Paquete Negocio Local",
+        "expected": "Febrero 2026"
+      },
+      {
+        "business": "Barbería en Playas",
+        "status": "En cotización - Paquete Digital Puro",
+        "expected": "Febrero 2026"
+      }
+    ]
   }
 }

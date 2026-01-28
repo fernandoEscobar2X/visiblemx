@@ -1,0 +1,506 @@
+{
+  "es": {
+    "nav": {
+      "examples": "Ejemplos",
+      "materials": "Materiales",
+      "packages": "Paquetes",
+      "addons": "Add-ons",
+      "process": "Proceso",
+      "contact": "Contacto",
+      "whatsapp": "WhatsApp"
+    },
+    "hero": {
+      "badge": "Aceptando nuevos proyectos Febrero 2026",
+      "title": "Tu negocio merece más que solo una página web:",
+      "titleHighlight": "presencia digital + física completa",
+      "description": "Sitios web modernos optimizados para móvil + stickers profesionales, acrílicos de mesa y códigos QR listos para usar. Todo incluido en un solo paquete.",
+      "priceFrom": "Desde $1,499 MXN / $75 USD",
+      "ctaPrimary": "Ver paquetes y precios",
+      "ctaSecondary": "Ver ejemplos →",
+      "badges": {
+        "delivery": "Entrega 5-28 días",
+        "guarantee": "Garantía 30 días",
+        "physical": "Físicos incluidos"
+      },
+      "cardTitle": "¿Qué incluyen nuestros paquetes?",
+      "features": [
+        "Sitio web profesional responsive",
+        "Códigos QR personalizados con analytics",
+        "Stickers premium para menús y mostrador",
+        "Acrílicos de mesa con impresión UV",
+        "SEO + velocidad optimizada (95+ Lighthouse)",
+        "WhatsApp Business integrado"
+      ]
+    },
+    "materials": {
+      "badge": "Incluido",
+      "title": "Más que una página web: presencia física tangible",
+      "description": "Todos nuestros paquetes (excepto Digital Puro) incluyen materiales físicos profesionales producidos localmente en Tijuana. No tienes que buscar imprentas por separado.",
+      "items": [
+        {
+          "icon": "🎨",
+          "title": "Stickers Premium",
+          "description": "Papel couché brillante, resistentes al agua. Perfectos para menús, mostradores, ventanas y material de delivery. Incluimos varios tamaños (5x5cm, 7x7cm, 10x10cm).",
+          "features": [
+            "De 100 a 200 unidades según paquete",
+            "Diseño personalizado con tu marca",
+            "Laminado protector UV"
+          ]
+        },
+        {
+          "icon": "💎",
+          "title": "Acrílicos de Mesa",
+          "description": "Acrílico transparente 3mm con impresión UV full color. Base incluida. Ideales para menús de mesa, promociones y códigos QR.",
+          "features": [
+            "De 2 a 5 piezas según paquete",
+            "Tamaños 10x15cm hasta 20x25cm",
+            "Resistentes y elegantes"
+          ]
+        },
+        {
+          "icon": "📱",
+          "title": "Códigos QR Profesionales",
+          "description": "QR personalizados con tu marca, analytics integrados y archivos en alta resolución para imprimir donde necesites.",
+          "features": [
+            "De 2 a 3 QR según paquete",
+            "Dashboard con estadísticas de escaneos",
+            "Diseño personalizado con colores de marca"
+          ]
+        },
+        {
+          "icon": "📄",
+          "title": "Diseños para Imprenta",
+          "description": "Archivos listos para imprimir en cualquier imprenta local. Menús, catálogos, tarjetas y roll-up banners en formato CMYK profesional.",
+          "features": [
+            "Solo en paquete Empresarial",
+            "Alta resolución con sangrado",
+            "Listo para imprimir donde quieras"
+          ]
+        }
+      ],
+      "note": {
+        "title": "¿Por qué incluimos materiales físicos?",
+        "description": "Porque un negocio local necesita presencia en ambos mundos: digital (tu sitio web) y físico (tu local, menús, mostradores). Al incluir todo en un solo paquete, ahorras tiempo, dinero y obtienes coherencia visual en toda tu marca."
+      },
+      "production": "💡 Producción local en Tijuana • Calidad garantizada"
+    },
+    "packages": {
+      "badge": "Inversión",
+      "title": "Elige el paquete perfecto para tu negocio",
+      "description": "Precios transparentes en pesos mexicanos y dólares. Pagos flexibles. Garantía de satisfacción 30 días.",
+      "currency": "Precios en MXN • Aceptamos USD al tipo de cambio del día",
+      "guarantee": {
+        "title": "Garantía de satisfacción total",
+        "description": "Si no estás 100% satisfecho con tu página web y materiales en los primeros 30 días, te devolvemos tu dinero sin preguntas."
+      }
+    },
+    "comparison": {
+      "title": "Comparativa detallada de paquetes",
+      "description": "Todas las diferencias en una tabla clara",
+      "unsure": "¿No estás seguro cuál paquete elegir?",
+      "ctaHelp": "Hablemos por WhatsApp"
+    },
+    "addons": {
+      "badge": "Extras",
+      "title": "Servicios adicionales para hacer crecer tu negocio",
+      "description": "Complementa tu paquete con servicios recurrentes o materiales físicos adicionales"
+    },
+    "roi": {
+      "badge": "Retorno de inversión",
+      "title": "¿Vale la pena invertir en una página web profesional?",
+      "description": "Haz los números tú mismo",
+      "clientsLabel": "¿Cuántos clientes extra crees que podría traerte tu página web al mes?",
+      "ticketLabel": "¿Cuánto gasta en promedio cada cliente? (MXN)",
+      "monthlyIncome": "Ingreso extra mensual estimado:",
+      "perMonth": "MXN por mes",
+      "recoverIn": "Recuperas tu inversión en el paquete Negocio Local ($2,799 MXN) en:",
+      "months": "meses",
+      "note": "Después de eso, todo es ganancia pura. Y los materiales físicos (stickers, acrílicos, QR) siguen trabajando para ti 24/7.",
+      "ctaPackages": "Ver paquetes disponibles"
+    },
+    "portfolio": {
+      "badge": "Showcase",
+      "title": "Ejemplos de nuestro trabajo",
+      "description": "Proyectos conceptuales que demuestran nuestro estilo y capacidades técnicas. Tu proyecto será único y personalizado.",
+      "viewDemo": "Ver demo completo",
+      "getPackage": "Quiero el paquete",
+      "disclaimer": "Los proyectos mostrados son demos conceptuales para ilustrar calidad de diseño y funcionalidades. Tu proyecto será 100% original y personalizado.",
+      "ctaTitle": "¿Listo para tener tu propia presencia profesional?",
+      "ctaDescription": "Trabajaremos contigo para crear un diseño único + materiales físicos incluidos",
+      "ctaButton": "Empezar mi proyecto"
+    },
+    "why": {
+      "badge": "Diferenciadores",
+      "title": "¿Por qué elegir VisibleMX?",
+      "description": "Combinamos diseño web profesional con materiales físicos de calidad",
+      "reasons": [
+        {
+          "icon": "🎯",
+          "title": "Todo en un solo lugar",
+          "description": "No necesitas buscar diseñador web por un lado e imprenta por otro. Nosotros te entregamos todo: sitio + stickers + acrílicos + QR en un solo paquete coherente."
+        },
+        {
+          "icon": "⚡",
+          "title": "Velocidad extrema",
+          "description": "Sitios optimizados que cargan en menos de 2 segundos. Score 95+ en Google Lighthouse garantizado. Tus clientes no esperan, tu web tampoco."
+        },
+        {
+          "icon": "📱",
+          "title": "Mobile-first real",
+          "description": "El 80% de tus clientes te buscarán desde el celular. Nuestros sitios se ven perfectos en móvil PRIMERO, desktop después."
+        },
+        {
+          "icon": "💎",
+          "title": "Materiales de calidad",
+          "description": "Stickers con laminado UV, acrílicos de 3mm, impresión full color. No escatimamos en calidad porque sabemos que representan tu negocio."
+        },
+        {
+          "icon": "♿",
+          "title": "Accesibilidad garantizada",
+          "description": "Cumplimiento WCAG 2.1 nivel AA. Tu sitio será usable para todos, incluyendo personas con discapacidades visuales o motoras."
+        },
+        {
+          "icon": "📊",
+          "title": "Analytics desde día 1",
+          "description": "Google Analytics integrado para que veas cuántas visitas recibes, de dónde vienen y qué hacen en tu sitio. Datos reales, decisiones inteligentes."
+        }
+      ]
+    },
+    "process": {
+      "badge": "Metodología",
+      "title": "Cómo trabajamos juntos",
+      "description": "Proceso transparente y colaborativo de principio a fin",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Brief & Diagnóstico",
+          "description": "Entendemos tu negocio, objetivos y audiencia. Definimos alcance, estilo visual y materiales físicos necesarios.",
+          "time": "1 día"
+        },
+        {
+          "number": "02",
+          "title": "Diseño & Propuesta",
+          "description": "Creamos moodboard, paleta de colores y propuesta visual inicial. Incluye mockups de stickers y acrílicos.",
+          "time": "2-3 días"
+        },
+        {
+          "number": "03",
+          "title": "Desarrollo Web",
+          "description": "Construimos tu sitio con código limpio, responsive design y SEO. Mientras tanto, producimos tus materiales físicos.",
+          "time": "3-7 días"
+        },
+        {
+          "number": "04",
+          "title": "Entrega & Lanzamiento",
+          "description": "Refinamos detalles finales, entregamos sitio en vivo + materiales físicos. Incluye guía de uso si elegiste CMS.",
+          "time": "1 día"
+        }
+      ],
+      "totalTime": "Tiempo total:",
+      "totalRange": "De 5 a 28 días según paquete",
+      "ctaButton": "Empezar mi proyecto"
+    },
+    "contact": {
+      "badge": "Hablemos",
+      "title": "¿Listo para impulsar tu negocio?",
+      "description": "Respuesta en menos de 2 horas por WhatsApp",
+      "channels": [
+        {
+          "icon": "💬",
+          "title": "WhatsApp",
+          "description": "Respuesta inmediata de lunes a viernes 9am - 7pm",
+          "cta": "Abrir WhatsApp"
+        },
+        {
+          "icon": "📸",
+          "title": "Instagram",
+          "description": "Síguenos para ver proyectos, materiales físicos y tips",
+          "cta": "@visiblemx_"
+        },
+        {
+          "icon": "📄",
+          "title": "Catálogo PDF",
+          "description": "Descarga información completa para compartir",
+          "cta": "Descargar PDF"
+        }
+      ],
+      "form": {
+        "title": "Envíanos un mensaje",
+        "name": "Nombre completo",
+        "namePlaceholder": "Tu nombre",
+        "email": "Email",
+        "emailPlaceholder": "tu@email.com",
+        "phone": "Teléfono (opcional)",
+        "phonePlaceholder": "+52 123 456 7890",
+        "package": "Paquete de interés",
+        "packagePlaceholder": "Seleccionar...",
+        "message": "Cuéntanos sobre tu proyecto",
+        "messagePlaceholder": "Describe brevemente qué tipo de negocio tienes y qué necesitas...",
+        "submit": "Enviar mensaje",
+        "note": "Al enviar este formulario aceptas nuestra política de privacidad. Responderemos en menos de 24 horas.",
+        "successTitle": "¡Mensaje enviado!",
+        "successMessage": "Gracias por contactarnos. Hemos recibido tu mensaje y te responderemos en menos de 24 horas.",
+        "successButton": "Entendido"
+      }
+    },
+    "footer": {
+      "description": "Presencia digital + física completa para negocios locales en Tijuana y San Diego.",
+      "services": "Servicios",
+      "resources": "Recursos",
+      "legal": "Legal",
+      "copyright": "VisibleMX — Presencia digital + física para negocios locales. Hecho con ❤️ en Tijuana, México."
+    }
+  },
+  "en": {
+    "nav": {
+      "examples": "Examples",
+      "materials": "Materials",
+      "packages": "Packages",
+      "addons": "Add-ons",
+      "process": "Process",
+      "contact": "Contact",
+      "whatsapp": "WhatsApp"
+    },
+    "hero": {
+      "badge": "Accepting new projects February 2026",
+      "title": "Your business deserves more than just a website:",
+      "titleHighlight": "complete digital + physical presence",
+      "description": "Modern mobile-optimized websites + professional stickers, table acrylics and QR codes ready to use. All included in one package.",
+      "priceFrom": "From $75 USD / $1,499 MXN",
+      "ctaPrimary": "See packages & pricing",
+      "ctaSecondary": "View examples →",
+      "badges": {
+        "delivery": "5-28 days delivery",
+        "guarantee": "30-day guarantee",
+        "physical": "Physical included"
+      },
+      "cardTitle": "What's included in our packages?",
+      "features": [
+        "Professional responsive website",
+        "Personalized QR codes with analytics",
+        "Premium stickers for menus and counter",
+        "Table acrylics with UV printing",
+        "SEO + optimized speed (95+ Lighthouse)",
+        "Integrated WhatsApp Business"
+      ]
+    },
+    "materials": {
+      "badge": "Included",
+      "title": "More than a website: tangible physical presence",
+      "description": "All our packages (except Digital Pure) include professional physical materials produced locally in Tijuana. No need to search for print shops separately.",
+      "items": [
+        {
+          "icon": "🎨",
+          "title": "Premium Stickers",
+          "description": "Glossy coated paper, water resistant. Perfect for menus, counters, windows and delivery materials. We include various sizes (5x5cm, 7x7cm, 10x10cm).",
+          "features": [
+            "100 to 200 units depending on package",
+            "Custom design with your brand",
+            "UV protective laminate"
+          ]
+        },
+        {
+          "icon": "💎",
+          "title": "Table Acrylics",
+          "description": "3mm transparent acrylic with full color UV printing. Base included. Ideal for table menus, promotions and QR codes.",
+          "features": [
+            "2 to 5 pieces depending on package",
+            "Sizes 10x15cm up to 20x25cm",
+            "Durable and elegant"
+          ]
+        },
+        {
+          "icon": "📱",
+          "title": "Professional QR Codes",
+          "description": "Customized QR with your brand, integrated analytics and high-resolution files to print wherever you need.",
+          "features": [
+            "2 to 3 QR depending on package",
+            "Dashboard with scan statistics",
+            "Custom design with brand colors"
+          ]
+        },
+        {
+          "icon": "📄",
+          "title": "Print-Ready Designs",
+          "description": "Files ready to print at any local print shop. Menus, catalogs, business cards and roll-up banners in professional CMYK format.",
+          "features": [
+            "Only in Business package",
+            "High resolution with bleed",
+            "Ready to print anywhere"
+          ]
+        }
+      ],
+      "note": {
+        "title": "Why do we include physical materials?",
+        "description": "Because a local business needs presence in both worlds: digital (your website) and physical (your location, menus, counters). By including everything in one package, you save time, money and get visual consistency across your brand."
+      },
+      "production": "💡 Local production in Tijuana • Quality guaranteed"
+    },
+    "packages": {
+      "badge": "Investment",
+      "title": "Choose the perfect package for your business",
+      "description": "Transparent pricing in Mexican pesos and dollars. Flexible payments. 30-day satisfaction guarantee.",
+      "currency": "Prices in USD • We accept MXN at current exchange rate",
+      "guarantee": {
+        "title": "Total satisfaction guarantee",
+        "description": "If you're not 100% satisfied with your website and materials within the first 30 days, we'll refund your money no questions asked."
+      }
+    },
+    "comparison": {
+      "title": "Detailed package comparison",
+      "description": "All differences in one clear table",
+      "unsure": "Not sure which package to choose?",
+      "ctaHelp": "Let's talk on WhatsApp"
+    },
+    "addons": {
+      "badge": "Extras",
+      "title": "Additional services to grow your business",
+      "description": "Complement your package with recurring services or additional physical materials"
+    },
+    "roi": {
+      "badge": "Return on investment",
+      "title": "Is it worth investing in a professional website?",
+      "description": "Do the math yourself",
+      "clientsLabel": "How many extra customers do you think your website could bring per month?",
+      "ticketLabel": "How much does each customer spend on average? (USD)",
+      "monthlyIncome": "Estimated extra monthly income:",
+      "perMonth": "USD per month",
+      "recoverIn": "You recover your investment in the Local Business package ($140 USD) in:",
+      "months": "months",
+      "note": "After that, it's all pure profit. And the physical materials (stickers, acrylics, QR) keep working for you 24/7.",
+      "ctaPackages": "See available packages"
+    },
+    "portfolio": {
+      "badge": "Showcase",
+      "title": "Examples of our work",
+      "description": "Conceptual projects demonstrating our style and technical capabilities. Your project will be unique and personalized.",
+      "viewDemo": "View full demo",
+      "getPackage": "I want the package",
+      "disclaimer": "Projects shown are conceptual demos to illustrate design quality and features. Your project will be 100% original and customized.",
+      "ctaTitle": "Ready to have your own professional presence?",
+      "ctaDescription": "We'll work with you to create a unique design + physical materials included",
+      "ctaButton": "Start my project"
+    },
+    "why": {
+      "badge": "Differentiators",
+      "title": "Why choose VisibleMX?",
+      "description": "We combine professional web design with quality physical materials",
+      "reasons": [
+        {
+          "icon": "🎯",
+          "title": "Everything in one place",
+          "description": "No need to search for a web designer on one side and print shop on another. We deliver everything: site + stickers + acrylics + QR in one coherent package."
+        },
+        {
+          "icon": "⚡",
+          "title": "Extreme speed",
+          "description": "Optimized sites that load in less than 2 seconds. 95+ Google Lighthouse score guaranteed. Your customers don't wait, neither should your website."
+        },
+        {
+          "icon": "📱",
+          "title": "Real mobile-first",
+          "description": "80% of your customers will search for you from their phone. Our sites look perfect on mobile FIRST, desktop second."
+        },
+        {
+          "icon": "💎",
+          "title": "Quality materials",
+          "description": "Stickers with UV laminate, 3mm acrylics, full color printing. We don't cut corners on quality because we know they represent your business."
+        },
+        {
+          "icon": "♿",
+          "title": "Guaranteed accessibility",
+          "description": "WCAG 2.1 level AA compliance. Your site will be usable for everyone, including people with visual or motor disabilities."
+        },
+        {
+          "icon": "📊",
+          "title": "Analytics from day 1",
+          "description": "Integrated Google Analytics so you can see how many visits you receive, where they come from and what they do on your site. Real data, smart decisions."
+        }
+      ]
+    },
+    "process": {
+      "badge": "Methodology",
+      "title": "How we work together",
+      "description": "Transparent and collaborative process from start to finish",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Brief & Analysis",
+          "description": "We understand your business, objectives and audience. We define scope, visual style and necessary physical materials.",
+          "time": "1 day"
+        },
+        {
+          "number": "02",
+          "title": "Design & Proposal",
+          "description": "We create moodboard, color palette and initial visual proposal. Includes mockups of stickers and acrylics.",
+          "time": "2-3 days"
+        },
+        {
+          "number": "03",
+          "title": "Web Development",
+          "description": "We build your site with clean code, responsive design and SEO. Meanwhile, we produce your physical materials.",
+          "time": "3-7 days"
+        },
+        {
+          "number": "04",
+          "title": "Delivery & Launch",
+          "description": "We refine final details, deliver live site + physical materials. Includes usage guide if you chose CMS.",
+          "time": "1 day"
+        }
+      ],
+      "totalTime": "Total time:",
+      "totalRange": "5 to 28 days depending on package",
+      "ctaButton": "Start my project"
+    },
+    "contact": {
+      "badge": "Let's talk",
+      "title": "Ready to boost your business?",
+      "description": "Response in less than 2 hours via WhatsApp",
+      "channels": [
+        {
+          "icon": "💬",
+          "title": "WhatsApp",
+          "description": "Immediate response Monday to Friday 9am - 7pm",
+          "cta": "Open WhatsApp"
+        },
+        {
+          "icon": "📸",
+          "title": "Instagram",
+          "description": "Follow us to see projects, physical materials and tips",
+          "cta": "@visiblemx_"
+        },
+        {
+          "icon": "📄",
+          "title": "PDF Catalog",
+          "description": "Download complete information to share",
+          "cta": "Download PDF"
+        }
+      ],
+      "form": {
+        "title": "Send us a message",
+        "name": "Full name",
+        "namePlaceholder": "Your name",
+        "email": "Email",
+        "emailPlaceholder": "you@email.com",
+        "phone": "Phone (optional)",
+        "phonePlaceholder": "+1 123 456 7890",
+        "package": "Package of interest",
+        "packagePlaceholder": "Select...",
+        "message": "Tell us about your project",
+        "messagePlaceholder": "Briefly describe what type of business you have and what you need...",
+        "submit": "Send message",
+        "note": "By submitting this form you accept our privacy policy. We'll respond within 24 hours.",
+        "successTitle": "Message sent!",
+        "successMessage": "Thank you for contacting us. We've received your message and will respond within 24 hours.",
+        "successButton": "Got it"
+      }
+    },
+    "footer": {
+      "description": "Complete digital + physical presence for local businesses in Tijuana and San Diego.",
+      "services": "Services",
+      "resources": "Resources",
+      "legal": "Legal",
+      "copyright": "VisibleMX — Digital + physical presence for local businesses. Made with ❤️ in Tijuana, Mexico."
+    }
+  }
+}
