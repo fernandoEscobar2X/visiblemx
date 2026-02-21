@@ -16,23 +16,23 @@ export function ContactSection() {
 
   const content = {
     es: {
-      overtitle: "Â¿Listo para comenzar?",
+      overtitle: "¿Listo para comenzar?",
       title: "Hablemos de tu proyecto",
       description: "Respuesta en menos de 24 horas. Sin compromiso.",
       form: {
         name: "Nombre completo",
         email: "Email",
-        phone: "TelÃ©fono (opcional)",
-        service: "Servicio de interÃ©s",
+        phone: "Teléfono (opcional)",
+        service: "Servicio de interés",
         servicePlaceholder: "Selecciona un servicio",
-        message: "CuÃ©ntanos sobre tu proyecto",
+        message: "Cuéntanos sobre tu proyecto",
         submit: "Enviar Mensaje",
-        whatsapp: "O escrÃ­benos por WhatsApp"
+        whatsapp: "O escríbenos por WhatsApp"
       },
       services: [
         { value: 'link', label: 'Visible Link - $1,799 MXN' },
         { value: 'page', label: 'Visible Page - $2,699 MXN' },
-        { value: 'menu', label: 'Visible MenÃº - $3,599 MXN' },
+        { value: 'menu', label: 'Visible Menú - $3,599 MXN' },
         { value: 'agenda', label: 'Visible Agenda - $4,499 MXN' },
         { value: 'custom', label: 'Proyecto personalizado' }
       ],
@@ -40,11 +40,11 @@ export function ContactSection() {
         email: "ferrobles2003@gmail.com",
         phone: "664 353 3036",
         whatsapp: "526643533036",
-        address: "Tijuana, Baja California, MÃ©xico"
+        address: "Tijuana, Baja California, México"
       },
       success: {
-        title: "Â¡Mensaje enviado!",
-        description: "Te contactaremos en las prÃ³ximas 24 horas"
+        title: "¡Mensaje enviado!",
+        description: "Te contactaremos en las próximas 24 horas"
       }
     },
     en: {
@@ -64,7 +64,7 @@ export function ContactSection() {
       services: [
         { value: 'link', label: 'Visible Link - $1,799 MXN' },
         { value: 'page', label: 'Visible Page - $2,699 MXN' },
-        { value: 'menu', label: 'Visible MenÃº - $3,599 MXN' },
+        { value: 'menu', label: 'Visible Menú - $3,599 MXN' },
         { value: 'agenda', label: 'Visible Agenda - $4,499 MXN' },
         { value: 'custom', label: 'Custom project' }
       ],
@@ -90,7 +90,7 @@ export function ContactSection() {
       `NUEVO LEAD - VISIBLE MX\n\n` +
       `Nombre: ${formData.name}\n` +
       `Email: ${formData.email}\n` +
-      `TelÃ©fono: ${formData.phone || 'No proporcionado'}\n` +
+      `Teléfono: ${formData.phone || 'No proporcionado'}\n` +
       `Servicio: ${formData.service}\n\n` +
       `Mensaje:\n${formData.message}`
     );
@@ -199,7 +199,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <div className="text-sm font-medium text-slate-600 mb-1 uppercase tracking-wider">
-                    {language === 'es' ? 'TelÃ©fono' : 'Phone'}
+                    {language === 'es' ? 'Teléfono' : 'Phone'}
                   </div>
                   <a href={`tel:${t.info.phone}`} className="text-xl font-medium text-slate-900 hover:underline">
                     {t.info.phone}
@@ -213,7 +213,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <div className="text-sm font-medium text-slate-600 mb-1 uppercase tracking-wider">
-                    {language === 'es' ? 'UbicaciÃ³n' : 'Location'}
+                    {language === 'es' ? 'Ubicación' : 'Location'}
                   </div>
                   <p className="text-xl font-medium text-slate-900">
                     {t.info.address}
@@ -254,7 +254,7 @@ export function ContactSection() {
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   className="w-full px-6 py-5 border-2 border-slate-200 focus:border-slate-900 focus:outline-none text-slate-900 text-lg transition-colors"
-                  placeholder="Juan PÃ©rez"
+                  placeholder="Juan Pérez"
                 />
               </div>
 
@@ -318,7 +318,7 @@ export function ContactSection() {
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   rows={5}
                   className="w-full px-6 py-5 border-2 border-slate-200 focus:border-slate-900 focus:outline-none text-slate-900 text-lg transition-colors resize-none"
-                  placeholder={language === 'es' ? "Necesito una pÃ¡gina web para..." : "I need a website for..."}
+                  placeholder={language === 'es' ? "Necesito una página web para..." : "I need a website for..."}
                 />
               </div>
 

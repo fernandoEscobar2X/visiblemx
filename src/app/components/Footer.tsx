@@ -13,16 +13,16 @@ export function Footer() {
         items: [
           { name: "Visible Link", price: "$1,799", href: "/demo/link" },
           { name: "Visible Page", price: "$2,699", href: "/demo/page" },
-          { name: "Visible MenÃº", price: "$3,599", href: "/demo/menu" },
+          { name: "Visible Menú", price: "$3,599", href: "/demo/menu" },
           { name: "Visible Agenda", price: "$4,499", href: "/demo/agenda" }
         ]
       },
       company: {
-        title: "CompaÃ±Ã­a",
+        title: "Compañía",
         items: [
           { name: "Sobre Nosotros", href: "#nosotros" },
           { name: "Proceso", href: "#proceso" },
-          { name: "Casos de Ã‰xito", href: "#casos" },
+          { name: "Casos de Éxito", href: "#casos" },
           { name: "Contacto", href: "#contacto" }
         ]
       },
@@ -30,19 +30,19 @@ export function Footer() {
         title: "Legal",
         items: [
           { name: "Privacidad", href: "#privacidad" },
-          { name: "TÃ©rminos", href: "#terminos" },
+          { name: "Términos", href: "#terminos" },
           { name: "Cookies", href: "#cookies" }
         ]
       },
       contact: {
         email: "ferrobles2003@gmail.com",
         phone: "664 353 3036",
-        address: "Tijuana, Baja California, MÃ©xico"
+        address: "Tijuana, Baja California, México"
       },
       social: {
-        title: "SÃ­guenos"
+        title: "Síguenos"
       },
-      copyright: "Â© 2026 Visible MX. Todos los derechos reservados.",
+      copyright: "© 2026 Visible MX. Todos los derechos reservados.",
       madeWith: "Hecho con"
     },
     en: {
@@ -52,7 +52,7 @@ export function Footer() {
         items: [
           { name: "Visible Link", price: "$1,799", href: "/demo/link" },
           { name: "Visible Page", price: "$2,699", href: "/demo/page" },
-          { name: "Visible MenÃº", price: "$3,599", href: "/demo/menu" },
+          { name: "Visible Menú", price: "$3,599", href: "/demo/menu" },
           { name: "Visible Agenda", price: "$4,499", href: "/demo/agenda" }
         ]
       },
@@ -81,7 +81,7 @@ export function Footer() {
       social: {
         title: "Follow Us"
       },
-      copyright: "Â© 2026 Visible MX. All rights reserved.",
+      copyright: "© 2026 Visible MX. All rights reserved.",
       madeWith: "Made with"
     }
   };
@@ -251,7 +251,7 @@ export function Footer() {
           className="text-center mt-12 pt-8 border-t border-white/10"
         >
           <p className="text-white/30 text-xs flex items-center justify-center gap-2">
-            {t.madeWith} <span className="text-red-500">â¤</span> {language === 'es' ? 'en' : 'in'} Tijuana
+            {t.madeWith} <span className="text-red-500">❤</span> {language === 'es' ? 'en' : 'in'} Tijuana
           </p>
         </motion.div>
       </div>
