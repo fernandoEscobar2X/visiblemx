@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { motion } from 'motion/react';
 import { Send, MessageCircle, Mail, MapPin, Phone, CheckCircle } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
@@ -16,35 +16,35 @@ export function ContactSection() {
 
   const content = {
     es: {
-      overtitle: "¿Listo para comenzar?",
+      overtitle: "Â¿Listo para comenzar?",
       title: "Hablemos de tu proyecto",
       description: "Respuesta en menos de 24 horas. Sin compromiso.",
       form: {
         name: "Nombre completo",
         email: "Email",
-        phone: "Teléfono (opcional)",
-        service: "Servicio de interés",
+        phone: "TelÃ©fono (opcional)",
+        service: "Servicio de interÃ©s",
         servicePlaceholder: "Selecciona un servicio",
-        message: "Cuéntanos sobre tu proyecto",
+        message: "CuÃ©ntanos sobre tu proyecto",
         submit: "Enviar Mensaje",
-        whatsapp: "O escríbenos por WhatsApp"
+        whatsapp: "O escrÃ­benos por WhatsApp"
       },
       services: [
         { value: 'link', label: 'Visible Link - $1,799 MXN' },
         { value: 'page', label: 'Visible Page - $2,699 MXN' },
-        { value: 'menu', label: 'Visible Menú - $3,599 MXN' },
+        { value: 'menu', label: 'Visible MenÃº - $3,599 MXN' },
         { value: 'agenda', label: 'Visible Agenda - $4,499 MXN' },
         { value: 'custom', label: 'Proyecto personalizado' }
       ],
       info: {
-        email: "hola@visiblemx.com",
-        phone: "+52 664 123 4567",
-        whatsapp: "5216641234567",
-        address: "Tijuana, Baja California, México"
+        email: "ferrobles2003@gmail.com",
+        phone: "664 353 3036",
+        whatsapp: "526643533036",
+        address: "Tijuana, Baja California, MÃ©xico"
       },
       success: {
-        title: "¡Mensaje enviado!",
-        description: "Te contactaremos en las próximas 24 horas"
+        title: "Â¡Mensaje enviado!",
+        description: "Te contactaremos en las prÃ³ximas 24 horas"
       }
     },
     en: {
@@ -64,14 +64,14 @@ export function ContactSection() {
       services: [
         { value: 'link', label: 'Visible Link - $1,799 MXN' },
         { value: 'page', label: 'Visible Page - $2,699 MXN' },
-        { value: 'menu', label: 'Visible Menú - $3,599 MXN' },
+        { value: 'menu', label: 'Visible MenÃº - $3,599 MXN' },
         { value: 'agenda', label: 'Visible Agenda - $4,499 MXN' },
         { value: 'custom', label: 'Custom project' }
       ],
       info: {
-        email: "hello@visiblemx.com",
-        phone: "+52 664 123 4567",
-        whatsapp: "5216641234567",
+        email: "ferrobles2003@gmail.com",
+        phone: "664 353 3036",
+        whatsapp: "526643533036",
         address: "Tijuana, Baja California, Mexico"
       },
       success: {
@@ -90,7 +90,7 @@ export function ContactSection() {
       `NUEVO LEAD - VISIBLE MX\n\n` +
       `Nombre: ${formData.name}\n` +
       `Email: ${formData.email}\n` +
-      `Teléfono: ${formData.phone || 'No proporcionado'}\n` +
+      `TelÃ©fono: ${formData.phone || 'No proporcionado'}\n` +
       `Servicio: ${formData.service}\n\n` +
       `Mensaje:\n${formData.message}`
     );
@@ -199,7 +199,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <div className="text-sm font-medium text-slate-600 mb-1 uppercase tracking-wider">
-                    {language === 'es' ? 'Teléfono' : 'Phone'}
+                    {language === 'es' ? 'TelÃ©fono' : 'Phone'}
                   </div>
                   <a href={`tel:${t.info.phone}`} className="text-xl font-medium text-slate-900 hover:underline">
                     {t.info.phone}
@@ -213,7 +213,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <div className="text-sm font-medium text-slate-600 mb-1 uppercase tracking-wider">
-                    {language === 'es' ? 'Ubicación' : 'Location'}
+                    {language === 'es' ? 'UbicaciÃ³n' : 'Location'}
                   </div>
                   <p className="text-xl font-medium text-slate-900">
                     {t.info.address}
@@ -254,7 +254,7 @@ export function ContactSection() {
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   className="w-full px-6 py-5 border-2 border-slate-200 focus:border-slate-900 focus:outline-none text-slate-900 text-lg transition-colors"
-                  placeholder="Juan Pérez"
+                  placeholder="Juan PÃ©rez"
                 />
               </div>
 
@@ -283,7 +283,7 @@ export function ContactSection() {
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   className="w-full px-6 py-5 border-2 border-slate-200 focus:border-slate-900 focus:outline-none text-slate-900 text-lg transition-colors"
-                  placeholder="+52 664 123 4567"
+                  placeholder="664 353 3036"
                 />
               </div>
 
@@ -318,7 +318,7 @@ export function ContactSection() {
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   rows={5}
                   className="w-full px-6 py-5 border-2 border-slate-200 focus:border-slate-900 focus:outline-none text-slate-900 text-lg transition-colors resize-none"
-                  placeholder={language === 'es' ? "Necesito una página web para..." : "I need a website for..."}
+                  placeholder={language === 'es' ? "Necesito una pÃ¡gina web para..." : "I need a website for..."}
                 />
               </div>
 
@@ -346,3 +346,4 @@ export function ContactSection() {
     </section>
   );
 }
+
