@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'motion/react';
 import { Send, MessageCircle, Mail, MapPin, Phone, CheckCircle } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
@@ -27,7 +27,8 @@ export function ContactSection() {
         servicePlaceholder: "Selecciona un servicio",
         message: "Cuéntanos sobre tu proyecto",
         submit: "Enviar Mensaje",
-        whatsapp: "O escríbenos por WhatsApp"
+        whatsapp: "O escríbenos por WhatsApp",
+        liveServiceNote: "Este servicio incluye plan mensual operativo."
       },
       services: [
         { value: 'link', label: 'Visible Link - $1,799 MXN' },
@@ -59,7 +60,8 @@ export function ContactSection() {
         servicePlaceholder: "Select a service",
         message: "Tell us about your project",
         submit: "Send Message",
-        whatsapp: "Or message us on WhatsApp"
+        whatsapp: "Or message us on WhatsApp",
+        liveServiceNote: "This service includes an operational monthly plan."
       },
       services: [
         { value: 'link', label: 'Visible Link - $1,799 MXN' },
@@ -305,6 +307,11 @@ export function ContactSection() {
                     </option>
                   ))}
                 </select>
+                {(formData.service === 'menu' || formData.service === 'agenda') && (
+                  <p className="mt-2 text-xs font-medium text-amber-700">
+                    {t.form.liveServiceNote}
+                  </p>
+                )}
               </div>
 
               <div>

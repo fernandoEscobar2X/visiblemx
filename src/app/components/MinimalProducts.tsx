@@ -32,17 +32,32 @@ const mockups = [
   }
 ];
 
+type Product = {
+  id: string;
+  name: string;
+  description: string;
+  paymentType: 'one-time' | 'live';
+  price?: string;
+  regularPrice?: string;
+  setupPrice?: string;
+  regularSetupPrice?: string;
+  monthlyPrice?: string;
+  regularMonthlyPrice?: string;
+  popular?: boolean;
+  liveService?: boolean;
+  features: string[];
+};
+
 export function MinimalProducts() {
   const { language } = useLanguage();
   const sectionRef = useRef<HTMLElement>(null);
   const cardsRef = useRef<HTMLDivElement[]>([]);
 
-  // GSAP ScrollTrigger for cards
   useEffect(() => {
     if (!sectionRef.current) return;
 
     const ctx = gsap.context(() => {
-      cardsRef.current.forEach((card, i) => {
+      cardsRef.current.forEach((card) => {
         gsap.fromTo(
           card,
           { y: 80, opacity: 0 },
@@ -54,8 +69,8 @@ export function MinimalProducts() {
             scrollTrigger: {
               trigger: card,
               start: 'top 85%',
-              once: true,
-            },
+              once: true
+            }
           }
         );
       });
@@ -66,24 +81,36 @@ export function MinimalProducts() {
 
   const content = {
     es: {
-      overtitle: "Soluciones",
-      title: "4 Productos. Una Filosofía.",
-      subtitle: "Cada solución es el resultado de años de experiencia construyendo productos digitales. Sin excesos, solo lo esencial.",
-      launch: "Precio de Lanzamiento",
-      regular: "Precio Regular",
+      overtitle: 'Soluciones',
+      title: '4 Productos. Una Filosofia.',
+      subtitle:
+        'Cada solucion es el resultado de anos de experiencia construyendo productos digitales. Sin excesos, solo lo esencial.',
+      regular: 'Precio Regular',
+      payment: {
+        oneTime: 'Pago unico',
+        launchTag: 'Oferta actual',
+        setupFrom: 'Setup desde',
+        setupRegular: 'Setup regular',
+        monthlyFrom: 'Mensualidad desde',
+        monthlyRegular: 'Mensualidad regular',
+        perMonth: '/mes',
+        liveService: 'Servicio vivo',
+        infraNote: 'Menu y Agenda incluyen plan mensual por infraestructura, soporte y actualizaciones.'
+      },
       products: [
         {
           id: 'link',
           name: 'Visible Link',
-          description: 'Tu tarjeta de presentación digital',
+          description: 'Tu tarjeta de presentacion digital',
+          paymentType: 'one-time',
           price: '1,799',
           regularPrice: '2,699',
           features: [
-            'Página con todos tus links',
-            'Diseño con tu marca',
-            'Botón de WhatsApp directo',
+            'Pagina con todos tus links',
+            'Diseno con tu marca',
+            'Boton de WhatsApp directo',
             'Se instala como app',
-            '1 Acrílico con QR incluido',
+            '1 Acrilico con QR incluido',
             'Listo en 24-48 horas'
           ]
         },
@@ -91,61 +118,81 @@ export function MinimalProducts() {
           id: 'page',
           name: 'Visible Page',
           description: 'Tu sitio web profesional',
+          paymentType: 'one-time',
           price: '2,699',
-          regularPrice: '4,499',
+          regularPrice: '3,999',
           popular: true,
           features: [
             'Todo de Visible Link',
             'Hasta 10 fotos de tu trabajo',
             'Formulario de contacto',
             'Optimizada para Google',
-            '2 Acrílicos o 50 tarjetas',
-            'Lista en 3-5 días'
+            '2 Acrilicos o 50 tarjetas',
+            'Lista en 3-5 dias'
           ]
         },
         {
           id: 'menu',
-          name: 'Visible Menú',
-          description: 'Menú digital que genera antojo',
-          price: '3,599',
-          regularPrice: '6,299',
+          name: 'Visible Menu',
+          description: 'Menu digital que genera antojo',
+          paymentType: 'live',
+          liveService: true,
+          setupPrice: '3,599',
+          regularSetupPrice: '5,299',
+          monthlyPrice: '590',
+          regularMonthlyPrice: '990',
           features: [
             'Hasta 50 productos',
             'Hasta 20 fotos de platillos',
             'Funciona sin internet',
-            'Link para reseñas Google',
-            '5 Acrílicos de mesa',
-            '1 Acrílico de mostrador'
+            'Link para resenas Google',
+            '5 Acrilicos de mesa',
+            '1 Acrilico de mostrador'
           ]
         },
         {
           id: 'agenda',
           name: 'Visible Agenda',
-          description: 'Sistema de citas automático',
-          price: '4,499',
-          regularPrice: '7,199',
+          description: 'Sistema de citas automatico',
+          paymentType: 'live',
+          liveService: true,
+          setupPrice: '4,499',
+          regularSetupPrice: '6,499',
+          monthlyPrice: '790',
+          regularMonthlyPrice: '1,290',
           features: [
             'Sistema de agendamiento',
-            'Galería de trabajos',
+            'Galeria de trabajos',
             'Presenta a tu equipo',
             'Testimonios de clientes',
-            '1 Acrílico de mostrador',
+            '1 Acrilico de mostrador',
             '50 Tarjetas con QR'
           ]
         }
-      ]
+      ] as Product[]
     },
     en: {
-      overtitle: "Solutions",
-      title: "4 Products. One Philosophy.",
-      subtitle: "Each solution is the result of years of experience building digital products. No excess, only the essential.",
-      launch: "Launch Price",
-      regular: "Regular Price",
+      overtitle: 'Solutions',
+      title: '4 Products. One Philosophy.',
+      subtitle: 'Each solution is the result of years of experience building digital products. No excess, only the essential.',
+      regular: 'Regular Price',
+      payment: {
+        oneTime: 'One-time payment',
+        launchTag: 'Current offer',
+        setupFrom: 'Setup from',
+        setupRegular: 'Regular setup',
+        monthlyFrom: 'Monthly from',
+        monthlyRegular: 'Regular monthly',
+        perMonth: '/month',
+        liveService: 'Live service',
+        infraNote: 'Menu and Agenda include a monthly plan for infrastructure, support, and updates.'
+      },
       products: [
         {
           id: 'link',
           name: 'Visible Link',
           description: 'Your digital business card',
+          paymentType: 'one-time',
           price: '1,799',
           regularPrice: '2,699',
           features: [
@@ -161,8 +208,9 @@ export function MinimalProducts() {
           id: 'page',
           name: 'Visible Page',
           description: 'Your professional website',
+          paymentType: 'one-time',
           price: '2,699',
-          regularPrice: '4,499',
+          regularPrice: '3,999',
           popular: true,
           features: [
             'Everything from Visible Link',
@@ -177,8 +225,12 @@ export function MinimalProducts() {
           id: 'menu',
           name: 'Visible Menu',
           description: 'Digital menu that sells',
-          price: '3,599',
-          regularPrice: '6,299',
+          paymentType: 'live',
+          liveService: true,
+          setupPrice: '3,599',
+          regularSetupPrice: '5,299',
+          monthlyPrice: '590',
+          regularMonthlyPrice: '990',
           features: [
             'Up to 50 products',
             'Up to 20 food photos',
@@ -192,8 +244,12 @@ export function MinimalProducts() {
           id: 'agenda',
           name: 'Visible Agenda',
           description: 'Automatic booking system',
-          price: '4,499',
-          regularPrice: '7,199',
+          paymentType: 'live',
+          liveService: true,
+          setupPrice: '4,499',
+          regularSetupPrice: '6,499',
+          monthlyPrice: '790',
+          regularMonthlyPrice: '1,290',
           features: [
             'Booking system',
             'Work gallery',
@@ -203,7 +259,7 @@ export function MinimalProducts() {
             '50 Cards with QR'
           ]
         }
-      ]
+      ] as Product[]
     }
   };
 
@@ -211,16 +267,15 @@ export function MinimalProducts() {
 
   return (
     <section ref={sectionRef} id="productos" className="py-24 lg:py-40 bg-white relative overflow-hidden">
-      {/* Subtle noise texture */}
-      <div 
+      <div
         className="absolute inset-0 opacity-[0.02] pointer-events-none mix-blend-overlay"
         style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+          backgroundImage:
+            'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 400 400\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")'
         }}
       />
 
       <div className="relative max-w-[1400px] mx-auto px-6 lg:px-8">
-        {/* Header */}
         <div className="mb-20 lg:mb-32">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -230,9 +285,7 @@ export function MinimalProducts() {
             className="flex items-center gap-3 mb-8"
           >
             <div className="w-12 h-px bg-slate-900" />
-            <span className="text-sm font-bold text-slate-600 tracking-[0.25em] uppercase">
-              {t.overtitle}
-            </span>
+            <span className="text-sm font-bold text-slate-600 tracking-[0.25em] uppercase">{t.overtitle}</span>
           </motion.div>
 
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
@@ -257,10 +310,9 @@ export function MinimalProducts() {
           </div>
         </div>
 
-        {/* Bento Grid - Enhanced Modern Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
           {t.products.map((product, index) => {
-            const mockup = mockups.find(m => m.product === product.id);
+            const mockup = mockups.find((m) => m.product === product.id);
 
             return (
               <div
@@ -270,12 +322,9 @@ export function MinimalProducts() {
                 }}
                 className="group"
               >
-                {/* Card with glassmorphism on hover */}
                 <div className="relative h-full bg-white border border-slate-200 rounded-[2rem] overflow-hidden transition-all duration-500 hover:border-slate-300 hover:shadow-2xl hover:shadow-slate-900/10">
-                  {/* Hover glow effect */}
                   <div className="absolute inset-0 bg-slate-900/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-                  {/* Image */}
                   <div className="relative aspect-[4/3] overflow-hidden bg-slate-50">
                     {mockup && (
                       <ImageWithFallback
@@ -284,63 +333,88 @@ export function MinimalProducts() {
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       />
                     )}
-                    
-                    {/* Floating number badge */}
+
                     <div className="absolute top-6 right-6 w-16 h-16 bg-slate-900 text-white flex items-center justify-center text-2xl font-black rounded-[1rem] shadow-lg">
                       0{index + 1}
                     </div>
 
-                    {/* Popular badge */}
                     {product.popular && (
                       <div className="absolute top-6 left-6 px-4 py-2 bg-slate-900 text-white text-xs font-black uppercase tracking-wider rounded-[0.5rem]">
-                        {language === 'es' ? 'Más Popular' : 'Most Popular'}
+                        {language === 'es' ? 'Mas Popular' : 'Most Popular'}
+                      </div>
+                    )}
+
+                    {product.liveService && (
+                      <div
+                        className={`absolute left-6 px-4 py-2 bg-emerald-600 text-white text-xs font-black uppercase tracking-wider rounded-[0.5rem] ${
+                          product.popular ? 'top-[4.75rem]' : 'top-6'
+                        }`}
+                      >
+                        {t.payment.liveService}
                       </div>
                     )}
                   </div>
 
-                  {/* Content */}
                   <div className="relative p-8 lg:p-10 space-y-6">
-                    {/* Name */}
                     <div>
-                      <h3 className="text-3xl lg:text-4xl font-black text-slate-900 mb-2 tracking-tight">
-                        {product.name}
-                      </h3>
-                      <p className="text-lg text-slate-600 font-light">
-                        {product.description}
-                      </p>
+                      <h3 className="text-3xl lg:text-4xl font-black text-slate-900 mb-2 tracking-tight">{product.name}</h3>
+                      <p className="text-lg text-slate-600 font-light">{product.description}</p>
                     </div>
 
-                    {/* Price */}
                     <div className="py-4 border-y border-slate-200 space-y-2">
-                      <div className="flex items-baseline gap-2">
-                        <span className="text-4xl lg:text-5xl font-black text-slate-900 tracking-tight">
-                          ${product.price}
-                        </span>
-                        <span className="text-lg text-slate-600 font-semibold">
-                          MXN
-                        </span>
-                      </div>
-                      <div className="text-sm text-slate-400 font-light">
-                        {t.regular}: <span className="line-through">${product.regularPrice} MXN</span>
-                      </div>
+                      {product.paymentType === 'live' ? (
+                        <>
+                          <div className="flex items-center justify-between gap-4">
+                            <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">{t.payment.setupFrom}</span>
+                            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-600">
+                              {t.payment.launchTag}
+                            </span>
+                          </div>
+                          <div className="flex items-baseline gap-2">
+                            <span className="text-4xl lg:text-5xl font-black text-slate-900 tracking-tight">${product.setupPrice}</span>
+                            <span className="text-lg text-slate-600 font-semibold">MXN</span>
+                          </div>
+                          <div className="text-sm text-slate-400 font-light">
+                            {t.payment.setupRegular}:{' '}
+                            <span className="line-through">${product.regularSetupPrice} MXN</span>
+                          </div>
+                          <div className="text-base text-slate-600 font-medium">
+                            {t.payment.monthlyFrom}{' '}
+                            <span className="font-black text-slate-900">${product.monthlyPrice}</span> MXN {t.payment.perMonth}
+                          </div>
+                          <div className="text-sm text-slate-400 font-light">
+                            {t.payment.monthlyRegular}:{' '}
+                            <span className="line-through">${product.regularMonthlyPrice} MXN {t.payment.perMonth}</span>
+                          </div>
+                        </>
+                      ) : (
+                        <>
+                          <div className="flex items-center justify-between gap-4">
+                            <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">{t.payment.oneTime}</span>
+                            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-600">
+                              {t.payment.launchTag}
+                            </span>
+                          </div>
+                          <div className="flex items-baseline gap-2">
+                            <span className="text-4xl lg:text-5xl font-black text-slate-900 tracking-tight">${product.price}</span>
+                            <span className="text-lg text-slate-600 font-semibold">MXN</span>
+                          </div>
+                          <div className="text-sm text-slate-400 font-light">
+                            {t.regular}: <span className="line-through">${product.regularPrice} MXN</span>
+                          </div>
+                        </>
+                      )}
                     </div>
 
-                    {/* Features */}
                     <ul className="space-y-3">
                       {product.features.map((feature, i) => (
-                        <li
-                          key={i}
-                          className="flex items-start gap-3 text-slate-700"
-                        >
+                        <li key={i} className="flex items-start gap-3 text-slate-700">
                           <div className="w-1.5 h-1.5 bg-slate-900 rounded-full mt-2 flex-shrink-0" />
-                          <span className="text-base font-light">
-                            {feature}
-                          </span>
+                          <span className="text-base font-light">{feature}</span>
                         </li>
                       ))}
                     </ul>
 
-                    {/* CTA Buttons */}
                     <div className="flex flex-col gap-3 pt-4">
                       <Link
                         to={`/demo/${product.id}`}
@@ -350,15 +424,13 @@ export function MinimalProducts() {
                         <span>{language === 'es' ? 'Ver Demo' : 'View Demo'}</span>
                         <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
                       </Link>
-                      
+
                       <motion.a
                         href="#contacto"
                         whileHover={{ x: 5 }}
                         className="group/link inline-flex items-center gap-3 text-slate-900 text-base font-semibold px-6 py-2"
                       >
-                        <span className="border-b border-slate-900">
-                          {language === 'es' ? 'Iniciar Proyecto' : 'Start Project'}
-                        </span>
+                        <span className="border-b border-slate-900">{language === 'es' ? 'Iniciar Proyecto' : 'Start Project'}</span>
                         <div className="w-6 h-px bg-slate-900 group-hover/link:w-10 transition-all" />
                       </motion.a>
                     </div>
@@ -367,6 +439,10 @@ export function MinimalProducts() {
               </div>
             );
           })}
+        </div>
+
+        <div className="mt-10 text-center">
+          <p className="text-sm font-medium text-slate-500">{t.payment.infraNote}</p>
         </div>
       </div>
     </section>
