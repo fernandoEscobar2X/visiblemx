@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,700;1,500;1,700&family=Inter:wght@300;400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Teko:wght@400;500;600;700&display=swap');
+
+:root {
+  --font-inter: 'Inter', sans-serif;
+  --font-cinzel: 'Cinzel', serif;
+  --font-playfair: 'Playfair Display', serif;
+  --font-space: 'Space Grotesk', sans-serif;
+  --font-jakarta: 'Plus Jakarta Sans', sans-serif;
+  --font-teko: 'Teko', sans-serif;
+  --font-oswald: 'Oswald', sans-serif;
+  --font-cormorant: 'Cormorant Garamond', serif;
+  --font-outfit: 'Outfit', sans-serif;
+}
+
+.font-inter {
+  font-family: var(--font-inter);
+}
+
+.font-cinzel {
+  font-family: var(--font-cinzel);
+}
+
+.font-playfair {
+  font-family: var(--font-playfair);
+}
+
+.font-space {
+  font-family: var(--font-space);
+}
+
+.font-jakarta {
+  font-family: var(--font-jakarta);
+}
+
+.font-teko {
+  font-family: var(--font-teko);
+}
+
+.font-oswald {
+  font-family: var(--font-oswald);
+}
+
+.font-cormorant {
+  font-family: var(--font-cormorant);
+}
+
+.font-outfit {
+  font-family: var(--font-outfit);
+}

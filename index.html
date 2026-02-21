@@ -1,166 +1,41 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VisibleMX — Regresamos pronto</title>
-  <meta name="description" content="VisibleMX está en mantenimiento. Regresamos pronto con una experiencia renovada para tu negocio." />
-  <meta name="theme-color" content="#08080A" />
-  <meta name="robots" content="noindex, nofollow" />
-  <meta property="og:title" content="VisibleMX — Regresamos pronto" />
-  <meta property="og:description" content="Estamos preparando algo mejor. Escríbenos por WhatsApp." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    ::selection { background: rgba(96,165,250,0.15); color: #E2E8F0; }
-    html, body { height: 100%; }
-    body {
-      font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
-      background: #08080A;
-      color: #94A3B8;
-      overflow: hidden;
-    }
-    .page {
-      min-height: 100vh;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      padding: 40px 24px;
-      position: relative; overflow: hidden;
-    }
-    .orb {
-      position: absolute; border-radius: 50%; pointer-events: none;
-    }
-    .orb-1 {
-      width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(96,165,250,0.06) 0%, transparent 70%);
-      top: -15%; right: -10%;
-      animation: o1 25s ease-in-out infinite;
-    }
-    .orb-2 {
-      width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(52,211,153,0.04) 0%, transparent 70%);
-      bottom: -10%; left: -8%;
-      animation: o2 30s ease-in-out infinite;
-    }
-    @keyframes o1 {
-      0%,100%{transform:translate(0,0) scale(1)}
-      33%{transform:translate(30px,-40px) scale(1.05)}
-      66%{transform:translate(-20px,20px) scale(.95)}
-    }
-    @keyframes o2 {
-      0%,100%{transform:translate(0,0) scale(1)}
-      33%{transform:translate(-40px,30px) scale(.95)}
-      66%{transform:translate(25px,-25px) scale(1.05)}
-    }
-    .line {
-      position: absolute; top: 0; left: 50%; transform: translateX(-50%);
-      width: 1px; height: 100%;
-      background: linear-gradient(180deg, transparent, rgba(255,255,255,.03) 30%, rgba(255,255,255,.03) 70%, transparent);
-      pointer-events: none;
-    }
-    .content {
-      position: relative; z-index: 10;
-      display: flex; flex-direction: column; align-items: center;
-      max-width: 520px; text-align: center;
-      opacity: 0; transform: translateY(24px);
-      animation: up 1.2s cubic-bezier(.16,1,.3,1) .15s forwards;
-    }
-    @keyframes up { to { opacity:1; transform:translateY(0) } }
-    .logo { margin-bottom: 48px; }
-    .pill {
-      display: inline-flex; align-items: center; gap: 8px;
-      margin-bottom: 40px; padding: 6px 16px; border-radius: 99px;
-      background: rgba(255,255,255,.03);
-      border: 1px solid rgba(255,255,255,.05);
-    }
-    .dot {
-      width: 6px; height: 6px; border-radius: 50%;
-      background: #FBBF24;
-      animation: breathe 3s ease-in-out infinite;
-    }
-    @keyframes breathe { 0%,100%{opacity:.4} 50%{opacity:1} }
-    .pill span { font-size: 12px; font-weight: 500; color: #94A3B8; letter-spacing: .06em; }
-    h1 {
-      font-family: 'DM Serif Display', Georgia, serif;
-      font-size: clamp(2.2rem, 6vw, 3.8rem);
-      font-weight: 400; line-height: 1.1;
-      color: #F1F5F9; margin-bottom: 20px;
-      letter-spacing: -.02em;
-    }
-    .g {
-      font-style: italic;
-      background: linear-gradient(135deg, #60A5FA, #34D399);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .sub { font-size: 16px; line-height: 1.7; color: #64748B; max-width: 400px; margin-bottom: 48px; }
-    .cta {
-      display: inline-flex; align-items: center; gap: 10px;
-      padding: 14px 32px; border-radius: 12px;
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(255,255,255,.07);
-      color: #E2E8F0; font-family: inherit;
-      font-size: 14px; font-weight: 500;
-      text-decoration: none;
-      transition: all .5s cubic-bezier(.16,1,.3,1);
-    }
-    .cta:hover {
-      border-color: rgba(96,165,250,.2);
-      background: rgba(96,165,250,.06);
-      transform: translateY(-2px);
-    }
-    .cta:focus-visible { outline: 2px solid rgba(96,165,250,.5); outline-offset: 4px; border-radius: 12px; }
-    .date { margin-top: 64px; font-size: 11px; color: #334155; letter-spacing: .08em; text-transform: capitalize; }
-    .sig {
-      position: absolute; bottom: 24px;
-      font-size: 10px; letter-spacing: .2em; color: #1E293B; text-transform: uppercase;
-      opacity: 0; animation: up 1.5s ease .6s forwards;
-    }
-    @media(prefers-reduced-motion:reduce){
-      *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
-      .content,.sig{opacity:1;transform:none}
-    }
-  </style>
-</head>
-<body>
-  <div class="page">
-    <div class="orb orb-1" aria-hidden="true"></div>
-    <div class="orb orb-2" aria-hidden="true"></div>
-    <div class="line" aria-hidden="true"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <div class="content">
-      <svg class="logo" width="44" height="42" viewBox="0 0 52 48" fill="none" aria-label="VisibleMX">
-        <path d="M6 6L26 40L40 12" stroke="url(#a)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M38 14L44 4" stroke="url(#b)" stroke-width="3" stroke-linecap="round"/>
-        <path d="M44 4L46 11M44 4L37 5.5" stroke="url(#b)" stroke-width="2" stroke-linecap="round"/>
-        <defs>
-          <linearGradient id="a" x1="6" y1="6" x2="44" y2="40"><stop stop-color="#60A5FA"/><stop offset="1" stop-color="#34D399"/></linearGradient>
-          <linearGradient id="b" x1="38" y1="14" x2="46" y2="4"><stop stop-color="#60A5FA"/><stop offset="1" stop-color="#34D399"/></linearGradient>
-        </defs>
-      </svg>
+    <!-- SEO Meta Tags -->
+    <title>Visible MX - Software que Impulsa Negocios</title>
+    <meta name="description" content="Agencia digital especializada en desarrollo de software para negocios. Visible Link, Visible Page, Visible Menu y Visible Agenda." />
+    <meta name="keywords" content="desarrollo web, software, agencia digital, mexico, tijuana" />
+    <meta name="author" content="Visible MX" />
+    <link rel="canonical" href="https://visiblemx.com/" />
 
-      <div class="pill">
-        <div class="dot"></div>
-        <span>En mantenimiento</span>
-      </div>
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Visible MX - Software que Impulsa Negocios" />
+    <meta property="og:description" content="Agencia digital especializada en desarrollo de software para negocios." />
+    <meta property="og:url" content="https://visiblemx.com" />
+    <meta property="og:site_name" content="Visible MX" />
+    <meta property="og:locale" content="es_MX" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1620188467120-5042ed1eb5da?w=1200&q=70" />
 
-      <h1>Estamos preparando<br><span class="g">algo mejor</span></h1>
-      <p class="sub">Nuestro sitio regresa pronto con una experiencia renovada para tu negocio.</p>
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Visible MX - Software que Impulsa Negocios" />
+    <meta name="twitter:description" content="Agencia digital especializada en desarrollo de software para negocios." />
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1620188467120-5042ed1eb5da?w=1200&q=70" />
 
-      <a class="cta" href="https://wa.me/5216633634237?text=Hola!%20Vi%20que%20est%C3%A1n%20en%20mantenimiento.%20Me%20interesa%20saber%20m%C3%A1s." target="_blank" rel="noopener noreferrer">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/></svg>
-        Escríbenos por WhatsApp
-      </a>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#0f172a" />
 
-      <p class="date" id="d"></p>
-    </div>
-    <div class="sig">VisibleMX</div>
-  </div>
-  <script>
-    document.getElementById('d').textContent = new Date().toLocaleDateString('es-MX',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
-  </script>
-</body>
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/index.tsx"></script>
+  </body>
 </html>
