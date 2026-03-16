@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://visiblemx.com/sitemap.xml
-
+Sitemap: https://visiblemx.com.mx/sitemap.xml
