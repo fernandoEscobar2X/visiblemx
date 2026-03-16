@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+﻿import { useEffect, useRef, useState } from 'react';
 import { motion, useMotionValue, useSpring } from 'motion/react';
 
 interface MouseGlowProps {
@@ -7,10 +7,10 @@ interface MouseGlowProps {
   blur?: number;
 }
 
-export function MouseGlow({ 
-  color = 'rgba(0, 0, 0, 0.03)', 
-  size = 400,
-  blur = 100 
+export function MouseGlow({
+  color = 'rgba(0, 0, 0, 0.025)',
+  size = 320,
+  blur = 72
 }: MouseGlowProps) {
   const [isVisible, setIsVisible] = useState(false);
   const visibleRef = useRef(false);
@@ -40,7 +40,7 @@ export function MouseGlow({
       }
     };
 
-    window.addEventListener('mousemove', updateMousePosition);
+    window.addEventListener('mousemove', updateMousePosition, { passive: true });
     document.addEventListener('mouseleave', handleMouseLeave);
     document.addEventListener('mouseenter', handleMouseEnter);
 
@@ -56,6 +56,7 @@ export function MouseGlow({
       className="pointer-events-none fixed inset-0 z-30 transition-opacity duration-300"
       style={{
         opacity: isVisible ? 1 : 0,
+        willChange: 'opacity',
       }}
     >
       <motion.div
@@ -67,6 +68,8 @@ export function MouseGlow({
           y,
           background: `radial-gradient(circle, ${color} 0%, transparent 70%)`,
           filter: `blur(${blur}px)`,
+          willChange: 'transform, opacity',
+          transform: 'translateZ(0)',
         }}
       />
     </motion.div>

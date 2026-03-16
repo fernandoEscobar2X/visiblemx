@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useMemo } from 'react';
+﻿import { useEffect, useRef, useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Zap, Shield, Smartphone, Globe, Layers, Eye, Cpu, Gauge, Lock } from 'lucide-react';
 import gsap from 'gsap';
@@ -7,8 +7,8 @@ import { useLanguage } from '../context/LanguageContext';
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Artifact 1: The Shuffler (Estándares de Calidad)
-// Recuperando la animación de tarjetas intercambiables que gustó
+// Artifact 1: The Shuffler (Estandares de Calidad)
+// Recuperando la animacion de tarjetas intercambiables que gusto
 function ShufflerArtifact() {
   const [cards, setCards] = useState([
     { id: 1, label: "PERFORMANCE", value: "99/100", sub: "Google PageSpeed", color: "bg-[#0B1221]", highlight: "text-emerald-400", dot: "bg-emerald-500" },
@@ -33,7 +33,7 @@ function ShufflerArtifact() {
       <div className="relative w-full h-full perspective-1000">
         <AnimatePresence mode="popLayout">
           {cards.map((card, index) => {
-            // Solo renderizamos las primeras 2 para el efecto de pila, ocultamos la 3ra detrás
+            // Solo renderizamos las primeras 2 para el efecto de pila, ocultamos la 3ra detras
             if (index > 1) return null;
             
             return (
@@ -90,10 +90,13 @@ function TelemetryArtifact() {
 
   useEffect(() => {
     if (!containerRef.current) return;
+    const shouldAnimate = !window.matchMedia('(max-width: 1024px), (prefers-reduced-motion: reduce)').matches;
+    if (!shouldAnimate) return;
+
     const el = containerRef.current;
     const totalHeight = el.scrollHeight / 2;
-    
-    gsap.to(el, {
+
+    const tween = gsap.to(el, {
       y: -totalHeight,
       duration: 20,
       ease: "none",
@@ -102,6 +105,8 @@ function TelemetryArtifact() {
         y: gsap.utils.unitize(y => parseFloat(y) % totalHeight)
       }
     });
+
+    return () => tween.kill();
   }, []);
 
   return (
@@ -152,7 +157,7 @@ function TelemetryArtifact() {
 }
 
 // Artifact 3: The Engagement Scanner (Impacto de Marca)
-// Recuperando el gráfico animado y escaneo
+// Recuperando el grafico animado y escaneo
 function GrowthArtifact() {
   return (
     <div className="relative w-full aspect-[4/3] p-4">
@@ -169,7 +174,7 @@ function GrowthArtifact() {
                             transition={{ delay: 0.5 }}
                             className="text-sm font-bold text-emerald-400 mt-1 bg-emerald-500/10 px-2 py-1 rounded self-start"
                         >
-                            Visitas Orgánicas
+                            Visitas Organicas
                         </motion.span>
                     </div>
                 </div>
@@ -239,19 +244,19 @@ export function InteractiveArtifacts() {
   const content = {
     es: {
       tag: "ESPECIFICACIONES",
-      title: "Ingeniería Premium",
-      subtitle: "Más allá de la estética. Cada desarrollo incluye una arquitectura técnica robusta diseñada para posicionar, retener y convertir.",
+      title: "Ingenieria Premium",
+      subtitle: "Mas alla de la estetica. Cada desarrollo incluye una arquitectura tecnica robusta disenada para posicionar, retener y convertir.",
       artifacts: [
         { 
-            title: "Obsesión por el Rendimiento", 
-            desc: "Optimizamos cada línea de código. Entregamos sitios con puntuaciones perfectas en Google PageSpeed para garantizar la mejor visibilidad orgánica." 
+            title: "Obsesion por el Rendimiento", 
+            desc: "Optimizamos cada linea de codigo. Entregamos sitios con puntuaciones perfectas en Google PageSpeed para garantizar la mejor visibilidad organica." 
         },
         { 
             title: "Infraestructura Viva", 
-            desc: "Tu sitio no es estático. Implementamos seguridad avanzada, compresión de assets en tiempo real y compatibilidad total con todos los dispositivos modernos." 
+            desc: "Tu sitio no es estatico. Implementamos seguridad avanzada, compresion de assets en tiempo real y compatibilidad total con todos los dispositivos modernos." 
         },
         { 
-            title: "Diseño para Retención", 
+            title: "Diseno para Retencion", 
             desc: "Creamos experiencias inmersivas que atrapan. Aumentamos el tiempo de permanencia de tus usuarios mediante micro-interacciones y narrativa visual fluida." 
         }
       ]
@@ -371,3 +376,4 @@ export function InteractiveArtifacts() {
     </section>
   );
 }
+

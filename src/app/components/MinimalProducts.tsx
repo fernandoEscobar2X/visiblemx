@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+﻿import { useEffect, useRef } from 'react';
 import { motion } from 'motion/react';
 import { useLanguage } from '../context/LanguageContext';
 import { ArrowRight, ExternalLink } from 'lucide-react';
@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const mockups = [
   {
-    product: 'link',
+    product: 'tap',
     url: 'https://images.unsplash.com/photo-1656164630621-8974e3a7e85c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwaG9uZSUyMHNjcmVlbiUyMHNvY2lhbCUyMG1lZGlhJTIwbGlua3MlMjBtb2NrdXB8ZW58MXx8fHwxNzcxMjA0NTI1fDA&ixlib=rb-4.1.0&q=80&w=1080',
     aspectRatio: '3/4'
   },
@@ -99,19 +99,19 @@ export function MinimalProducts() {
       },
       products: [
         {
-          id: 'link',
-          name: 'Visible Link',
-          description: 'Tu tarjeta de presentacion digital',
+          id: 'tap',
+          name: 'Visible Tap',
+          description: 'Tu contacto inteligente para NFC, QR o link',
           paymentType: 'one-time',
-          price: '1,799',
-          regularPrice: '2,699',
+          price: '450',
+          regularPrice: '650',
           features: [
-            'Pagina con todos tus links',
-            'Diseno con tu marca',
-            'Boton de WhatsApp directo',
-            'Se instala como app',
-            '1 Acrilico con QR incluido',
-            'Listo en 24-48 horas'
+            'Pagina ligera para abrir, guardar y compartir contacto',
+            'Funciona con NFC, QR o link',
+            '4 estilos base para vender rapido',
+            'Diseno mobile-first y CTA directos',
+            'Entrega agil para nuevos clientes',
+            'Llavero NFC desde $70 por pieza'
           ]
         },
         {
@@ -123,7 +123,7 @@ export function MinimalProducts() {
           regularPrice: '3,999',
           popular: true,
           features: [
-            'Todo de Visible Link',
+            'Sitio con estructura mas completa',
             'Hasta 10 fotos de tu trabajo',
             'Formulario de contacto',
             'Optimizada para Google',
@@ -169,7 +169,14 @@ export function MinimalProducts() {
             '50 Tarjetas con QR'
           ]
         }
-      ] as Product[]
+      ] as Product[],
+      linkContext: {
+        eyebrow: 'Siguiente nivel',
+        title: 'Visible Link sigue vivo como upsell',
+        description:
+          'Visible Tap queda como el producto principal de entrada y Visible Link como la opcion que lo complementa. Tap resuelve el contacto rapido; Link entra cuando el cliente necesita mas contexto, galeria y una presencia de marca mas completa.',
+        cta: 'Ver ejemplo de Visible Link'
+      }
     },
     en: {
       overtitle: 'Solutions',
@@ -189,19 +196,19 @@ export function MinimalProducts() {
       },
       products: [
         {
-          id: 'link',
-          name: 'Visible Link',
-          description: 'Your digital business card',
+          id: 'tap',
+          name: 'Visible Tap',
+          description: 'Your smart contact page for NFC, QR, or link',
           paymentType: 'one-time',
-          price: '1,799',
-          regularPrice: '2,699',
+          price: '450',
+          regularPrice: '650',
           features: [
-            'Page with all your links',
-            'Design with your brand',
-            'Direct WhatsApp button',
-            'Installs as an app',
-            '1 Acrylic with QR included',
-            'Ready in 24-48 hours'
+            'Light page to open, save, and share contact details',
+            'Works with NFC, QR, or link',
+            '4 base styles ready to sell quickly',
+            'Mobile-first design and direct CTAs',
+            'Fast delivery for new clients',
+            'NFC keychain from $70 per piece'
           ]
         },
         {
@@ -213,7 +220,7 @@ export function MinimalProducts() {
           regularPrice: '3,999',
           popular: true,
           features: [
-            'Everything from Visible Link',
+            'Website with a more complete structure',
             'Up to 10 photos of your work',
             'Contact form',
             'Google optimized',
@@ -259,42 +266,49 @@ export function MinimalProducts() {
             '50 Cards with QR'
           ]
         }
-      ] as Product[]
+      ] as Product[],
+      linkContext: {
+        eyebrow: 'Next level',
+        title: 'Visible Link stays alive as the upsell',
+        description:
+          'Visible Tap becomes the main entry product and Visible Link becomes the offer that complements it. Tap handles fast contact sharing; Link comes in when a client needs more context, gallery, and stronger brand presence.',
+        cta: 'View Visible Link example'
+      }
     }
   };
 
   const t = content[language];
 
   return (
-    <section ref={sectionRef} id="productos" className="py-24 lg:py-40 bg-white relative overflow-hidden">
+    <section ref={sectionRef} id="productos" className="relative overflow-hidden bg-white py-24 lg:py-40">
       <div
-        className="absolute inset-0 opacity-[0.02] pointer-events-none mix-blend-overlay"
+        className="pointer-events-none absolute inset-0 opacity-[0.02] mix-blend-overlay"
         style={{
           backgroundImage:
             'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 400 400\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")'
         }}
       />
 
-      <div className="relative max-w-[1400px] mx-auto px-6 lg:px-8">
+      <div className="relative mx-auto max-w-[1400px] px-6 lg:px-8">
         <div className="mb-20 lg:mb-32">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="flex items-center gap-3 mb-8"
+            className="mb-8 flex items-center gap-3"
           >
-            <div className="w-12 h-px bg-slate-900" />
-            <span className="text-sm font-bold text-slate-600 tracking-[0.25em] uppercase">{t.overtitle}</span>
+            <div className="h-px w-12 bg-slate-900" />
+            <span className="text-sm font-bold uppercase tracking-[0.25em] text-slate-600">{t.overtitle}</span>
           </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
+          <div className="grid gap-8 lg:grid-cols-2 lg:gap-16">
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="text-5xl lg:text-7xl font-black text-slate-900 tracking-tight leading-none"
+              className="text-5xl font-black leading-none tracking-tight text-slate-900 lg:text-7xl"
             >
               {t.title}
             </motion.h2>
@@ -303,16 +317,25 @@ export function MinimalProducts() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-xl lg:text-2xl text-slate-600 font-light leading-[1.6] lg:pt-8"
+              className="text-xl font-light leading-[1.6] text-slate-600 lg:pt-8 lg:text-2xl"
             >
               {t.subtitle}
             </motion.p>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8">
           {t.products.map((product, index) => {
             const mockup = mockups.find((m) => m.product === product.id);
+            const demoHref = product.id === 'tap' ? '/tap' : `/demo/${product.id}`;
+            const demoLabel =
+              product.id === 'tap'
+                ? language === 'es'
+                  ? 'Ver estilos'
+                  : 'View styles'
+                : language === 'es'
+                  ? 'Ver Demo'
+                  : 'View Demo';
 
             return (
               <div
@@ -322,31 +345,31 @@ export function MinimalProducts() {
                 }}
                 className="group"
               >
-                <div className="relative h-full bg-white border border-slate-200 rounded-[2rem] overflow-hidden transition-all duration-500 hover:border-slate-300 hover:shadow-2xl hover:shadow-slate-900/10">
-                  <div className="absolute inset-0 bg-slate-900/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                <div className="relative h-full overflow-hidden rounded-[2rem] border border-slate-200 bg-white transition-all duration-500 hover:border-slate-300 hover:shadow-2xl hover:shadow-slate-900/10">
+                  <div className="pointer-events-none absolute inset-0 bg-slate-900/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
                   <div className="relative aspect-[4/3] overflow-hidden bg-slate-50">
                     {mockup && (
                       <ImageWithFallback
                         src={mockup.url}
                         alt={product.name}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                       />
                     )}
 
-                    <div className="absolute top-6 right-6 w-16 h-16 bg-slate-900 text-white flex items-center justify-center text-2xl font-black rounded-[1rem] shadow-lg">
+                    <div className="absolute right-6 top-6 flex h-16 w-16 items-center justify-center rounded-[1rem] bg-slate-900 text-2xl font-black text-white shadow-lg">
                       0{index + 1}
                     </div>
 
                     {product.popular && (
-                      <div className="absolute top-6 left-6 px-4 py-2 bg-slate-900 text-white text-xs font-black uppercase tracking-wider rounded-[0.5rem]">
+                      <div className="absolute left-6 top-6 rounded-[0.5rem] bg-slate-900 px-4 py-2 text-xs font-black uppercase tracking-wider text-white">
                         {language === 'es' ? 'Mas Popular' : 'Most Popular'}
                       </div>
                     )}
 
                     {product.liveService && (
                       <div
-                        className={`absolute left-6 px-4 py-2 bg-emerald-600 text-white text-xs font-black uppercase tracking-wider rounded-[0.5rem] ${
+                        className={`absolute left-6 rounded-[0.5rem] bg-emerald-600 px-4 py-2 text-xs font-black uppercase tracking-wider text-white ${
                           product.popular ? 'top-[4.75rem]' : 'top-6'
                         }`}
                       >
@@ -355,53 +378,53 @@ export function MinimalProducts() {
                     )}
                   </div>
 
-                  <div className="relative p-8 lg:p-10 space-y-6">
+                  <div className="relative space-y-6 p-8 lg:p-10">
                     <div>
-                      <h3 className="text-3xl lg:text-4xl font-black text-slate-900 mb-2 tracking-tight">{product.name}</h3>
-                      <p className="text-lg text-slate-600 font-light">{product.description}</p>
+                      <h3 className="mb-2 text-3xl font-black tracking-tight text-slate-900 lg:text-4xl">{product.name}</h3>
+                      <p className="text-lg font-light text-slate-600">{product.description}</p>
                     </div>
 
-                    <div className="py-4 border-y border-slate-200 space-y-2">
+                    <div className="space-y-2 border-y border-slate-200 py-4">
                       {product.paymentType === 'live' ? (
                         <>
                           <div className="flex items-center justify-between gap-4">
                             <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">{t.payment.setupFrom}</span>
-                            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-600">
-                              {t.payment.launchTag}
-                            </span>
+                            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-600">{t.payment.launchTag}</span>
                           </div>
                           <div className="flex items-baseline gap-2">
-                            <span className="text-4xl lg:text-5xl font-black text-slate-900 tracking-tight">${product.setupPrice}</span>
-                            <span className="text-lg text-slate-600 font-semibold">MXN</span>
+                            <span className="text-4xl font-black tracking-tight text-slate-900 lg:text-5xl">${product.setupPrice}</span>
+                            <span className="text-lg font-semibold text-slate-600">MXN</span>
                           </div>
-                          <div className="text-sm text-slate-400 font-light">
-                            {t.payment.setupRegular}:{' '}
-                            <span className="line-through">${product.regularSetupPrice} MXN</span>
+                          <div className="text-sm font-light text-slate-400">
+                            {t.payment.setupRegular}: <span className="line-through">${product.regularSetupPrice} MXN</span>
                           </div>
-                          <div className="text-base text-slate-600 font-medium">
-                            {t.payment.monthlyFrom}{' '}
-                            <span className="font-black text-slate-900">${product.monthlyPrice}</span> MXN {t.payment.perMonth}
+                          <div className="text-base font-medium text-slate-600">
+                            {t.payment.monthlyFrom} <span className="font-black text-slate-900">${product.monthlyPrice}</span> MXN {t.payment.perMonth}
                           </div>
-                          <div className="text-sm text-slate-400 font-light">
-                            {t.payment.monthlyRegular}:{' '}
-                            <span className="line-through">${product.regularMonthlyPrice} MXN {t.payment.perMonth}</span>
+                          <div className="text-sm font-light text-slate-400">
+                            {t.payment.monthlyRegular}: <span className="line-through">${product.regularMonthlyPrice} MXN {t.payment.perMonth}</span>
                           </div>
                         </>
                       ) : (
                         <>
                           <div className="flex items-center justify-between gap-4">
                             <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">{t.payment.oneTime}</span>
-                            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-600">
-                              {t.payment.launchTag}
-                            </span>
+                            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-600">{t.payment.launchTag}</span>
                           </div>
                           <div className="flex items-baseline gap-2">
-                            <span className="text-4xl lg:text-5xl font-black text-slate-900 tracking-tight">${product.price}</span>
-                            <span className="text-lg text-slate-600 font-semibold">MXN</span>
+                            <span className="text-4xl font-black tracking-tight text-slate-900 lg:text-5xl">${product.price}</span>
+                            <span className="text-lg font-semibold text-slate-600">MXN</span>
                           </div>
-                          <div className="text-sm text-slate-400 font-light">
+                          <div className="text-sm font-light text-slate-400">
                             {t.regular}: <span className="line-through">${product.regularPrice} MXN</span>
                           </div>
+                          {product.id === 'tap' && (
+                            <div className="rounded-[1rem] border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-medium leading-6 text-emerald-900">
+                              {language === 'es'
+                                ? 'Desarrollo de pagina: $450 MXN. Llavero NFC: +$70 por pieza. Juntos forman la experiencia completa.'
+                                : 'Page development: $450 MXN. NFC keychain: +$70 per piece. Together they create the full experience.'}
+                            </div>
+                          )}
                         </>
                       )}
                     </div>
@@ -409,7 +432,7 @@ export function MinimalProducts() {
                     <ul className="space-y-3">
                       {product.features.map((feature, i) => (
                         <li key={i} className="flex items-start gap-3 text-slate-700">
-                          <div className="w-1.5 h-1.5 bg-slate-900 rounded-full mt-2 flex-shrink-0" />
+                          <div className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-slate-900" />
                           <span className="text-base font-light">{feature}</span>
                         </li>
                       ))}
@@ -417,21 +440,21 @@ export function MinimalProducts() {
 
                     <div className="flex flex-col gap-3 pt-4">
                       <Link
-                        to={`/demo/${product.id}`}
-                        className="group/btn inline-flex items-center justify-center gap-3 px-6 py-4 bg-slate-900 text-white hover:bg-slate-800 transition-all font-semibold rounded-[1rem]"
+                        to={demoHref}
+                        className="group/btn inline-flex items-center justify-center gap-3 rounded-[1rem] bg-slate-900 px-6 py-4 font-semibold text-white transition-all hover:bg-slate-800"
                       >
-                        <ExternalLink className="w-5 h-5" />
-                        <span>{language === 'es' ? 'Ver Demo' : 'View Demo'}</span>
-                        <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
+                        <ExternalLink className="h-5 w-5" />
+                        <span>{demoLabel}</span>
+                        <ArrowRight className="h-5 w-5 transition-transform group-hover/btn:translate-x-1" />
                       </Link>
 
                       <motion.a
                         href="#contacto"
                         whileHover={{ x: 5 }}
-                        className="group/link inline-flex items-center gap-3 text-slate-900 text-base font-semibold px-6 py-2"
+                        className="group/link inline-flex items-center gap-3 px-6 py-2 text-base font-semibold text-slate-900"
                       >
                         <span className="border-b border-slate-900">{language === 'es' ? 'Iniciar Proyecto' : 'Start Project'}</span>
-                        <div className="w-6 h-px bg-slate-900 group-hover/link:w-10 transition-all" />
+                        <div className="h-px w-6 bg-slate-900 transition-all group-hover/link:w-10" />
                       </motion.a>
                     </div>
                   </div>
@@ -441,6 +464,31 @@ export function MinimalProducts() {
           })}
         </div>
 
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.12 }}
+          className="mt-8 rounded-[2rem] border border-slate-200 bg-slate-50 p-8 lg:p-10"
+        >
+          <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.22em] text-slate-500">{t.linkContext.eyebrow}</p>
+              <h3 className="mt-3 text-3xl font-black tracking-tight text-slate-900">{t.linkContext.title}</h3>
+              <p className="mt-3 max-w-3xl text-base leading-7 text-slate-600">{t.linkContext.description}</p>
+            </div>
+
+            <Link
+              to="/demo/link"
+              className="inline-flex items-center justify-center gap-3 rounded-[1rem] border border-slate-300 bg-white px-6 py-4 text-sm font-semibold text-slate-900 transition-all hover:border-slate-900"
+            >
+              <ExternalLink className="h-5 w-5" />
+              <span>{t.linkContext.cta}</span>
+              <ArrowRight className="h-5 w-5" />
+            </Link>
+          </div>
+        </motion.div>
+
         <div className="mt-10 text-center">
           <p className="text-sm font-medium text-slate-500">{t.payment.infraNote}</p>
         </div>
@@ -448,3 +496,4 @@ export function MinimalProducts() {
     </section>
   );
 }
+

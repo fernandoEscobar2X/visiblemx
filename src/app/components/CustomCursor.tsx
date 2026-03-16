@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+﻿import { useEffect, useRef, useState } from 'react';
 import { motion, useSpring } from 'motion/react';
 
 export function CustomCursor() {
@@ -16,8 +16,8 @@ export function CustomCursor() {
       cursorY.set(e.clientY);
 
       const target = e.target as HTMLElement;
-      const isClickable = 
-        target.tagName === 'A' || 
+      const isClickable =
+        target.tagName === 'A' ||
         target.tagName === 'BUTTON' ||
         target.closest('a') !== null ||
         target.closest('button') !== null;
@@ -41,7 +41,7 @@ export function CustomCursor() {
       }
     };
 
-    window.addEventListener('mousemove', moveCursor);
+    window.addEventListener('mousemove', moveCursor, { passive: true });
     document.addEventListener('mouseenter', handleMouseEnter);
     document.addEventListener('mouseleave', handleMouseLeave);
 
@@ -54,7 +54,6 @@ export function CustomCursor() {
 
   return (
     <>
-      {/* Main cursor */}
       <motion.div
         className="fixed top-0 left-0 w-4 h-4 bg-slate-900 rounded-full pointer-events-none z-[9999] mix-blend-difference"
         style={{
@@ -63,6 +62,8 @@ export function CustomCursor() {
           translateX: '-50%',
           translateY: '-50%',
           opacity: isHidden ? 0 : 1,
+          willChange: 'transform, opacity',
+          transform: 'translateZ(0)',
         }}
         animate={{
           scale: isPointer ? 0.5 : 1,
@@ -72,7 +73,6 @@ export function CustomCursor() {
         }}
       />
 
-      {/* Trailing circle */}
       <motion.div
         className="fixed top-0 left-0 w-10 h-10 border-2 border-slate-900 rounded-full pointer-events-none z-[9998] mix-blend-difference"
         style={{
@@ -81,6 +81,8 @@ export function CustomCursor() {
           translateX: '-50%',
           translateY: '-50%',
           opacity: isHidden ? 0 : 0.5,
+          willChange: 'transform, opacity',
+          transform: 'translateZ(0)',
         }}
         animate={{
           scale: isPointer ? 1.5 : 1,

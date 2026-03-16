@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+﻿import type { ReactNode } from 'react';
 import { Suspense, lazy } from 'react';
 import { createBrowserRouter } from 'react-router';
 import { LanguageProvider } from './context/LanguageContext';
@@ -18,6 +18,12 @@ const VisibleMenuDemo = lazy(() =>
 const VisibleAgendaDemo = lazy(() =>
   import('./demos/VisibleAgendaDemo').then((mod) => ({ default: mod.VisibleAgendaDemo }))
 );
+const VisibleTapPage = lazy(() =>
+  import('./pages/VisibleTapPage').then((mod) => ({ default: mod.VisibleTapPage }))
+);
+const VisibleTapDemoPage = lazy(() =>
+  import('./pages/VisibleTapDemoPage').then((mod) => ({ default: mod.VisibleTapDemoPage }))
+);
 
 function RouteFallback() {
   return <div className="min-h-screen bg-[#0A1128]" />;
@@ -27,7 +33,6 @@ function withSuspense(children: ReactNode) {
   return <Suspense fallback={<RouteFallback />}>{children}</Suspense>;
 }
 
-// Wrapper for demos with Language Context
 function DemoWrapper({ children }: { children: React.ReactNode }) {
   return <LanguageProvider>{children}</LanguageProvider>;
 }
@@ -66,6 +71,22 @@ export const router = createBrowserRouter([
     element: withSuspense(
       <DemoWrapper>
         <VisibleAgendaDemo />
+      </DemoWrapper>
+    )
+  },
+  {
+    path: '/tap',
+    element: withSuspense(
+      <DemoWrapper>
+        <VisibleTapPage />
+      </DemoWrapper>
+    )
+  },
+  {
+    path: '/tap/demos/:slug',
+    element: withSuspense(
+      <DemoWrapper>
+        <VisibleTapDemoPage />
       </DemoWrapper>
     )
   }
