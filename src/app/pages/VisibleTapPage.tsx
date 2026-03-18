@@ -1,4 +1,4 @@
-ï»¿import { motion } from 'motion/react';
+import { motion } from 'motion/react';
 import { ArrowLeft, ArrowRight, Smartphone, Waves } from 'lucide-react';
 import { Link } from 'react-router';
 
@@ -23,7 +23,7 @@ const demos = [
     name: 'Luxury Profile',
     slug: 'luxury-profile',
     tag: 'Warm / Aspirational',
-    summary: 'Aspiracional, calido y visualmente deseable. DiseÃ±ado para negocios donde la imagen acelera la venta.',
+    summary: 'Aspiracional, calido y visualmente deseable. Diseñado para negocios donde la imagen acelera la venta.',
     audience: 'Ideal para Beauty, wellness, personal brands',
     glow: 'from-rose-300/20'
   },
@@ -60,7 +60,7 @@ const cardVariants = {
 
 export function VisibleTapPage() {
   return (
-    <div className="bg-white min-h-screen font-sans overflow-hidden text-slate-900">
+    <div className="bg-white min-h-screen font-sans overflow-x-hidden text-slate-900">
       <div className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-4">
         <div className="flex w-full max-w-6xl items-center justify-between rounded-full border border-slate-200 bg-white/90 px-5 py-3 backdrop-blur-xl shadow-[0_10px_30px_rgba(15,23,42,0.06)]">
           <Link to="/" className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.24em] text-slate-900">
@@ -106,7 +106,7 @@ export function VisibleTapPage() {
             transition={{ duration: 0.75, delay: 0.1 }}
             className="text-lg text-slate-500 max-w-2xl mt-6"
           >
-            Cada demo esta diseÃ±ada psicologicamente para un perfil de cliente distinto. Toca, comparte y cierra el trato en segundos.
+            Cada demo esta diseñada psicologicamente para un perfil de cliente distinto. Toca, comparte y cierra el trato en segundos.
           </motion.p>
         </section>
 
