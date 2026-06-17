@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { LanguageProvider } from '../context/LanguageContext';
 import { EliteNavbar } from '../components/EliteNavbar';
 import { AwwwardsHero } from '../components/AwwwardsHero';
@@ -15,6 +15,7 @@ import { CustomCursor } from '../components/CustomCursor';
 import { MouseGlow } from '../components/MouseGlow';
 import { ScrollProgress } from '../components/ScrollProgress';
 import { PageLoader } from '../components/PageLoader';
+import { ScrollNarrative } from '../components/ScrollNarrative';
 
 export function LandingPage() {
   const [showEnhancedCursor, setShowEnhancedCursor] = useState(false);
@@ -63,6 +64,7 @@ export function LandingPage() {
 
         <main className="relative">
           <AwwwardsHero />
+          <ScrollNarrative />
           <div style={deferredSectionStyle}>
             <InteractiveArtifacts />
           </div>

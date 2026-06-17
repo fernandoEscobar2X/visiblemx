@@ -75,8 +75,9 @@ Regla de oro: **primero se reposiciona VisibleMX (Fases 0–4 y 6), y la migraci
       - [x] **1.8.2** Prototipo del hero scanner/reveal.
             *Hecho cuando:* exista una primera versión funcional y sobria del concepto “lo invisible se vuelve visible”, sin romper performance, responsive ni claridad comercial.
             *Cerrada:* implementada la narrativa visual "caos → sistema" usando una máscara CSS (`mask-image`) controlada dinámicamente por Framer Motion. Se creó una capa base ("ChaosLayer") con elementos desordenados y se reveló el flujo del sistema mediante el escáner sobre el cursor en desktop, y mediante un auto-reveal accesible y amigable en mobile. Sin uso de WebGL, Canvas ni scroll hijacking, manteniendo el performance y la accesibilidad intactos.
-      - [ ] **1.8.3** Scroll narrativo caos → sistema.
+      - [x] **1.8.3** Scroll narrativo caos → sistema.
             *Hecho cuando:* los elementos dispersos se ordenen visualmente en una arquitectura de operación, usando motion solo si aporta a la narrativa.
+            *Cerrada:* Se implementó `ScrollNarrative.tsx` usando Framer Motion (`useScroll`, `useTransform`) y CSS `sticky` con una duración contenida de `200vh`. No se usó GSAP ni Lenis. Textos corregidos, íconos genéricos, mobile simplificado a bloques apilados estáticos y reduced motion respetado sin dependencias nuevas.
       - [ ] **1.8.4** Servicios como arquitectura visual.
             *Hecho cuando:* las secciones de servicios se sientan conectadas a una misma propuesta de sistema, no como cards aisladas genéricas.
       - [ ] **1.8.5** Pulido final, performance y accesibilidad.
