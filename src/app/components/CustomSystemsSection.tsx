@@ -19,7 +19,7 @@ export function CustomSystemsSection() {
 
   const content = {
     es: {
-      eyebrow: 'Sistemas a medida',
+      eyebrow: '02 · Sistemas a medida',
       title: 'Sistemas a medida para operar con más orden',
       subtitle:
         'Cuando una página web ya no es suficiente, construimos plataformas internas para controlar clientes, citas, pedidos, inventario, reportes y procesos del negocio.',
@@ -50,7 +50,7 @@ export function CustomSystemsSection() {
       ]
     },
     en: {
-      eyebrow: 'Custom systems',
+      eyebrow: '02 · Custom systems',
       title: 'Custom systems to operate with more order',
       subtitle:
         'When a website is no longer enough, we build internal platforms to control clients, bookings, orders, inventory, reports and business processes.',

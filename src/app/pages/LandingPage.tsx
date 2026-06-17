@@ -16,6 +16,7 @@ import { MouseGlow } from '../components/MouseGlow';
 import { ScrollProgress } from '../components/ScrollProgress';
 import { PageLoader } from '../components/PageLoader';
 import { ScrollNarrative } from '../components/ScrollNarrative';
+import { ServicesArchitecture } from '../components/ServicesArchitecture';
 
 export function LandingPage() {
   const [showEnhancedCursor, setShowEnhancedCursor] = useState(false);
@@ -72,13 +73,16 @@ export function LandingPage() {
             <TheManifesto />
           </div>
           <div style={deferredSectionStyle}>
+            <ServicesArchitecture />
+          </div>
+          <div style={deferredSectionStyle}>
+            <MinimalProducts />
+          </div>
+          <div style={deferredSectionStyle}>
             <CustomSystemsSection />
           </div>
           <div style={deferredSectionStyle}>
             <MultichannelPlatformsSection />
-          </div>
-          <div style={deferredSectionStyle}>
-            <MinimalProducts />
           </div>
           <div style={deferredSectionStyle}>
             <ExternalCaseShowcase />

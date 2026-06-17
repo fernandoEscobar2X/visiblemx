@@ -29,7 +29,7 @@ export function MultichannelPlatformsSection() {
 
   const content = {
     es: {
-      eyebrow: 'Plataformas multicanal',
+      eyebrow: '03 · Plataformas multicanal',
       title: 'Plataformas multicanal conectadas a una misma operación',
       subtitle:
         'Creamos sistemas que pueden funcionar desde web, computadora o celular, para que administradores, empleados o clientes consulten y actualicen información desde el canal que necesitan.',
@@ -67,7 +67,7 @@ export function MultichannelPlatformsSection() {
       ]
     },
     en: {
-      eyebrow: 'Multichannel platforms',
+      eyebrow: '03 · Multichannel platforms',
       title: 'Multichannel platforms connected to one operation',
       subtitle:
         'We build systems that can work from web, desktop or mobile, so admins, employees or clients can view and update information from the channel they need.',

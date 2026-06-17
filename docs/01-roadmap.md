@@ -78,8 +78,9 @@ Regla de oro: **primero se reposiciona VisibleMX (Fases 0–4 y 6), y la migraci
       - [x] **1.8.3** Scroll narrativo caos → sistema.
             *Hecho cuando:* los elementos dispersos se ordenen visualmente en una arquitectura de operación, usando motion solo si aporta a la narrativa.
             *Cerrada:* Se implementó `ScrollNarrative.tsx` usando Framer Motion (`useScroll`, `useTransform`) y CSS `sticky` con una duración contenida de `200vh`. No se usó GSAP ni Lenis. Textos corregidos, íconos genéricos, mobile simplificado a bloques apilados estáticos y reduced motion respetado sin dependencias nuevas.
-      - [ ] **1.8.4** Servicios como arquitectura visual.
+      - [x] **1.8.4** Servicios como arquitectura visual.
             *Hecho cuando:* las secciones de servicios se sientan conectadas a una misma propuesta de sistema, no como cards aisladas genéricas.
+            *Cerrada:* Se agregó `ServicesArchitecture.tsx` como mapa de navegación. Se reordenó el layout a 1,2,3 y se ajustaron los eyebrows. No se instaló nada, ni se rediseñó la home.
       - [ ] **1.8.5** Pulido final, performance y accesibilidad.
             *Hecho cuando:* mobile, tablet y desktop funcionen sin overflow, con motion reducido si el usuario lo solicita, sin animaciones pesadas y sin sacrificar SEO ni claridad.
 
