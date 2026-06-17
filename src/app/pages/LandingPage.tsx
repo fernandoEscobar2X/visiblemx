@@ -1,21 +1,23 @@
 import { useEffect, useState } from 'react';
-import { LanguageProvider } from '../context/LanguageContext';
-import { EliteNavbar } from '../components/EliteNavbar';
 import { AwwwardsHero } from '../components/AwwwardsHero';
 import { InteractiveArtifacts } from '../components/InteractiveArtifacts';
 import { TheManifesto } from '../components/TheManifesto';
 import { ExternalCaseShowcase } from '../components/ExternalCaseShowcase';
 import { TheProtocol } from '../components/TheProtocol';
 import { ContactSection } from '../components/ContactSection';
-import { Footer } from '../components/Footer';
 import { CustomCursor } from '../components/CustomCursor';
 import { MouseGlow } from '../components/MouseGlow';
 import { ScrollProgress } from '../components/ScrollProgress';
 import { PageLoader } from '../components/PageLoader';
 import { ScrollNarrative } from '../components/ScrollNarrative';
 import { ServicesArchitecture } from '../components/ServicesArchitecture';
+import { useDocumentMeta } from '../hooks/useDocumentMeta';
 
 export function LandingPage() {
+  useDocumentMeta(
+    'Visible MX — Sitios, sistemas y plataformas digitales',
+    'Estudio digital en Tijuana. Creamos sitios, sistemas y plataformas digitales para negocios que quieren vender mejor y operar con más orden.'
+  );
   const [showEnhancedCursor, setShowEnhancedCursor] = useState(false);
   const deferredSectionStyle = {
     contentVisibility: 'auto' as const,
@@ -45,7 +47,7 @@ export function LandingPage() {
   }, []);
 
   return (
-    <LanguageProvider>
+    <>
       <div
         className={`min-h-screen bg-white antialiased ${showEnhancedCursor ? 'has-custom-cursor' : ''}`}
         style={{ position: 'relative' }}
@@ -58,7 +60,6 @@ export function LandingPage() {
           </>
         )}
         <ScrollProgress />
-        <EliteNavbar />
 
         <main className="relative">
           <AwwwardsHero />
@@ -82,9 +83,7 @@ export function LandingPage() {
             <ContactSection />
           </div>
         </main>
-
-        <Footer />
       </div>
-    </LanguageProvider>
+    </>
   );
 }

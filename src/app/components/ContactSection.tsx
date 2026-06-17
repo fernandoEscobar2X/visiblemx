@@ -120,7 +120,7 @@ export function ContactSection() {
         `Qué necesita resolver:\n${formData.message}`
     );
 
-    window.open(`https://wa.me/${t.info.whatsapp}?text=${message}`, '_blank');
+    window.open(`https://wa.me/${t.info.whatsapp}?text=${message}`, '_blank', 'noopener,noreferrer');
     setSubmitted(true);
 
     setTimeout(() => {
@@ -130,7 +130,7 @@ export function ContactSection() {
   };
 
   const handleWhatsAppDirect = () => {
-    window.open(`https://wa.me/${t.info.whatsapp}?text=¡Hola! Quiero cotizar un proyecto con Visible MX`, '_blank');
+    window.open(`https://wa.me/${t.info.whatsapp}?text=¡Hola! Quiero cotizar un proyecto con Visible MX`, '_blank', 'noopener,noreferrer');
   };
 
   if (submitted) {

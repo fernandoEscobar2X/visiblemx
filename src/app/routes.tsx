@@ -1,7 +1,9 @@
 import type { ReactNode } from 'react';
 import { Suspense, lazy } from 'react';
-import { createBrowserRouter } from 'react-router';
+import { createBrowserRouter, Outlet } from 'react-router';
 import { LanguageProvider } from './context/LanguageContext';
+import { useHashScrollListener } from './hooks/useHashScroll';
+import { AppLayout } from './components/AppLayout';
 
 const LandingPage = lazy(() =>
   import('./pages/LandingPage').then((mod) => ({ default: mod.LandingPage }))
@@ -24,6 +26,12 @@ const VisibleTapPage = lazy(() =>
 const VisibleTapDemoPage = lazy(() =>
   import('./pages/VisibleTapDemoPage').then((mod) => ({ default: mod.VisibleTapDemoPage }))
 );
+const ServicesPage = lazy(() =>
+  import('./pages/ServicesPage').then((mod) => ({ default: mod.ServicesPage }))
+);
+const DigitalPresencePage = lazy(() =>
+  import('./pages/DigitalPresencePage').then((mod) => ({ default: mod.DigitalPresencePage }))
+);
 
 function RouteFallback() {
   return <div className="min-h-screen bg-[#0A1128]" />;
@@ -33,76 +41,61 @@ function withSuspense(children: ReactNode) {
   return <Suspense fallback={<RouteFallback />}>{children}</Suspense>;
 }
 
-function DemoWrapper({ children }: { children: React.ReactNode }) {
-  return <LanguageProvider>{children}</LanguageProvider>;
+// Global Layout to handle Providers and centralized hooks
+function RootLayout() {
+  useHashScrollListener();
+  return (
+    <LanguageProvider>
+      <Outlet />
+    </LanguageProvider>
+  );
 }
-
-const ServicesPage = lazy(() =>
-  import('./pages/ServicesPage').then((mod) => ({ default: mod.ServicesPage }))
-);
-const DigitalPresencePage = lazy(() =>
-  import('./pages/DigitalPresencePage').then((mod) => ({ default: mod.DigitalPresencePage }))
-);
 
 export const router = createBrowserRouter([
   {
-    path: '/',
-    element: withSuspense(<LandingPage />)
-  },
-  {
-    path: '/servicios',
-    element: withSuspense(<ServicesPage />)
-  },
-  {
-    path: '/presencia-digital',
-    element: withSuspense(<DigitalPresencePage />)
-  },
-  {
-    path: '/demo/link',
-    element: withSuspense(
-      <DemoWrapper>
-        <VisibleLinkDemo />
-      </DemoWrapper>
-    )
-  },
-  {
-    path: '/demo/page',
-    element: withSuspense(
-      <DemoWrapper>
-        <VisiblePageDemo />
-      </DemoWrapper>
-    )
-  },
-  {
-    path: '/demo/menu',
-    element: withSuspense(
-      <DemoWrapper>
-        <VisibleMenuDemo />
-      </DemoWrapper>
-    )
-  },
-  {
-    path: '/demo/agenda',
-    element: withSuspense(
-      <DemoWrapper>
-        <VisibleAgendaDemo />
-      </DemoWrapper>
-    )
-  },
-  {
-    path: '/tap',
-    element: withSuspense(
-      <DemoWrapper>
-        <VisibleTapPage />
-      </DemoWrapper>
-    )
-  },
-  {
-    path: '/tap/demos/:slug',
-    element: withSuspense(
-      <DemoWrapper>
-        <VisibleTapDemoPage />
-      </DemoWrapper>
-    )
+    element: <RootLayout />,
+    children: [
+      {
+        element: <AppLayout />,
+        children: [
+          {
+            path: '/',
+            element: withSuspense(<LandingPage />)
+          },
+          {
+            path: '/servicios',
+            element: withSuspense(<ServicesPage />)
+          },
+          {
+            path: '/presencia-digital',
+            element: withSuspense(<DigitalPresencePage />)
+          }
+        ]
+      },
+      {
+        path: '/demo/link',
+        element: withSuspense(<VisibleLinkDemo />)
+      },
+      {
+        path: '/demo/page',
+        element: withSuspense(<VisiblePageDemo />)
+      },
+      {
+        path: '/demo/menu',
+        element: withSuspense(<VisibleMenuDemo />)
+      },
+      {
+        path: '/demo/agenda',
+        element: withSuspense(<VisibleAgendaDemo />)
+      },
+      {
+        path: '/tap',
+        element: withSuspense(<VisibleTapPage />)
+      },
+      {
+        path: '/tap/demos/:slug',
+        element: withSuspense(<VisibleTapDemoPage />)
+      }
+    ]
   }
 ]);

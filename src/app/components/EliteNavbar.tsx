@@ -1,12 +1,15 @@
-﻿import { motion, useMotionValueEvent, useScroll } from 'motion/react';
+import { motion, useMotionValueEvent, useScroll } from 'motion/react';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router';
 import { useLanguage } from '../context/LanguageContext';
+import { useHashLink } from '../hooks/useHashScroll';
 
 export function EliteNavbar() {
   const { language, toggleLanguage } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { scrollY } = useScroll();
+  const { handleHashLinkClick } = useHashLink();
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
     setIsScrolled(latest > 20);
@@ -43,17 +46,19 @@ export function EliteNavbar() {
   const content = {
     es: {
       nav: [
-        { label: 'Sistemas', href: '#sistemas' },
-        { label: 'Filosofía', href: '#filosofia' },
-        { label: 'Proceso', href: '#proceso' }
+        { label: 'Inicio', href: '/' },
+        { label: 'Presencia digital', href: '/presencia-digital' },
+        { label: 'Servicios', href: '/servicios' },
+        { label: 'Contacto', href: '/#contacto' }
       ],
       cta: 'Iniciar proyecto'
     },
     en: {
       nav: [
-        { label: 'Systems', href: '#sistemas' },
-        { label: 'Philosophy', href: '#filosofia' },
-        { label: 'Process', href: '#proceso' }
+        { label: 'Home', href: '/' },
+        { label: 'Digital presence', href: '/presencia-digital' },
+        { label: 'Services', href: '/servicios' },
+        { label: 'Contact', href: '/#contacto' }
       ],
       cta: 'Start Project'
     }
@@ -84,25 +89,26 @@ export function EliteNavbar() {
             }
           `}
         >
-          <a href="/" className="group flex items-center gap-2">
+          <Link to="/" onClick={(e) => handleHashLinkClick(e, '/')} className="group flex items-center gap-2">
             <div className="w-8 h-8 bg-slate-900 rounded-lg flex items-center justify-center group-hover:scale-95 transition-transform duration-300">
               <div className="w-3 h-3 bg-white rounded-sm" />
             </div>
             <span className="font-bold tracking-tight text-lg text-slate-900">
               VISIBLE<span className="text-slate-400">MX</span>
             </span>
-          </a>
+          </Link>
 
           <div className="hidden md:flex items-center gap-8">
             {t.nav.map((item) => (
-              <a
+              <Link
                 key={item.href}
-                href={item.href}
+                to={item.href}
+                onClick={(e) => handleHashLinkClick(e, item.href)}
                 className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors relative group"
               >
                 {item.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-slate-900 transition-all duration-300 group-hover:w-full" />
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -115,13 +121,14 @@ export function EliteNavbar() {
               {language}
             </button>
 
-            <a
-              href="#contacto"
+            <Link
+              to="/#contacto"
+              onClick={(e) => handleHashLinkClick(e, '/#contacto')}
               className="hidden sm:flex items-center gap-2 px-5 py-2.5 bg-slate-900 text-white text-xs font-bold uppercase tracking-wide rounded-full hover:bg-slate-800 hover:scale-105 active:scale-95 transition-all duration-300"
             >
               <div className="w-1.5 h-1.5 bg-[#00E676] rounded-full animate-pulse" />
               {t.cta}
-            </a>
+            </Link>
 
             <button
               className="md:hidden p-2 text-slate-900"
@@ -155,23 +162,29 @@ export function EliteNavbar() {
           <div className="mx-auto max-w-sm">
             <div className="flex flex-col gap-8">
               {t.nav.map((item) => (
-                <a
+                <Link
                   key={item.href}
-                  href={item.href}
-                  onClick={() => setIsMenuOpen(false)}
+                  to={item.href}
+                  onClick={(e) => {
+                    setIsMenuOpen(false);
+                    handleHashLinkClick(e, item.href);
+                  }}
                   className="text-2xl font-bold text-slate-900"
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
 
-              <a
-                href="#contacto"
-                onClick={() => setIsMenuOpen(false)}
+              <Link
+                to="/#contacto"
+                onClick={(e) => {
+                  setIsMenuOpen(false);
+                  handleHashLinkClick(e, '/#contacto');
+                }}
                 className="mt-2 px-8 py-4 bg-slate-900 text-white text-sm font-bold uppercase tracking-wide rounded-full inline-flex justify-center"
               >
                 {t.cta}
-              </a>
+              </Link>
             </div>
           </div>
         </div>
