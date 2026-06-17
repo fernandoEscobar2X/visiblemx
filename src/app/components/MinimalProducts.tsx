@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+﻿import { useEffect, useRef } from 'react';
 import { motion } from 'motion/react';
 import { useLanguage } from '../context/LanguageContext';
 import { ArrowRight, ExternalLink } from 'lucide-react';
@@ -76,7 +76,7 @@ export function MinimalProducts() {
 
   const content = {
     es: {
-      overtitle: '01 · Presencia digital',
+      overtitle: 'Presencia digital',
       title: 'Soluciones de entrada para negocios que quieren operar con más orden.',
       subtitle:
         'Piezas concretas para verse profesional, captar contactos y preparar el camino hacia sistemas más completos. El alcance se define por objetivos, operación y prioridad; sin compra impulsiva ni presión artificial.',
@@ -161,7 +161,7 @@ export function MinimalProducts() {
       }
     },
     en: {
-      overtitle: '01 · Digital presence',
+      overtitle: 'Digital presence',
       title: 'Entry solutions for businesses that want more order.',
       subtitle:
         'Concrete pieces to look professional, capture leads and prepare the path toward more complete systems. Scope is defined by goals, operations and priority, without discounts or artificial pressure.',

@@ -4,9 +4,6 @@ import { EliteNavbar } from '../components/EliteNavbar';
 import { AwwwardsHero } from '../components/AwwwardsHero';
 import { InteractiveArtifacts } from '../components/InteractiveArtifacts';
 import { TheManifesto } from '../components/TheManifesto';
-import { CustomSystemsSection } from '../components/CustomSystemsSection';
-import { MultichannelPlatformsSection } from '../components/MultichannelPlatformsSection';
-import { MinimalProducts } from '../components/MinimalProducts';
 import { ExternalCaseShowcase } from '../components/ExternalCaseShowcase';
 import { TheProtocol } from '../components/TheProtocol';
 import { ContactSection } from '../components/ContactSection';
@@ -74,15 +71,6 @@ export function LandingPage() {
           </div>
           <div style={deferredSectionStyle}>
             <ServicesArchitecture />
-          </div>
-          <div style={deferredSectionStyle}>
-            <MinimalProducts />
-          </div>
-          <div style={deferredSectionStyle}>
-            <CustomSystemsSection />
-          </div>
-          <div style={deferredSectionStyle}>
-            <MultichannelPlatformsSection />
           </div>
           <div style={deferredSectionStyle}>
             <ExternalCaseShowcase />

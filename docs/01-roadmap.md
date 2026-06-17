@@ -72,20 +72,16 @@ Regla de oro: **primero se reposiciona VisibleMX (Fases 0–4 y 6), y la migraci
       - [x] **1.8.1** Definir dirección creativa y alcance técnico.
             *Hecho cuando:* quede documentado qué se va a construir, qué no se va a construir, qué interacción será prioritaria, qué librerías se justifican y cuál será el fallback mobile.
             *Cerrada:* definido en `docs/08-motion-concept.md`. La dirección creativa queda centrada en **“Lo invisible se vuelve visible”**: información dispersa → operación visible → sistema ordenado. Para `1.8.2` se prioriza un hero scanner/reveal sobrio, construido primero con React, TypeScript, Tailwind/CSS y SVG; `motion` solo si aporta microinteracciones claras. Quedan fuera del alcance inicial: rediseño total, 3D, Canvas, Lenis, Three.js/R3F/GLSL, Lottie y dependencias nuevas. Mobile tendrá fallback simple y `prefers-reduced-motion` debe estar contemplado.
-      - [x] **1.8.2** Prototipo del hero scanner/reveal.
+      - [ ] **1.8.2** Prototipo del hero scanner/reveal.
             *Hecho cuando:* exista una primera versión funcional y sobria del concepto “lo invisible se vuelve visible”, sin romper performance, responsive ni claridad comercial.
-            *Cerrada:* implementada la narrativa visual "caos → sistema" usando una máscara CSS (`mask-image`) controlada dinámicamente por Framer Motion. Se creó una capa base ("ChaosLayer") con elementos desordenados y se reveló el flujo del sistema mediante el escáner sobre el cursor en desktop, y mediante un auto-reveal accesible y amigable en mobile. Sin uso de WebGL, Canvas ni scroll hijacking, manteniendo el performance y la accesibilidad intactos.
-      - [x] **1.8.3** Scroll narrativo caos → sistema.
+      - [ ] **1.8.3** Scroll narrativo caos → sistema.
             *Hecho cuando:* los elementos dispersos se ordenen visualmente en una arquitectura de operación, usando motion solo si aporta a la narrativa.
-            *Cerrada:* Se implementó `ScrollNarrative.tsx` usando Framer Motion (`useScroll`, `useTransform`) y CSS `sticky` con una duración contenida de `200vh`. No se usó GSAP ni Lenis. Textos corregidos, íconos genéricos, mobile simplificado a bloques apilados estáticos y reduced motion respetado sin dependencias nuevas.
-      - [x] **1.8.4** Servicios como arquitectura visual.
+      - [ ] **1.8.4** Servicios como arquitectura visual.
             *Hecho cuando:* las secciones de servicios se sientan conectadas a una misma propuesta de sistema, no como cards aisladas genéricas.
-            *Cerrada:* Se agregó `ServicesArchitecture.tsx` como mapa de navegación. Se reordenó el layout a 1,2,3 y se ajustaron los eyebrows. No se instaló nada, ni se rediseñó la home.
-      - [x] **1.8.5** Pulido final, performance y accesibilidad.
+      - [ ] **1.8.5** Pulido final, performance y accesibilidad.
             *Hecho cuando:* mobile, tablet y desktop funcionen sin overflow, con motion reducido si el usuario lo solicita, sin animaciones pesadas y sin sacrificar SEO ni claridad.
-            *Cerrada:* Auditoría global superada en todos los viewports. No hay bugs de overflow. Se documenta deuda técnica menor: animaciones GSAP legacy en MinimalProducts no respetan del todo prefers-reduced-motion. Fase 1 oficialmente cerrada.
 
-**Criterio de salida:** un visitante entiende en ~10 segundos que VisibleMX hace desde una landing hasta un sistema completo, y que el siguiente paso es una cotización.
+**Criterio de salida:** un visitante entiende en ~10 segundos que VisibleMX hace desde una landing hasta un sistema completo, y que el siguiente paso es un diagnóstico.
 
 ---
 
@@ -93,23 +89,14 @@ Regla de oro: **primero se reposiciona VisibleMX (Fases 0–4 y 6), y la migraci
 
 **Objetivo:** estructurar la oferta en los tres niveles de `docs/02-services.md`.
 
-- [x] **2.1 Definir arquitectura de rutas y navegación**
-      *Hecho cuando:* el plan de ruteo está aprobado y documentado.
-      *Cerrada:* Plan aprobado. Arquitectura final: `/servicios` y `/presencia-digital`. Home se compactará usando ServicesArchitecture como mapa.
-- [x] **2.2 Crear página `/servicios`**
-      *Hecho cuando:* existe la ruta para Sistemas a Medida y Plataformas Multicanal, con su detalle comercial completo.
-      *Cerrada:* Creado `ServicesPage.tsx` con H1 y copy de negocio, se reutilizaron las secciones de Fase 1, se integró navbar y footer con CTA funcional a `#contacto`. Rutas configuradas.
-- [x] **2.3 Crear página `/presencia-digital`**
-      *Hecho cuando:* existe la ruta para las soluciones de entrada, alejando el concepto de "catálogo de productos".
-      *Cerrada:* Creado `DigitalPresencePage.tsx` con H1 y copy de negocio, se reutilizó MinimalProducts, CTA funcional a `#contacto`. Rutas configuradas y validadas.
-- [ ] **2.4 Compactar Home sin perder claridad comercial**
-      *Hecho cuando:* la Home retiene el Hero, Narrativa, Manifiesto y Mapa de Arquitectura, enviando el contenido pesado a las rutas internas.
-- [ ] **2.5 Menú hamburguesa y navegación mobile**
-      *Hecho cuando:* la navegación (desktop y mobile) refleja las nuevas rutas.
-- [ ] **2.6 QA visual, responsive y rutas**
-      *Hecho cuando:* no hay links rotos, los anchors funcionan y el SEO básico se mantiene.
+- [ ] **2.1** Crear página/sección de servicios con: Presencia digital, Sistemas a medida, Plataformas multicanal.
+      *Hecho cuando:* los tres niveles están presentes, con descripción de negocio y siguiente paso.
+- [ ] **2.2** Redactar cada servicio sin tecnicismos (descripción, a quién le sirve, cómo se explica).
+      *Hecho cuando:* el copy coincide con `docs/02-services.md` y no usa jerga técnica.
+- [ ] **2.3** Mover productos de entrada a una página secundaria (no protagonizan la home).
+      *Hecho cuando:* los productos de entrada viven en su propia página y la home no gira alrededor de ellos.
 
-**Criterio de salida:** la oferta es multicapa; la Home actúa como lobby rápido y el cliente profundiza solo en el nivel que necesita.
+**Criterio de salida:** la oferta es legible y escalonada; el cliente se ubica solo en el nivel que necesita.
 
 ---
 
@@ -184,8 +171,7 @@ Regla de oro: **primero se reposiciona VisibleMX (Fases 0–4 y 6), y la migraci
 ## Estado actual
 
 - Fase 0: **completada**.
-- Fase 1: **completada**.
-- Próxima tarea concreta a ejecutar: **2.1** (Crear página/sección de servicios con: Presencia digital, Sistemas a medida, Plataformas multicanal).
+- Fase 1: **en curso** — 1.1, 1.2, 1.3, 1.4, 1.5, 1.6 y 1.7 completadas.
+- Próxima tarea concreta a ejecutar: **1.8.2** (prototipo del hero scanner/reveal; ver `docs/08-motion-concept.md` antes de implementar UI).
 
 > Mantener esta sección “Estado actual” actualizada al cerrar cada tarea: apuntar siempre cuál es la siguiente `[ ]`.
-

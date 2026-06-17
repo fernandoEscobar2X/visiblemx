@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 import { motion } from 'motion/react';
+import { useLocation } from 'react-router';
+import { LanguageProvider } from '../context/LanguageContext';
 import { EliteNavbar } from '../components/EliteNavbar';
 import { Footer } from '../components/Footer';
 import { CustomSystemsSection } from '../components/CustomSystemsSection';
@@ -7,12 +9,22 @@ import { MultichannelPlatformsSection } from '../components/MultichannelPlatform
 import { ContactSection } from '../components/ContactSection';
 import { ArrowRight } from 'lucide-react';
 
-import { LanguageProvider } from '../context/LanguageContext';
-
 export function ServicesPage() {
+  const location = useLocation();
+
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    if (location.hash) {
+      const element = document.querySelector(location.hash);
+      if (element) {
+        // Add a small delay to ensure rendering is complete
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [location]);
 
   return (
     <LanguageProvider>
