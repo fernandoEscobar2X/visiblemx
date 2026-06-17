@@ -85,18 +85,36 @@ Regla de oro: **primero se reposiciona VisibleMX (Fases 0–4 y 6), y la migraci
 
 ---
 
-## Fase 2 — Servicios
+## Fase 2 — Arquitectura Multicapa
 
-**Objetivo:** estructurar la oferta en los tres niveles de `docs/02-services.md`.
+**Objetivo:** Dividir la oferta y compactar la Home.
 
-- [ ] **2.1** Crear página/sección de servicios con: Presencia digital, Sistemas a medida, Plataformas multicanal.
-      *Hecho cuando:* los tres niveles están presentes, con descripción de negocio y siguiente paso.
-- [ ] **2.2** Redactar cada servicio sin tecnicismos (descripción, a quién le sirve, cómo se explica).
-      *Hecho cuando:* el copy coincide con `docs/02-services.md` y no usa jerga técnica.
-- [ ] **2.3** Mover productos de entrada a una página secundaria (no protagonizan la home).
-      *Hecho cuando:* los productos de entrada viven en su propia página y la home no gira alrededor de ellos.
+- [x] **2.1 Definir arquitectura de rutas y navegación**
+      *Hecho cuando:* se acuerda qué secciones van a la Home, cuáles a /servicios y cuáles a /presencia-digital.
+      *Cerrada:* Rutas acordadas: `/servicios` para sistemas y plataformas, `/presencia-digital` para productos base. La Home funcionará como índice.
+- [x] **2.2 Crear página `/servicios`**
+      *Hecho cuando:* existe la ruta con las secciones CustomSystems y MultichannelPlatforms, con un encabezado de valor.
+      *Cerrada:* Creado `ServicesPage.tsx` con H1 y copy de negocio, se reutilizaron las secciones de Fase 1, se integró navbar y footer con CTA funcional a `#contacto`. Rutas configuradas.
+- [x] **2.3 Crear página `/presencia-digital`**
+      *Hecho cuando:* existe la ruta para las soluciones de entrada, alejando el concepto de "catálogo de productos".
+      *Cerrada:* Creado `DigitalPresencePage.tsx` con H1 y copy de negocio, se reutilizó MinimalProducts, CTA funcional a `#contacto`. Rutas configuradas y validadas.
+- [x] **2.4 Compactar Home sin perder claridad comercial**
+      *Hecho cuando:* la Home retiene el Hero, Narrativa, Manifiesto y Mapa de Arquitectura, enviando el contenido pesado a las rutas internas.
+      *Cerrada:* Se extrajeron los componentes pesados (productos, sistemas, plataformas) de `LandingPage`. `ServicesArchitecture` se convirtió en un mapa de rutas usando `<Link>`. Se implementó lógica de scroll a anclas para evitar colisión de UX en `ServicesPage` y `DigitalPresencePage`. La Home ahora es súper ligera y scrolleable en mobile.
+- [x] **2.5 Menú hamburguesa y navegación mobile**
+      *Hecho cuando:* la navegación (desktop y mobile) refleja las nuevas rutas.
+      *Cerrada:* `EliteNavbar` actualizado con links `react-router` a Inicio, Presencia digital, Servicios y Contacto. Menú mobile cierra al navegar.
+- [x] **2.6 QA visual, responsive y rutas**
+      *Hecho cuando:* no hay links rotos, los anchors funcionan y el SEO básico se mantiene.
+      *Cerrada:* Se ejecutó auditoría UX/UI revelando problemas críticos en anclas e idioma, lo que originó la tarea 2.7.
+- [x] **2.7 Sprint correctivo de UX, conversión y estabilidad**
+      *Objetivo:* Solucionar bugs críticos del embudo sin dependencias nuevas ni rediseños radicales.
+      - [x] **2.7.1 Fix navegación de hashes y persistencia de idioma**
+            *Cerrada:* Se centralizó el ruteo en `RootLayout`, inyectando `useHashScroll` y persistiendo `LanguageProvider` con `localStorage`. Verificado en 1440x900 y 390x844.
+      - [x] **2.7.2 Refuerzo visual sobrio de ScrollNarrative e inner pages**
+            *Cerrada:* Se mejoró el contraste del mockup en ScrollNarrative (panel oscuro con datos legibles, B2B) y se pulieron los heroes internos (`/servicios` y `/presencia-digital`) con badges, retícula sutil y CTAs directos al formulario. Verificado en múltiples viewports.
 
-**Criterio de salida:** la oferta es legible y escalonada; el cliente se ubica solo en el nivel que necesita.
+**Criterio de salida:** la oferta es multicapa; la Home actúa como lobby rápido y el cliente profundiza solo en el nivel que necesita sin bugs de navegación y con una interfaz premium y sobria.
 
 ---
 
@@ -171,7 +189,8 @@ Regla de oro: **primero se reposiciona VisibleMX (Fases 0–4 y 6), y la migraci
 ## Estado actual
 
 - Fase 0: **completada**.
-- Fase 1: **en curso** — 1.1, 1.2, 1.3, 1.4, 1.5, 1.6 y 1.7 completadas.
-- Próxima tarea concreta a ejecutar: **1.8.2** (prototipo del hero scanner/reveal; ver `docs/08-motion-concept.md` antes de implementar UI).
+- Fase 1: **en curso** — 1.1 a 1.7 completadas. La parte visual (1.8) está en pausa.
+- Fase 2: **completada** — 2.1 a 2.7 completadas.
+- Próxima tarea concreta a ejecutar: **3.1** (Crear `/portafolio` - O esperar desbloqueo del usuario).
 
 > Mantener esta sección “Estado actual” actualizada al cerrar cada tarea: apuntar siempre cuál es la siguiente `[ ]`.
