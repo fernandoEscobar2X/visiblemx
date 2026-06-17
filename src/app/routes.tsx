@@ -1,4 +1,4 @@
-﻿import type { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import { Suspense, lazy } from 'react';
 import { createBrowserRouter } from 'react-router';
 import { LanguageProvider } from './context/LanguageContext';
@@ -37,10 +37,18 @@ function DemoWrapper({ children }: { children: React.ReactNode }) {
   return <LanguageProvider>{children}</LanguageProvider>;
 }
 
+const ServicesPage = lazy(() =>
+  import('./pages/ServicesPage').then((mod) => ({ default: mod.ServicesPage }))
+);
+
 export const router = createBrowserRouter([
   {
     path: '/',
     element: withSuspense(<LandingPage />)
+  },
+  {
+    path: '/servicios',
+    element: withSuspense(<ServicesPage />)
   },
   {
     path: '/demo/link',

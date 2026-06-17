@@ -93,14 +93,22 @@ Regla de oro: **primero se reposiciona VisibleMX (Fases 0–4 y 6), y la migraci
 
 **Objetivo:** estructurar la oferta en los tres niveles de `docs/02-services.md`.
 
-- [ ] **2.1** Crear página/sección de servicios con: Presencia digital, Sistemas a medida, Plataformas multicanal.
-      *Hecho cuando:* los tres niveles están presentes, con descripción de negocio y siguiente paso.
-- [ ] **2.2** Redactar cada servicio sin tecnicismos (descripción, a quién le sirve, cómo se explica).
-      *Hecho cuando:* el copy coincide con `docs/02-services.md` y no usa jerga técnica.
-- [ ] **2.3** Mover productos de entrada a una página secundaria (no protagonizan la home).
-      *Hecho cuando:* los productos de entrada viven en su propia página y la home no gira alrededor de ellos.
+- [x] **2.1 Definir arquitectura de rutas y navegación**
+      *Hecho cuando:* el plan de ruteo está aprobado y documentado.
+      *Cerrada:* Plan aprobado. Arquitectura final: `/servicios` y `/presencia-digital`. Home se compactará usando ServicesArchitecture como mapa.
+- [x] **2.2 Crear página `/servicios`**
+      *Hecho cuando:* existe la ruta para Sistemas a Medida y Plataformas Multicanal, con su detalle comercial completo.
+      *Cerrada:* Creado `ServicesPage.tsx` con H1 y copy de negocio, se reutilizaron las secciones de Fase 1, se integró navbar y footer con CTA funcional a `#contacto`. Rutas configuradas.
+- [ ] **2.3 Crear página `/presencia-digital`**
+      *Hecho cuando:* existe la ruta para las soluciones de entrada, alejando el concepto de "catálogo de productos".
+- [ ] **2.4 Compactar Home sin perder claridad comercial**
+      *Hecho cuando:* la Home retiene el Hero, Narrativa, Manifiesto y Mapa de Arquitectura, enviando el contenido pesado a las rutas internas.
+- [ ] **2.5 Menú hamburguesa y navegación mobile**
+      *Hecho cuando:* la navegación (desktop y mobile) refleja las nuevas rutas.
+- [ ] **2.6 QA visual, responsive y rutas**
+      *Hecho cuando:* no hay links rotos, los anchors funcionan y el SEO básico se mantiene.
 
-**Criterio de salida:** la oferta es legible y escalonada; el cliente se ubica solo en el nivel que necesita.
+**Criterio de salida:** la oferta es multicapa; la Home actúa como lobby rápido y el cliente profundiza solo en el nivel que necesita.
 
 ---
 
