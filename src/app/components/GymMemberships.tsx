@@ -16,8 +16,8 @@ interface Plan {
 const content = {
   es: {
     tag: 'Pricing matrix',
-    title: 'Membresias de alto impacto',
-    subtitle: 'Tres niveles. Una sola mision: rendimiento sostenido.',
+    title: 'Membresías de alto impacto',
+    subtitle: 'Tres niveles. Una sola misión: rendimiento sostenido.',
     cta: 'Comenzar ahora',
     plans: [
       {
@@ -25,35 +25,35 @@ const content = {
         name: 'IRON CORE',
         price: '599',
         period: 'MXN/mes',
-        subtitle: 'Acceso esencial para construir base atletica.',
-        features: ['Pesas y cardio ilimitado', 'Vestidores premium', 'App de seguimiento', 'Asesoria inicial']
+        subtitle: 'Acceso esencial para construir base atlética.',
+        features: ['Pesas y cardio ilimitado', 'Vestidores premium', 'App de seguimiento', 'Asesoría inicial']
       },
       {
         id: 'pro',
         name: 'IRON PROTOCOL',
         price: '899',
         period: 'MXN/mes',
-        subtitle: 'El nivel mas elegido para progresar rapido.',
+        subtitle: 'El nivel más elegido para progresar rápido.',
         features: [
           'Todo lo de Iron Core',
           'Clases grupales ilimitadas',
           'Zona funcional y cross training',
-          'Evaluacion mensual',
+          'Evaluación mensual',
           'Invitado gratis 2 veces por mes'
         ],
         featured: true,
-        badge: 'Mas popular'
+        badge: 'Más popular'
       },
       {
         id: 'elite',
         name: 'IRON ASCENT',
         price: '1299',
         period: 'MXN/mes',
-        subtitle: 'Experiencia total para objetivos de elite.',
+        subtitle: 'Experiencia total para objetivos de élite.',
         features: [
           'Todo lo de Iron Protocol',
           '4 sesiones PT al mes',
-          'Nutricion personalizada',
+          'Nutrición personalizada',
           'Acceso 24/7',
           'Locker VIP y estacionamiento'
         ]
@@ -194,7 +194,7 @@ export function GymMemberships() {
         <div className="mt-12 flex justify-center">
           <div className="inline-flex items-center gap-2 border border-blue-400/40 bg-blue-500/10 px-4 py-2 text-xs uppercase tracking-[0.16em] text-blue-200">
             <Shield className="h-4 w-4" />
-            Garantia de resultados en 90 dias
+            Garantía de resultados en 90 días
           </div>
         </div>
       </div>

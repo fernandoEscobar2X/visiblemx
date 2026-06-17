@@ -12,76 +12,79 @@ export function ContactSection() {
   const { language } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
-    phone: '',
-    service: '',
+    company: '',
+    contact: '',
+    projectType: '',
     message: ''
   });
   const [submitted, setSubmitted] = useState(false);
 
   const content = {
     es: {
-      overtitle: 'Listo para comenzar?',
-      title: 'Hablemos de tu proyecto',
-      description: 'Respuesta en menos de 24 horas. Sin compromiso.',
+      overtitle: 'Proyecto',
+      title: 'Cuéntanos tu proyecto',
+      description:
+        'Describe qué necesitas construir, mejorar u ordenar. Te responderemos con una propuesta según el alcance, etapa y objetivos del proyecto.',
       form: {
-        name: 'Nombre completo',
-        email: 'Email',
-        phone: 'Telefono (opcional)',
-        service: 'Servicio de interes',
-        servicePlaceholder: 'Selecciona un servicio',
-        message: 'Cuentanos sobre tu proyecto',
-        submit: 'Enviar Mensaje',
-        whatsapp: 'O escribenos por WhatsApp',
-        liveServiceNote: 'Este servicio incluye plan mensual operativo.',
-        tapNote: 'Visible Tap incluye el desarrollo de la pagina por $450 MXN. Cada llavero NFC va desde $70 MXN y juntos forman la experiencia completa.'
+        name: 'Nombre',
+        company: 'Empresa o negocio',
+        contact: 'WhatsApp o correo',
+        projectType: 'Tipo de proyecto',
+        projectTypePlaceholder: 'Selecciona el tipo de proyecto',
+        message: 'Qué necesitas resolver',
+        submit: 'Enviar solicitud',
+        whatsapp: 'O escríbenos por WhatsApp'
       },
       services: [
-        { value: 'tap', label: 'Visible Tap - $450 MXN (solo desarrollo)' },
-        { value: 'link', label: 'Visible Link - $1,799 MXN' },
-        { value: 'page', label: 'Visible Page - $2,699 MXN' },
-        { value: 'menu', label: 'Visible Menu - $3,599 MXN' },
-        { value: 'agenda', label: 'Visible Agenda - $4,499 MXN' },
-        { value: 'custom', label: 'Proyecto personalizado' }
+        { value: 'sitio-profesional', label: 'Sitio web profesional' },
+        { value: 'landing-page', label: 'Landing page' },
+        { value: 'menu-digital', label: 'Menú digital' },
+        { value: 'agenda-citas', label: 'Agenda o sistema de citas' },
+        { value: 'sistema-medida', label: 'Sistema a medida' },
+        { value: 'plataforma-multicanal', label: 'Plataforma multicanal' },
+        { value: 'automatizacion-reportes', label: 'Automatización y reportes' },
+        { value: 'orientacion', label: 'No estoy seguro, necesito orientación' }
       ] as ServiceOption[],
       info: {
         email: 'ferrobles2003@gmail.com',
         phone: '664 353 3036',
         whatsapp: '526643533036',
-        address: 'Tijuana, Baja California, Mexico'
+        address: 'Tijuana, Baja California, México'
       },
       success: {
-        title: 'Mensaje enviado!',
-        description: 'Te contactaremos en las proximas 24 horas'
+        title: '¡Mensaje enviado!',
+        description: 'Te contactaremos en las próximas 24 horas'
       },
       placeholders: {
-        name: 'Juan Perez',
-        message: 'Necesito una pagina web para...'
+        name: 'Juan Pérez',
+        company: 'Nombre del negocio',
+        contact: '664 123 4567 o correo@empresa.com',
+        message: 'Quiero construir, mejorar u ordenar...'
       }
     },
     en: {
-      overtitle: 'Ready to start?',
-      title: "Let's talk about your project",
-      description: 'Response in less than 24 hours. No commitment.',
+      overtitle: 'Project',
+      title: 'Tell us about your project',
+      description: 'Describe what you need to build, improve or organize. We will reply with a proposal based on project scope, stage and goals.',
       form: {
-        name: 'Full name',
-        email: 'Email',
-        phone: 'Phone (optional)',
-        service: 'Service of interest',
-        servicePlaceholder: 'Select a service',
-        message: 'Tell us about your project',
-        submit: 'Send Message',
-        whatsapp: 'Or message us on WhatsApp',
-        liveServiceNote: 'This service includes an operational monthly plan.',
-        tapNote: 'Visible Tap includes page development for $450 MXN. Each NFC keychain starts at $70 MXN and together they create the full experience.'
+        name: 'Name',
+        company: 'Company or business',
+        contact: 'WhatsApp or email',
+        projectType: 'Project type',
+        projectTypePlaceholder: 'Select the project type',
+        message: 'What do you need to solve?',
+        submit: 'Send request',
+        whatsapp: 'Or message us on WhatsApp'
       },
       services: [
-        { value: 'tap', label: 'Visible Tap - $450 MXN (development only)' },
-        { value: 'link', label: 'Visible Link - $1,799 MXN' },
-        { value: 'page', label: 'Visible Page - $2,699 MXN' },
-        { value: 'menu', label: 'Visible Menu - $3,599 MXN' },
-        { value: 'agenda', label: 'Visible Agenda - $4,499 MXN' },
-        { value: 'custom', label: 'Custom project' }
+        { value: 'professional-website', label: 'Professional website' },
+        { value: 'landing-page', label: 'Landing page' },
+        { value: 'digital-menu', label: 'Digital menu' },
+        { value: 'booking-system', label: 'Booking or appointment system' },
+        { value: 'custom-system', label: 'Custom system' },
+        { value: 'multichannel-platform', label: 'Multichannel platform' },
+        { value: 'automation-reports', label: 'Automation and reports' },
+        { value: 'guidance', label: 'Not sure yet, I need guidance' }
       ] as ServiceOption[],
       info: {
         email: 'ferrobles2003@gmail.com',
@@ -95,13 +98,15 @@ export function ContactSection() {
       },
       placeholders: {
         name: 'John Perez',
-        message: 'I need a website for...'
+        company: 'Business name',
+        contact: 'Phone or email',
+        message: 'I want to build, improve or organize...'
       }
     }
   };
 
   const t = content[language];
-  const selectedService = t.services.find((service) => service.value === formData.service);
+  const selectedProjectType = t.services.find((service) => service.value === formData.projectType);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -109,10 +114,10 @@ export function ContactSection() {
     const message = encodeURIComponent(
       `NUEVO LEAD - VISIBLE MX\n\n` +
         `Nombre: ${formData.name}\n` +
-        `Email: ${formData.email}\n` +
-        `Telefono: ${formData.phone || 'No proporcionado'}\n` +
-        `Servicio: ${selectedService?.label || formData.service}\n\n` +
-        `Mensaje:\n${formData.message}`
+        `Empresa o negocio: ${formData.company}\n` +
+        `Contacto: ${formData.contact}\n` +
+        `Tipo de proyecto: ${selectedProjectType?.label || formData.projectType}\n\n` +
+        `Qué necesita resolver:\n${formData.message}`
     );
 
     window.open(`https://wa.me/${t.info.whatsapp}?text=${message}`, '_blank');
@@ -120,12 +125,12 @@ export function ContactSection() {
 
     setTimeout(() => {
       setSubmitted(false);
-      setFormData({ name: '', email: '', phone: '', service: '', message: '' });
+      setFormData({ name: '', company: '', contact: '', projectType: '', message: '' });
     }, 5000);
   };
 
   const handleWhatsAppDirect = () => {
-    window.open(`https://wa.me/${t.info.whatsapp}?text=Hola! Estoy interesado en los servicios de Visible MX`, '_blank');
+    window.open(`https://wa.me/${t.info.whatsapp}?text=¡Hola! Quiero cotizar un proyecto con Visible MX`, '_blank');
   };
 
   if (submitted) {
@@ -163,8 +168,8 @@ export function ContactSection() {
               <div className="h-px w-12 bg-slate-900" />
               <span className="text-sm font-medium uppercase tracking-[0.2em] text-slate-600">{t.overtitle}</span>
             </div>
-            <h2 className="mb-6 text-6xl font-black leading-tight text-slate-900 lg:text-7xl">{t.title}</h2>
-            <p className="text-2xl font-light text-slate-600">{t.description}</p>
+            <h2 className="mb-6 text-5xl font-black leading-tight text-slate-900 md:text-6xl lg:text-7xl">{t.title}</h2>
+            <p className="text-xl font-light leading-8 text-slate-600 md:text-2xl">{t.description}</p>
           </motion.div>
         </div>
 
@@ -194,7 +199,7 @@ export function ContactSection() {
                   <Phone className="h-6 w-6 text-slate-900 transition-colors group-hover:text-white" />
                 </div>
                 <div>
-                  <div className="mb-1 text-sm font-medium uppercase tracking-wider text-slate-600">{language === 'es' ? 'Telefono' : 'Phone'}</div>
+                  <div className="mb-1 text-sm font-medium uppercase tracking-wider text-slate-600">{language === 'es' ? 'Teléfono' : 'Phone'}</div>
                   <a href={`tel:${t.info.phone}`} className="text-xl font-medium text-slate-900 hover:underline">
                     {t.info.phone}
                   </a>
@@ -206,7 +211,7 @@ export function ContactSection() {
                   <MapPin className="h-6 w-6 text-slate-900 transition-colors group-hover:text-white" />
                 </div>
                 <div>
-                  <div className="mb-1 text-sm font-medium uppercase tracking-wider text-slate-600">{language === 'es' ? 'Ubicacion' : 'Location'}</div>
+                  <div className="mb-1 text-sm font-medium uppercase tracking-wider text-slate-600">{language === 'es' ? 'Ubicación' : 'Location'}</div>
                   <p className="text-xl font-medium text-slate-900">{t.info.address}</p>
                 </div>
               </div>
@@ -247,56 +252,53 @@ export function ContactSection() {
               </div>
 
               <div>
-                <label htmlFor="contact-email" className="mb-3 block text-sm font-medium uppercase tracking-wider text-slate-900">
-                  {t.form.email}
+                <label htmlFor="contact-company" className="mb-3 block text-sm font-medium uppercase tracking-wider text-slate-900">
+                  {t.form.company}
                 </label>
                 <input
-                  id="contact-email"
-                  type="email"
+                  id="contact-company"
+                  type="text"
                   required
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  value={formData.company}
+                  onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                   className="w-full border-2 border-slate-200 px-6 py-5 text-lg text-slate-900 transition-colors focus:border-slate-900 focus:outline-none"
-                  placeholder="juan@empresa.com"
+                  placeholder={t.placeholders.company}
                 />
               </div>
 
               <div>
-                <label htmlFor="contact-phone" className="mb-3 block text-sm font-medium uppercase tracking-wider text-slate-900">
-                  {t.form.phone}
+                <label htmlFor="contact-method" className="mb-3 block text-sm font-medium uppercase tracking-wider text-slate-900">
+                  {t.form.contact}
                 </label>
                 <input
-                  id="contact-phone"
-                  type="tel"
-                  value={formData.phone}
-                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  id="contact-method"
+                  type="text"
+                  required
+                  value={formData.contact}
+                  onChange={(e) => setFormData({ ...formData, contact: e.target.value })}
                   className="w-full border-2 border-slate-200 px-6 py-5 text-lg text-slate-900 transition-colors focus:border-slate-900 focus:outline-none"
-                  placeholder="664 353 3036"
+                  placeholder={t.placeholders.contact}
                 />
               </div>
 
               <div>
-                <label htmlFor="contact-service" className="mb-3 block text-sm font-medium uppercase tracking-wider text-slate-900">
-                  {t.form.service}
+                <label htmlFor="contact-project-type" className="mb-3 block text-sm font-medium uppercase tracking-wider text-slate-900">
+                  {t.form.projectType}
                 </label>
                 <select
-                  id="contact-service"
+                  id="contact-project-type"
                   required
-                  value={formData.service}
-                  onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                  value={formData.projectType}
+                  onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
                   className="w-full appearance-none bg-white border-2 border-slate-200 px-6 py-5 text-lg text-slate-900 transition-colors focus:border-slate-900 focus:outline-none"
                 >
-                  <option value="">{t.form.servicePlaceholder}</option>
+                  <option value="">{t.form.projectTypePlaceholder}</option>
                   {t.services.map((service) => (
                     <option key={service.value} value={service.value}>
                       {service.label}
                     </option>
                   ))}
                 </select>
-                {formData.service === 'tap' && <p className="mt-2 text-xs font-medium text-slate-500">{t.form.tapNote}</p>}
-                {(formData.service === 'menu' || formData.service === 'agenda') && (
-                  <p className="mt-2 text-xs font-medium text-amber-700">{t.form.liveServiceNote}</p>
-                )}
               </div>
 
               <div>

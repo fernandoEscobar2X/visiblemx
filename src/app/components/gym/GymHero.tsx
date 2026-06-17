@@ -28,8 +28,8 @@ export function GymHero() {
         lineB: 'SYSTEM',
         lineC: 'MODE',
         subtitle:
-          'Entrenamiento industrial de precision con ciencia de rendimiento, biomecanica aplicada y protocolos reales de transformacion.',
-        cta: 'Activar Prueba 7 Dias',
+          'Entrenamiento industrial de precisión con ciencia de rendimiento, biomecánica aplicada y protocolos reales de transformación.',
+        cta: 'Activar Prueba 7 Días',
         secondary: 'Ver laboratorio',
         micro: 'LIVE METRICS ONLINE'
       },

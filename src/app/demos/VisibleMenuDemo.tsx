@@ -62,11 +62,11 @@ export function VisibleMenuDemo() {
 
   const restaurant = {
     name: 'TACOS EL PRIMO',
-    tagline: 'Autenticos tacos de calle desde 2010',
-    description: 'Street-food lab en modo alto rendimiento. Fuego, plancha y recetas de frontera para provocar hambre instantanea.',
+    tagline: 'Auténticos tacos de calle desde 2010',
+    description: 'Street-food lab en modo alto rendimiento. Fuego, plancha y recetas de frontera para provocar hambre instantánea.',
     phone: '+52 664 123 4567',
     whatsapp: '5216641234567',
-    address: 'Av. Revolucion 1234, Centro, Tijuana',
+    address: 'Av. Revolución 1234, Centro, Tijuana',
     city: 'Tijuana, B.C.',
     hours: 'Lun - Dom 11:00 AM - 11:00 PM',
     rating: 4.8,
@@ -89,7 +89,7 @@ export function VisibleMenuDemo() {
     {
       id: 1,
       name: 'Taco al Pastor',
-      description: 'Con pina, cilantro y cebolla en tortilla recien salida del comal',
+      description: 'Con piña, cilantro y cebolla en tortilla recién salida del comal',
       price: 35,
       category: 'Tacos',
       image: 'https://images.unsplash.com/photo-1629793982144-00548a0c75cc?w=800&q=80',
@@ -128,7 +128,7 @@ export function VisibleMenuDemo() {
     {
       id: 4,
       name: 'Taco de Pollo',
-      description: 'Pollo marinado en adobo citrico con salsa verde cremosa',
+      description: 'Pollo marinado en adobo cítrico con salsa verde cremosa',
       price: 30,
       category: 'Tacos',
       image: 'https://images.unsplash.com/photo-1765087909734-a8a07a167fb3?w=800&q=80',
@@ -192,7 +192,7 @@ export function VisibleMenuDemo() {
     },
     {
       id: 9,
-      name: 'Quesadilla de Champinones',
+      name: 'Quesadilla de Champiñones',
       description: 'Con epazote, queso y cebolla caramelizada',
       price: 50,
       category: 'Quesadillas',
@@ -232,7 +232,7 @@ export function VisibleMenuDemo() {
     {
       id: 12,
       name: 'Torta de Asada',
-      description: 'Pan telera, frijol, carne asada, aguacate y jalapeno',
+      description: 'Pan telera, frijol, carne asada, aguacate y jalapeño',
       price: 85,
       category: 'Especiales',
       image: 'https://images.unsplash.com/photo-1629793982144-00548a0c75cc?w=800&q=80',
@@ -258,7 +258,7 @@ export function VisibleMenuDemo() {
     {
       id: 14,
       name: 'Agua de Jamaica',
-      description: 'Refrescante y natural, sin azucar anadida',
+      description: 'Refrescante y natural, sin azúcar añadida',
       price: 25,
       category: 'Bebidas',
       image: 'https://images.unsplash.com/photo-1629793982144-00548a0c75cc?w=800&q=80',
@@ -271,7 +271,7 @@ export function VisibleMenuDemo() {
     {
       id: 15,
       name: 'Churros con Lechera',
-      description: 'Con canela, azucar y topping de lechera',
+      description: 'Con canela, azúcar y topping de lechera',
       price: 45,
       category: 'Postres',
       image: 'https://images.unsplash.com/photo-1629793982144-00548a0c75cc?w=800&q=80',
@@ -379,7 +379,7 @@ export function VisibleMenuDemo() {
 
   const handleCheckout = () => {
     const orderText = cartItems.map((item) => `- ${item.quantity}x ${item.name} - $${item.price * item.quantity}`).join('\n');
-    const message = `Hola! Quiero hacer un pedido:\n\n${orderText}\n\nTOTAL: $${cartTotal} MXN\nDireccion: ${restaurant.address}`;
+    const message = `¡Hola! Quiero hacer un pedido:\n\n${orderText}\n\nTOTAL: $${cartTotal} MXN\nDirección: ${restaurant.address}`;
     window.open(`https://wa.me/${restaurant.whatsapp}?text=${encodeURIComponent(message)}`, '_blank');
   };
 
@@ -612,7 +612,7 @@ export function VisibleMenuDemo() {
               }}
               className="mt-5 text-[#EA580C]"
             >
-              Mostrar todo el menu
+              Mostrar todo el menú
             </button>
           </div>
         ) : null}
@@ -722,7 +722,7 @@ export function VisibleMenuDemo() {
                 {cartItems.length === 0 ? (
                   <div className="py-10 text-center text-white/55">
                     <ShoppingCart className="mx-auto mb-3 h-10 w-10" />
-                    Tu carrito esta vacio
+                    Tu carrito está vacío
                   </div>
                 ) : null}
               </div>
@@ -740,7 +740,7 @@ export function VisibleMenuDemo() {
                 </div>
 
                 {cartTotal < restaurant.minOrder ? (
-                  <p className="mb-3 text-sm text-[#EA580C]">Minimo para envio: ${restaurant.minOrder} MXN</p>
+                  <p className="mb-3 text-sm text-[#EA580C]">Mínimo para envío: ${restaurant.minOrder} MXN</p>
                 ) : null}
 
                 <motion.button

@@ -44,7 +44,7 @@ export function VisibleAgendaDemo() {
       'Editorial beauty lab con estilistas senior, rituales premium y una experiencia boutique de inicio a cierre.',
     phone: '+52 664 789 0123',
     whatsapp: '5216647890123',
-    address: 'Plaza Rio, Tijuana',
+    address: 'Plaza Río, Tijuana',
     rating: '4.9',
     reviews: '856',
     hero: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=1400&q=80',
@@ -57,14 +57,14 @@ export function VisibleAgendaDemo() {
       name: 'Corte Premium',
       duration: '45 min',
       price: 450,
-      description: 'Corte personalizado con analisis facial y styling final.',
+      description: 'Corte personalizado con análisis facial y styling final.',
       icon: Scissors,
       image: 'https://images.unsplash.com/photo-1519415943484-cfbec6d2f8c9?w=900&q=80',
       badge: 'popular'
     },
     {
       id: 2,
-      name: 'Coloracion Completa',
+      name: 'Coloración Completa',
       duration: '2 hrs',
       price: 1400,
       description: 'Color de autor con productos Schwarzkopf y protocolo de sellado.',
@@ -77,7 +77,7 @@ export function VisibleAgendaDemo() {
       name: 'Balayage Signature',
       duration: '2.5 hrs',
       price: 1800,
-      description: 'Iluminacion francesa para contraste suave y acabado natural.',
+      description: 'Iluminación francesa para contraste suave y acabado natural.',
       icon: Sparkles,
       image: 'https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=900&q=80',
       badge: 'popular'
@@ -87,7 +87,7 @@ export function VisibleAgendaDemo() {
       name: 'Keratina Silk',
       duration: '3 hrs',
       price: 2200,
-      description: 'Alisado premium con efecto anti-frizz de larga duracion.',
+      description: 'Alisado premium con efecto anti-frizz de larga duración.',
       icon: Sparkles,
       image: 'https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?w=900&q=80'
     },
@@ -96,7 +96,7 @@ export function VisibleAgendaDemo() {
       name: 'Peinado Evento',
       duration: '1 hr',
       price: 750,
-      description: 'Diseno para boda, gala o evento social con fijacion profesional.',
+      description: 'Diseño para boda, gala o evento social con fijación profesional.',
       icon: Scissors,
       image: 'https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=900&q=80',
       badge: 'popular'
@@ -106,7 +106,7 @@ export function VisibleAgendaDemo() {
       name: 'Tratamiento Capilar',
       duration: '1 hr',
       price: 550,
-      description: 'Hidratacion profunda y reconstruccion con Olaplex.',
+      description: 'Hidratación profunda y reconstrucción con Olaplex.',
       icon: Sparkles,
       image: 'https://images.unsplash.com/photo-1607779097040-26e80aa78e66?w=900&q=80'
     },
@@ -125,7 +125,7 @@ export function VisibleAgendaDemo() {
       name: 'Bridal Couture',
       duration: '4 hrs',
       price: 3500,
-      description: 'Peinado, maquillaje, prueba previa y coordinacion de look.',
+      description: 'Peinado, maquillaje, prueba previa y coordinación de look.',
       icon: Crown,
       image: 'https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=900&q=80',
       badge: 'premium'
@@ -186,7 +186,7 @@ export function VisibleAgendaDemo() {
       day: 'numeric'
     });
 
-    const message = `Hola, quiero agendar una cita:\n\nServicio: ${selectedServiceData.name}\nPrecio: $${selectedServiceData.price} MXN\nDuracion: ${selectedServiceData.duration}\nFecha: ${dateStr}\nHora: ${selectedTime}\n\nEsta disponible?`;
+    const message = `Hola, quiero agendar una cita:\n\nServicio: ${selectedServiceData.name}\nPrecio: $${selectedServiceData.price} MXN\nDuración: ${selectedServiceData.duration}\nFecha: ${dateStr}\nHora: ${selectedTime}\n\n¿Está disponible?`;
 
     window.open(`https://wa.me/${salon.whatsapp}?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
     setShowConfirmation(true);
@@ -226,7 +226,7 @@ export function VisibleAgendaDemo() {
               </div>
               <div className="rounded-2xl border border-[#E6E2D9] bg-[#F3F0EA] p-4">
                 <p className="font-jakarta text-3xl font-semibold">{salon.reviews}</p>
-                <p className="text-[11px] uppercase tracking-[0.16em] text-[#1A1A1A]/55">Resenas</p>
+                <p className="text-[11px] uppercase tracking-[0.16em] text-[#1A1A1A]/55">Reseñas</p>
               </div>
               <div className="rounded-2xl border border-[#E6E2D9] bg-[#F3F0EA] p-4">
                 <p className="font-jakarta text-3xl font-semibold">8</p>
@@ -246,7 +246,7 @@ export function VisibleAgendaDemo() {
             </div>
             <div className="mt-5 space-y-3 text-sm text-[#1A1A1A]/72">
               <p className="flex items-center gap-2"><MapPin className="h-4 w-4 text-[#A87A65]" />{salon.address}</p>
-              <p className="flex items-center gap-2"><Clock className="h-4 w-4 text-[#A87A65]" />Lun - Sab | 9:00 AM - 8:00 PM</p>
+              <p className="flex items-center gap-2"><Clock className="h-4 w-4 text-[#A87A65]" />Lun - Sáb | 9:00 AM - 8:00 PM</p>
               <p className="flex items-center gap-2"><MessageCircle className="h-4 w-4 text-[#A87A65]" />{salon.phone}</p>
             </div>
           </motion.div>
@@ -423,9 +423,9 @@ export function VisibleAgendaDemo() {
         <h3 className="font-cormorant text-4xl italic text-[#1A1A1A] md:text-5xl">Lo que dicen nuestras clientas</h3>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {[
-            { name: 'Ana Garcia', quote: 'Atencion impecable y resultado editorial en cada cita.' },
-            { name: 'Sofia Martinez', quote: 'El salon mas consistente de Tijuana. Todo se siente premium.' },
-            { name: 'Laura Ramirez', quote: 'Agenda rapida, experiencia fluida y un resultado espectacular.' }
+            { name: 'Ana García', quote: 'Atención impecable y resultado editorial en cada cita.' },
+            { name: 'Sofía Martínez', quote: 'El salón más consistente de Tijuana. Todo se siente premium.' },
+            { name: 'Laura Ramírez', quote: 'Agenda rápida, experiencia fluida y un resultado espectacular.' }
           ].map((item, index) => (
             <motion.article
               key={item.name}
@@ -518,7 +518,7 @@ export function VisibleAgendaDemo() {
                 <CheckCircle className="h-8 w-8" />
               </div>
               <h4 className="font-cormorant text-4xl italic text-[#1A1A1A]">Redirigiendo a WhatsApp</h4>
-              <p className="mt-3 text-sm text-[#1A1A1A]/65">Tu solicitud ya esta lista para confirmacion directa con Studio Vogue.</p>
+              <p className="mt-3 text-sm text-[#1A1A1A]/65">Tu solicitud ya está lista para confirmación directa con Studio Vogue.</p>
               <button
                 type="button"
                 onClick={() => setShowConfirmation(false)}

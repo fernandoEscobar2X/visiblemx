@@ -18,13 +18,13 @@ const content = {
     overtitle: 'Protocolos de rendimiento',
     title: 'Performance Shuffler',
     subtitle:
-      'Tres nodos en rotacion continua. Cada bloque representa una unidad tactica de entrenamiento de alto rendimiento.',
+      'Tres nodos en rotación continua. Cada bloque representa una unidad táctica de entrenamiento de alto rendimiento.',
     cta: 'Explorar programa',
     cards: [
       {
         id: 'combat-strength',
         name: 'Fuerza estructural',
-        description: 'Bloques de fuerza con periodizacion progresiva y control biomecanico de ejecucion.',
+        description: 'Bloques de fuerza con periodización progresiva y control biomecánico de ejecución.',
         icon: Dumbbell,
         image: 'https://images.unsplash.com/photo-1534367610401-9f5ed68180aa?w=1200&q=80',
         metric: 'Power +28%'
@@ -32,7 +32,7 @@ const content = {
       {
         id: 'engine-hiit',
         name: 'Motor HIIT',
-        description: 'Intervalos de alta intensidad para elevar VO2 max, resistencia lactica y recuperacion.',
+        description: 'Intervalos de alta intensidad para elevar VO2 max, resistencia láctica y recuperación.',
         icon: Flame,
         image: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=1200&q=80',
         metric: 'VO2 +19%'
@@ -48,7 +48,7 @@ const content = {
       {
         id: 'recovery-lab',
         name: 'Recovery lab',
-        description: 'Recuperacion activa, movilidad y trabajo de tejido para sostener cargas altas.',
+        description: 'Recuperación activa, movilidad y trabajo de tejido para sostener cargas altas.',
         icon: ShieldCheck,
         image: 'https://images.unsplash.com/photo-1534258936925-c58bed479fcb?w=1200&q=80',
         metric: 'Injury -37%'

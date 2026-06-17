@@ -36,13 +36,8 @@ type Product = {
   id: string;
   name: string;
   description: string;
-  paymentType: 'one-time' | 'live';
-  price?: string;
-  regularPrice?: string;
-  setupPrice?: string;
-  regularSetupPrice?: string;
-  monthlyPrice?: string;
-  regularMonthlyPrice?: string;
+  scope: string;
+  nextStep: string;
   popular?: boolean;
   liveService?: boolean;
   features: string[];
@@ -81,144 +76,125 @@ export function MinimalProducts() {
 
   const content = {
     es: {
-      overtitle: 'Soluciones',
-      title: '4 Productos. Una Filosofia.',
+      overtitle: 'Presencia digital',
+      title: 'Soluciones de entrada para negocios que quieren operar con más orden.',
       subtitle:
-        'Cada solucion es el resultado de anos de experiencia construyendo productos digitales. Sin excesos, solo lo esencial.',
-      regular: 'Precio Regular',
+        'Piezas concretas para verse profesional, captar contactos y preparar el camino hacia sistemas más completos. El alcance se define por objetivos, operación y prioridad; sin compra impulsiva ni presión artificial.',
       payment: {
-        oneTime: 'Pago unico',
-        launchTag: 'Oferta actual',
-        setupFrom: 'Setup desde',
-        setupRegular: 'Setup regular',
-        monthlyFrom: 'Mensualidad desde',
-        monthlyRegular: 'Mensualidad regular',
-        perMonth: '/mes',
-        liveService: 'Servicio vivo',
-        infraNote: 'Menu y Agenda incluyen plan mensual por infraestructura, soporte y actualizaciones.'
+        scopeLabel: 'Cotización por proyecto',
+        projectMode: 'Proyecto por fases',
+        liveService: 'Operación continua',
+        nextStepLabel: 'Siguiente paso',
+        infraNote: 'Menú y Agenda pueden incluir infraestructura, soporte y actualizaciones según el alcance operativo.'
       },
       products: [
         {
           id: 'tap',
           name: 'Visible Tap',
           description: 'Tu contacto inteligente para NFC, QR o link',
-          paymentType: 'one-time',
-          price: '450',
-          regularPrice: '650',
+          scope: 'Ideal para compartir contacto, redes y canales de atención desde una experiencia rápida y profesional.',
+          nextStep: 'Definir estilo, contenido y material NFC/QR según el uso real del negocio.',
           features: [
-            'Pagina ligera para abrir, guardar y compartir contacto',
+            'Página ligera para abrir, guardar y compartir contacto',
             'Funciona con NFC, QR o link',
-            '4 estilos base para vender rapido',
-            'Diseno mobile-first y CTA directos',
-            'Entrega agil para nuevos clientes',
-            'Llavero NFC desde $70 por pieza'
+            'Estilos base adaptables al perfil del negocio',
+            'Diseño mobile-first y CTA directos',
+            'Entrega clara para activar contactos rápido',
+            'Puede integrarse con material NFC o QR'
           ]
         },
         {
           id: 'page',
           name: 'Visible Page',
           description: 'Tu sitio web profesional',
-          paymentType: 'one-time',
-          price: '2,699',
-          regularPrice: '3,999',
           popular: true,
+          scope: 'Para negocios que necesitan explicar lo que hacen, mostrar confianza y convertir visitas en conversaciones.',
+          nextStep: 'Revisar servicios, fotos, mensajes clave y flujo de contacto antes de definir alcance.',
           features: [
-            'Sitio con estructura mas completa',
+            'Sitio con estructura más completa',
             'Hasta 10 fotos de tu trabajo',
             'Formulario de contacto',
             'Optimizada para Google',
-            '2 Acrilicos o 50 tarjetas',
-            'Lista en 3-5 dias'
+            '2 Acrílicos o 50 tarjetas',
+            'Lista en 3-5 días'
           ]
         },
         {
           id: 'menu',
           name: 'Visible Menu',
-          description: 'Menu digital que genera antojo',
-          paymentType: 'live',
+          description: 'Menú digital que genera antojo',
           liveService: true,
-          setupPrice: '3,599',
-          regularSetupPrice: '5,299',
-          monthlyPrice: '590',
-          regularMonthlyPrice: '990',
+          scope: 'Para restaurantes y negocios de alimentos que quieren mostrar sus productos sin depender de PDF o imágenes sueltas.',
+          nextStep: 'Mapear categorías, productos, fotos, pedidos y necesidades de actualización.',
           features: [
             'Hasta 50 productos',
             'Hasta 20 fotos de platillos',
             'Funciona sin internet',
-            'Link para resenas Google',
-            '5 Acrilicos de mesa',
-            '1 Acrilico de mostrador'
+            'Link para reseñas Google',
+            '5 Acrílicos de mesa',
+            '1 Acrílico de mostrador'
           ]
         },
         {
           id: 'agenda',
           name: 'Visible Agenda',
-          description: 'Sistema de citas automatico',
-          paymentType: 'live',
+          description: 'Sistema de citas automático',
           liveService: true,
-          setupPrice: '4,499',
-          regularSetupPrice: '6,499',
-          monthlyPrice: '790',
-          regularMonthlyPrice: '1,290',
+          scope: 'Para negocios que pierden citas o tiempo porque todo se coordina por llamadas y mensajes sueltos.',
+          nextStep: 'Definir servicios, horarios, equipo, confirmaciones y operación diaria.',
           features: [
             'Sistema de agendamiento',
-            'Galeria de trabajos',
+            'Galería de trabajos',
             'Presenta a tu equipo',
-            'Testimonios de clientes',
-            '1 Acrilico de mostrador',
+            'Señales de confianza reales',
+            '1 Acrílico de mostrador',
             '50 Tarjetas con QR'
           ]
         }
       ] as Product[],
       linkContext: {
-        eyebrow: 'Siguiente nivel',
-        title: 'Visible Link sigue vivo como upsell',
+        eyebrow: 'Presencia ampliada',
+        title: 'Visible Link cuando el contacto necesita más contexto',
         description:
-          'Visible Tap queda como el producto principal de entrada y Visible Link como la opcion que lo complementa. Tap resuelve el contacto rapido; Link entra cuando el cliente necesita mas contexto, galeria y una presencia de marca mas completa.',
+          'Tap resuelve el contacto rápido; Link entra cuando el cliente necesita más contexto, galería, enlaces y una presencia de marca más completa sin convertir la home en un catálogo.',
         cta: 'Ver ejemplo de Visible Link'
       }
     },
     en: {
-      overtitle: 'Solutions',
-      title: '4 Products. One Philosophy.',
-      subtitle: 'Each solution is the result of years of experience building digital products. No excess, only the essential.',
-      regular: 'Regular Price',
+      overtitle: 'Digital presence',
+      title: 'Entry solutions for businesses that want more order.',
+      subtitle:
+        'Concrete pieces to look professional, capture leads and prepare the path toward more complete systems. Scope is defined by goals, operations and priority, without discounts or artificial pressure.',
       payment: {
-        oneTime: 'One-time payment',
-        launchTag: 'Current offer',
-        setupFrom: 'Setup from',
-        setupRegular: 'Regular setup',
-        monthlyFrom: 'Monthly from',
-        monthlyRegular: 'Regular monthly',
-        perMonth: '/month',
-        liveService: 'Live service',
-        infraNote: 'Menu and Agenda include a monthly plan for infrastructure, support, and updates.'
+        scopeLabel: 'Project quote',
+        projectMode: 'Phased project',
+        liveService: 'Continuous operation',
+        nextStepLabel: 'Next step',
+        infraNote: 'Menu and Agenda may include infrastructure, support and updates depending on operational scope.'
       },
       products: [
         {
           id: 'tap',
           name: 'Visible Tap',
           description: 'Your smart contact page for NFC, QR, or link',
-          paymentType: 'one-time',
-          price: '450',
-          regularPrice: '650',
+          scope: 'Ideal for sharing contact details, social channels and action links through a fast professional experience.',
+          nextStep: 'Define style, content and NFC/QR material according to real business use.',
           features: [
             'Light page to open, save, and share contact details',
             'Works with NFC, QR, or link',
-            '4 base styles ready to sell quickly',
+            'Base styles adaptable to the business profile',
             'Mobile-first design and direct CTAs',
-            'Fast delivery for new clients',
-            'NFC keychain from $70 per piece'
+            'Clear delivery to activate contact quickly',
+            'Can integrate NFC or QR material'
           ]
         },
         {
           id: 'page',
           name: 'Visible Page',
           description: 'Your professional website',
-          paymentType: 'one-time',
-          price: '2,699',
-          regularPrice: '3,999',
           popular: true,
+          scope: 'For businesses that need to explain what they do, build trust and turn visits into conversations.',
+          nextStep: 'Review services, photos, key messages and contact flow before defining scope.',
           features: [
             'Website with a more complete structure',
             'Up to 10 photos of your work',
@@ -232,12 +208,9 @@ export function MinimalProducts() {
           id: 'menu',
           name: 'Visible Menu',
           description: 'Digital menu that sells',
-          paymentType: 'live',
           liveService: true,
-          setupPrice: '3,599',
-          regularSetupPrice: '5,299',
-          monthlyPrice: '590',
-          regularMonthlyPrice: '990',
+          scope: 'For restaurants and food businesses that want to present their offer without relying on PDFs or loose images.',
+          nextStep: 'Map categories, products, photos, ordering flow and update needs.',
           features: [
             'Up to 50 products',
             'Up to 20 food photos',
@@ -251,27 +224,24 @@ export function MinimalProducts() {
           id: 'agenda',
           name: 'Visible Agenda',
           description: 'Automatic booking system',
-          paymentType: 'live',
           liveService: true,
-          setupPrice: '4,499',
-          regularSetupPrice: '6,499',
-          monthlyPrice: '790',
-          regularMonthlyPrice: '1,290',
+          scope: 'For businesses that lose bookings or time because everything is coordinated through calls and scattered messages.',
+          nextStep: 'Define services, schedules, team members, confirmations and daily operation.',
           features: [
             'Booking system',
             'Work gallery',
             'Showcase your team',
-            'Client testimonials',
+            'Real trust signals',
             '1 Counter acrylic',
             '50 Cards with QR'
           ]
         }
       ] as Product[],
       linkContext: {
-        eyebrow: 'Next level',
-        title: 'Visible Link stays alive as the upsell',
+        eyebrow: 'Expanded presence',
+        title: 'Visible Link when contact needs more context',
         description:
-          'Visible Tap becomes the main entry product and Visible Link becomes the offer that complements it. Tap handles fast contact sharing; Link comes in when a client needs more context, gallery, and stronger brand presence.',
+          'Tap handles fast contact sharing; Link comes in when a client needs more context, gallery, links and stronger brand presence without turning the home into a pricing table.',
         cta: 'View Visible Link example'
       }
     }
@@ -363,7 +333,7 @@ export function MinimalProducts() {
 
                     {product.popular && (
                       <div className="absolute left-6 top-6 rounded-[0.5rem] bg-slate-900 px-4 py-2 text-xs font-black uppercase tracking-wider text-white">
-                        {language === 'es' ? 'Mas Popular' : 'Most Popular'}
+                        {language === 'es' ? 'Entrada recomendada' : 'Recommended entry'}
                       </div>
                     )}
 
@@ -384,49 +354,17 @@ export function MinimalProducts() {
                       <p className="text-lg font-light text-slate-600">{product.description}</p>
                     </div>
 
-                    <div className="space-y-2 border-y border-slate-200 py-4">
-                      {product.paymentType === 'live' ? (
-                        <>
-                          <div className="flex items-center justify-between gap-4">
-                            <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">{t.payment.setupFrom}</span>
-                            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-600">{t.payment.launchTag}</span>
-                          </div>
-                          <div className="flex items-baseline gap-2">
-                            <span className="text-4xl font-black tracking-tight text-slate-900 lg:text-5xl">${product.setupPrice}</span>
-                            <span className="text-lg font-semibold text-slate-600">MXN</span>
-                          </div>
-                          <div className="text-sm font-light text-slate-400">
-                            {t.payment.setupRegular}: <span className="line-through">${product.regularSetupPrice} MXN</span>
-                          </div>
-                          <div className="text-base font-medium text-slate-600">
-                            {t.payment.monthlyFrom} <span className="font-black text-slate-900">${product.monthlyPrice}</span> MXN {t.payment.perMonth}
-                          </div>
-                          <div className="text-sm font-light text-slate-400">
-                            {t.payment.monthlyRegular}: <span className="line-through">${product.regularMonthlyPrice} MXN {t.payment.perMonth}</span>
-                          </div>
-                        </>
-                      ) : (
-                        <>
-                          <div className="flex items-center justify-between gap-4">
-                            <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">{t.payment.oneTime}</span>
-                            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-600">{t.payment.launchTag}</span>
-                          </div>
-                          <div className="flex items-baseline gap-2">
-                            <span className="text-4xl font-black tracking-tight text-slate-900 lg:text-5xl">${product.price}</span>
-                            <span className="text-lg font-semibold text-slate-600">MXN</span>
-                          </div>
-                          <div className="text-sm font-light text-slate-400">
-                            {t.regular}: <span className="line-through">${product.regularPrice} MXN</span>
-                          </div>
-                          {product.id === 'tap' && (
-                            <div className="rounded-[1rem] border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-medium leading-6 text-emerald-900">
-                              {language === 'es'
-                                ? 'Desarrollo de pagina: $450 MXN. Llavero NFC: +$70 por pieza. Juntos forman la experiencia completa.'
-                                : 'Page development: $450 MXN. NFC keychain: +$70 per piece. Together they create the full experience.'}
-                            </div>
-                          )}
-                        </>
-                      )}
+                    <div className="space-y-3 border-y border-slate-200 py-4">
+                      <div className="flex flex-wrap items-center gap-3">
+                        <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">{t.payment.scopeLabel}</span>
+                        <span className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-700">
+                          {product.liveService ? t.payment.liveService : t.payment.projectMode}
+                        </span>
+                      </div>
+                      <p className="text-base leading-7 text-slate-700">{product.scope}</p>
+                      <p className="text-sm leading-6 text-slate-500">
+                        <span className="font-bold text-slate-800">{t.payment.nextStepLabel}:</span> {product.nextStep}
+                      </p>
                     </div>
 
                     <ul className="space-y-3">
@@ -453,7 +391,7 @@ export function MinimalProducts() {
                         whileHover={{ x: 5 }}
                         className="group/link inline-flex items-center gap-3 px-6 py-2 text-base font-semibold text-slate-900"
                       >
-                        <span className="border-b border-slate-900">{language === 'es' ? 'Iniciar Proyecto' : 'Start Project'}</span>
+                        <span className="border-b border-slate-900">{language === 'es' ? 'Cotizar proyecto' : 'Quote project'}</span>
                         <div className="h-px w-6 bg-slate-900 transition-all group-hover/link:w-10" />
                       </motion.a>
                     </div>

@@ -13,25 +13,24 @@ body,
 
 html {
   background-color: #0a1128;
-  overflow-x: hidden;
+  /* clip (not hidden) contains horizontal overflow WITHOUT forcing overflow-y
+     to `auto`, which would turn this into a nested scroll container and break
+     mouse-wheel scrolling on desktop. */
   overflow-x: clip;
   overscroll-behavior-x: none;
-  overscroll-behavior-y: none;
 }
 
 body {
-  overflow-x: hidden;
+  overflow-x: clip;
   background-color: inherit;
   position: relative;
   overscroll-behavior-x: none;
-  overscroll-behavior-y: none;
-  -webkit-overflow-scrolling: touch;
 }
 
 #root {
   min-height: 100dvh;
   background-color: transparent;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 #root > * {

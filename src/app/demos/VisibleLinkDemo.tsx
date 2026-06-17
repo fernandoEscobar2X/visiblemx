@@ -63,7 +63,7 @@ export function VisibleLinkDemo() {
       email: 'reservas@yukisushi.mx',
       instagram: '@yukisushitj',
       website: 'yukisushi.mx',
-      address: 'Av. Sanchez Taboada 10611, Zona Rio',
+      address: 'Av. Sánchez Taboada 10611, Zona Río',
       city: 'Tijuana, Baja California',
       hours: 'Mar - Dom 13:00 - 23:00',
       closedDay: 'Lunes cerrado',
@@ -83,7 +83,7 @@ export function VisibleLinkDemo() {
       awards: [
         { title: 'Michelin Guide', subtitle: 'Recommended 2024', icon: Award },
         { title: 'Best Sushi', subtitle: 'Tijuana Food Awards', icon: Sparkles },
-        { title: '15 Anos', subtitle: 'Culinary Excellence', icon: Star }
+        { title: '15 Años', subtitle: 'Culinary Excellence', icon: Star }
       ],
       menu: {
         omakase: { name: 'Experiencia Omakase', price: '1,200 MXN', desc: '12 piezas seleccionadas por el chef' },
@@ -106,7 +106,7 @@ export function VisibleLinkDemo() {
       },
       {
         icon: Calendar,
-        label: 'Menu Omakase',
+        label: 'Menú Omakase',
         subtitle: 'Experiencia completa 1,200',
         url: '#menu-destacado',
         primary: false,
@@ -130,8 +130,8 @@ export function VisibleLinkDemo() {
       },
       {
         icon: MapPin,
-        label: 'Ubicacion',
-        subtitle: 'Zona Rio - Estacionamiento incluido',
+        label: 'Ubicación',
+        subtitle: 'Zona Río - Estacionamiento incluido',
         url: 'https://maps.google.com/?q=Zona+Rio,+Tijuana',
         primary: false,
         badge: '15 min centro'
@@ -219,7 +219,7 @@ export function VisibleLinkDemo() {
 
           <div className="mt-8 inline-flex w-fit items-center gap-3 rounded-full border border-white/20 bg-black/40 px-4 py-2 backdrop-blur-xl">
             <Star className="h-4 w-4 text-[#F59E0B]" />
-            <span className="text-sm text-white/88">{business.rating} � {business.reviews} rese�as</span>
+            <span className="text-sm text-white/88">{business.rating} · {business.reviews} reseñas</span>
           </div>
         </div>
       </section>
@@ -326,7 +326,7 @@ export function VisibleLinkDemo() {
             </section>
 
             <section id="menu-destacado" className="rounded-3xl border border-[#B91C1C]/40 bg-[#130A0A] p-6 md:p-8">
-              <p className="mb-3 font-cinzel text-xs uppercase tracking-[0.35em] text-[#F59E0B]">Menu Destacado</p>
+              <p className="mb-3 font-cinzel text-xs uppercase tracking-[0.35em] text-[#F59E0B]">Menú Destacado</p>
               <div className="space-y-4">
                 {Object.values(business.menu).map((item) => (
                   <div key={item.name} className="flex items-center justify-between border-b border-white/10 pb-4 last:border-b-0 last:pb-0">
@@ -407,7 +407,7 @@ export function VisibleLinkDemo() {
               exit={{ opacity: 0 }}
               onClick={() => setSelectedImage(null)}
               className="fixed inset-0 z-[90] bg-black/70 backdrop-blur-md"
-              aria-label="Cerrar visor de galeria"
+              aria-label="Cerrar visor de galería"
             />
 
             <motion.section

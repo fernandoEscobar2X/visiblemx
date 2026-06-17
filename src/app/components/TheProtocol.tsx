@@ -36,21 +36,21 @@ export function TheProtocol() {
           id: '01',
           title: 'Diseño Premium',
           description:
-            'Estetica suiza con ejecucion quirurgica. Cada bloque de interfaz esta pensado para elevar autoridad y conversion.',
+            'Estética suiza con ejecución quirúrgica. Cada bloque de interfaz está pensado para elevar autoridad y conversión.',
           icon: Sparkles
         },
         {
           id: '02',
           title: 'Velocidad Extrema',
           description:
-            'Carga instantanea y experiencia fluida en desktop y mobile. Performance tangible desde el primer segundo.',
+            'Carga instantánea y experiencia fluida en desktop y mobile. Performance tangible desde el primer segundo.',
           icon: Zap
         },
         {
           id: '03',
           title: 'ROI Medible',
           description:
-            'Metricas de negocio accionables, dashboards claros y decisiones guiadas por data real.',
+            'Métricas de negocio accionables, dashboards claros y decisiones guiadas por data real.',
           icon: TrendingUp
         }
       ] as ProcessCard[]

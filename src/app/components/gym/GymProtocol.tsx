@@ -31,32 +31,32 @@ export function GymProtocol() {
   const content = {
     es: {
       tag: 'Stacking protocol',
-      title: 'Ruta de transformacion',
+      title: 'Ruta de transformación',
       processing: 'PROCESSING',
       cards: [
         {
           id: '01',
-          title: 'Diagnostico tactico',
+          title: 'Diagnóstico táctico',
           description:
-            'Evaluacion InBody, movilidad, fuerza base y estres metabolico para construir un mapa real de rendimiento.',
+            'Evaluación InBody, movilidad, fuerza base y estrés metabólico para construir un mapa real de rendimiento.',
           badge: 'Estrategia',
           metric: 'Data confidence 99%',
           icon: Activity
         },
         {
           id: '02',
-          title: 'Ingenieria de carga',
+          title: 'Ingeniería de carga',
           description:
-            'Ciclos de fuerza, hipertrofia y acondicionamiento con periodizacion semanal y supervision biomecanica.',
+            'Ciclos de fuerza, hipertrofia y acondicionamiento con periodización semanal y supervisión biomecánica.',
           badge: 'Desarrollo',
           metric: 'Progress velocity +42%',
           icon: Target
         },
         {
           id: '03',
-          title: 'Ejecucion dominante',
+          title: 'Ejecución dominante',
           description:
-            'Fase de precision total: intensidad alta, control tecnico y ajustes de recuperacion en tiempo real.',
+            'Fase de precisión total: intensidad alta, control técnico y ajustes de recuperación en tiempo real.',
           badge: 'Lanzamiento',
           metric: 'Performance unlock',
           icon: Flame

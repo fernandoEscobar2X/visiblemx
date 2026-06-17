@@ -23,7 +23,7 @@ const contact: ContactData = {
   name: 'Carlos Mendoza',
   title: 'Director Comercial',
   company: 'Soluciones Pro',
-  tagline: 'Transformando negocios con estrategias comerciales y tecnologia de clase mundial',
+  tagline: 'Transformando negocios con estrategias comerciales y tecnología de clase mundial',
   phone: '+52 55 1234 5678',
   email: 'carlos@solucionespro.mx',
   whatsapp: '+525512345678',

@@ -1,4 +1,4 @@
-﻿import { Instagram, Linkedin, Twitter, Mail, MapPin, Phone } from 'lucide-react';
+import { ArrowRight, Mail, MapPin, Phone } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { motion } from 'motion/react';
 
@@ -7,69 +7,68 @@ export function Footer() {
 
   const content = {
     es: {
-      tagline: 'Transformamos ideas en experiencias digitales',
+      tagline: 'Creamos sitios, sistemas y plataformas digitales para vender mejor y operar con más orden.',
       products: {
-        title: 'Productos',
+        title: 'Soluciones',
         items: [
-          { name: 'Visible Tap', price: '$450', href: '/tap' },
-          { name: 'Visible Link', price: '$1,799', href: '/demo/link' },
-          { name: 'Visible Page', price: '$2,699', href: '/demo/page' },
-          { name: 'Visible Menu', price: '$3,599', href: '/demo/menu' },
-          { name: 'Visible Agenda', price: '$4,499', href: '/demo/agenda' }
+          { name: 'Presencia digital', href: '#productos' },
+          { name: 'Sistemas conectados', href: '#sistemas' },
+          { name: 'Proceso por fases', href: '#proceso' },
+          { name: 'Proyecto', href: '#contacto' }
         ]
       },
       company: {
-        title: 'Compania',
+        title: 'Compañía',
         items: [
-          { name: 'Sobre Nosotros', href: '#nosotros' },
+          { name: 'Filosofía', href: '#filosofia' },
           { name: 'Proceso', href: '#proceso' },
-          { name: 'Casos de Exito', href: '#casos' },
+          { name: 'Caso real', href: '#caso-real' },
           { name: 'Contacto', href: '#contacto' }
         ]
       },
       legal: {
-        title: 'Legal',
+        title: 'Siguiente paso',
         items: [
-          { name: 'Privacidad', href: '#privacidad' },
-          { name: 'Terminos', href: '#terminos' },
-          { name: 'Cookies', href: '#cookies' }
+          { name: 'Hablemos de tu proyecto', href: '#contacto' },
+          { name: 'Ver soluciones', href: '#productos' },
+          { name: 'Ver caso real', href: '#caso-real' }
         ]
       },
       contact: {
         email: 'ferrobles2003@gmail.com',
         phone: '664 353 3036',
-        address: 'Tijuana, Baja California, Mexico'
+        address: 'Tijuana, Baja California, México'
       },
       copyright: '© 2026 Visible MX. Todos los derechos reservados.',
-      madeWith: 'Hecho con'
+      madeWith: 'Hecho en Tijuana',
+      projectCta: 'Hablemos de tu proyecto'
     },
     en: {
-      tagline: 'Transforming ideas into digital experiences',
+      tagline: 'We build websites, systems and digital platforms to sell better and operate with more order.',
       products: {
-        title: 'Products',
+        title: 'Solutions',
         items: [
-          { name: 'Visible Tap', price: '$450', href: '/tap' },
-          { name: 'Visible Link', price: '$1,799', href: '/demo/link' },
-          { name: 'Visible Page', price: '$2,699', href: '/demo/page' },
-          { name: 'Visible Menu', price: '$3,599', href: '/demo/menu' },
-          { name: 'Visible Agenda', price: '$4,499', href: '/demo/agenda' }
+          { name: 'Digital presence', href: '#productos' },
+          { name: 'Connected systems', href: '#sistemas' },
+          { name: 'Phased process', href: '#proceso' },
+          { name: 'Project', href: '#contacto' }
         ]
       },
       company: {
         title: 'Company',
         items: [
-          { name: 'About Us', href: '#about' },
-          { name: 'Process', href: '#process' },
-          { name: 'Case Studies', href: '#cases' },
-          { name: 'Contact', href: '#contact' }
+          { name: 'Philosophy', href: '#filosofia' },
+          { name: 'Process', href: '#proceso' },
+          { name: 'Real case', href: '#caso-real' },
+          { name: 'Contact', href: '#contacto' }
         ]
       },
       legal: {
-        title: 'Legal',
+        title: 'Next step',
         items: [
-          { name: 'Privacy', href: '#privacy' },
-          { name: 'Terms', href: '#terms' },
-          { name: 'Cookies', href: '#cookies' }
+          { name: "Let's talk about your project", href: '#contacto' },
+          { name: 'See solutions', href: '#productos' },
+          { name: 'See real case', href: '#caso-real' }
         ]
       },
       contact: {
@@ -78,17 +77,12 @@ export function Footer() {
         address: 'Tijuana, Baja California, Mexico'
       },
       copyright: '© 2026 Visible MX. All rights reserved.',
-      madeWith: 'Made with'
+      madeWith: 'Made in Tijuana',
+      projectCta: "Let's talk about your project"
     }
   };
 
   const t = content[language];
-
-  const socialLinks = [
-    { icon: Instagram, href: 'https://instagram.com/visiblemx', label: 'Instagram' },
-    { icon: Linkedin, href: 'https://linkedin.com/company/visiblemx', label: 'LinkedIn' },
-    { icon: Twitter, href: 'https://twitter.com/visiblemx', label: 'Twitter' }
-  ];
 
   return (
     <footer className="relative overflow-hidden bg-slate-900 text-white">
@@ -125,9 +119,9 @@ export function Footer() {
             <ul className="space-y-4">
               {t.products.items.map((item, i) => (
                 <li key={i}>
-                  <a href={item.href} className="group flex items-baseline gap-2 text-white/60 transition-colors hover:text-white">
+                  <a href={item.href} className="group flex items-center gap-2 text-white/60 transition-colors hover:text-white">
                     <span className="group-hover:underline">{item.name}</span>
-                    <span className="text-xs text-white/40">{item.price}</span>
+                    <ArrowRight className="h-3.5 w-3.5 opacity-0 transition-opacity group-hover:opacity-100" />
                   </a>
                 </li>
               ))}
@@ -177,23 +171,15 @@ export function Footer() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="order-1 flex items-center gap-4 md:order-2"
+            className="order-1 md:order-2"
           >
-            {socialLinks.map((social, i) => {
-              const Icon = social.icon;
-              return (
-                <a
-                  key={i}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={social.label}
-                  className="group flex h-12 w-12 items-center justify-center border-2 border-white/20 transition-all hover:border-white hover:bg-white"
-                >
-                  <Icon className="h-5 w-5 text-white transition-colors group-hover:text-slate-900" />
-                </a>
-              );
-            })}
+            <a
+              href="#contacto"
+              className="inline-flex items-center gap-2 border border-white/20 px-5 py-3 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:border-white hover:bg-white hover:text-slate-900"
+            >
+              {t.projectCta}
+              <ArrowRight className="h-4 w-4" />
+            </a>
           </motion.div>
         </div>
 
@@ -204,9 +190,7 @@ export function Footer() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-12 border-t border-white/10 pt-8 text-center"
         >
-          <p className="flex items-center justify-center gap-2 text-xs text-white/30">
-            {t.madeWith} <span className="text-red-500">❤</span> {language === 'es' ? 'en' : 'in'} Tijuana
-          </p>
+          <p className="text-xs text-white/30">{t.madeWith}</p>
         </motion.div>
       </div>
 

@@ -174,7 +174,7 @@ function GrowthArtifact() {
                             transition={{ delay: 0.5 }}
                             className="text-sm font-bold text-emerald-400 mt-1 bg-emerald-500/10 px-2 py-1 rounded self-start"
                         >
-                            Visitas Organicas
+                            Visitas Orgánicas
                         </motion.span>
                     </div>
                 </div>
@@ -244,20 +244,20 @@ export function InteractiveArtifacts() {
   const content = {
     es: {
       tag: "ESPECIFICACIONES",
-      title: "Ingenieria Premium",
-      subtitle: "Mas alla de la estetica. Cada desarrollo incluye una arquitectura tecnica robusta disenada para posicionar, retener y convertir.",
+      title: "Ingeniería Premium",
+      subtitle: "Más allá de la estética. Cada desarrollo incluye una arquitectura técnica robusta diseñada para posicionar, retener y convertir.",
       artifacts: [
-        { 
-            title: "Obsesion por el Rendimiento", 
-            desc: "Optimizamos cada linea de codigo. Entregamos sitios con puntuaciones perfectas en Google PageSpeed para garantizar la mejor visibilidad organica." 
+        {
+            title: "Obsesión por el Rendimiento",
+            desc: "Optimizamos cada línea de código. Entregamos sitios con puntuaciones perfectas en Google PageSpeed para garantizar la mejor visibilidad orgánica."
         },
-        { 
-            title: "Infraestructura Viva", 
-            desc: "Tu sitio no es estatico. Implementamos seguridad avanzada, compresion de assets en tiempo real y compatibilidad total con todos los dispositivos modernos." 
+        {
+            title: "Infraestructura Viva",
+            desc: "Tu sitio no es estático. Implementamos seguridad avanzada, compresión de assets en tiempo real y compatibilidad total con todos los dispositivos modernos."
         },
-        { 
-            title: "Diseno para Retencion", 
-            desc: "Creamos experiencias inmersivas que atrapan. Aumentamos el tiempo de permanencia de tus usuarios mediante micro-interacciones y narrativa visual fluida." 
+        {
+            title: "Diseño para Retención",
+            desc: "Creamos experiencias inmersivas que atrapan. Aumentamos el tiempo de permanencia de tus usuarios mediante micro-interacciones y narrativa visual fluida."
         }
       ]
     },
@@ -307,7 +307,7 @@ export function InteractiveArtifacts() {
   }, [language]);
 
   return (
-    <section id="sistemas" ref={sectionRef} className="py-24 lg:py-40 bg-white relative overflow-hidden">
+    <section id="ingenieria" ref={sectionRef} className="py-24 lg:py-40 bg-white relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
       

@@ -23,18 +23,18 @@ const content = {
     overtitle: 'Caso Destacado',
     title: 'Corte Laser Tijuana para cerrar propuestas completas',
     subtitle: 'Un sitio web que presenta, vende y convierte desde el primer vistazo.',
-    badges: ['Entrega agil', 'Personalizacion total', 'Atencion inmediata'],
-    services: ['Displays acrilicos', 'Corte laser', 'Grabado personalizado', 'Llaveros y senaletica'],
+    badges: ['Entrega ágil', 'Personalización total', 'Atención inmediata'],
+    services: ['Displays acrílicos', 'Corte láser', 'Grabado personalizado', 'Llaveros y señalética'],
     primaryCta: 'Ver sitio',
     secondaryCta: 'Cotizar por WhatsApp',
     footer: 'Visualiza la experiencia digital y abre el sitio en vivo en un clic.',
     previewNav: {
       inicio: 'Inicio',
       servicios: 'Servicios',
-      galeria: 'Galeria'
+      galeria: 'Galería'
     },
     previewTitle: 'Corte Laser Tijuana',
-    previewSubtitle: 'Displays, grabado y piezas personalizadas con entrega rapida.',
+    previewSubtitle: 'Displays, grabado y piezas personalizadas con entrega rápida.',
     previewCta: 'Cotizar ahora',
     featuredTitle: 'Trabajos destacados'
   },

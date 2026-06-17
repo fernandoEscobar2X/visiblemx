@@ -1,4 +1,5 @@
-import { motion, useScroll, useSpring } from 'motion/react';
+import { motion, useScroll, useSpring, useMotionValueEvent } from 'motion/react';
+import { useState } from 'react';
 
 export function ScrollProgress() {
   const { scrollYProgress } = useScroll();
@@ -6,6 +7,13 @@ export function ScrollProgress() {
     stiffness: 100,
     damping: 30,
     restDelta: 0.001
+  });
+
+  // Subscribe the readout to scroll changes; reading the motion value once in
+  // render leaves the percentage frozen at 0% on desktop.
+  const [progress, setProgress] = useState(0);
+  useMotionValueEvent(scrollYProgress, 'change', (latest) => {
+    setProgress(Math.round(latest * 100));
   });
 
   return (
@@ -56,7 +64,7 @@ export function ScrollProgress() {
           }}
         >
           <motion.span className="text-xs font-black text-slate-900 tracking-tight">
-            {Math.round(scrollYProgress.get() * 100)}%
+            {progress}%
           </motion.span>
         </motion.div>
       </div>

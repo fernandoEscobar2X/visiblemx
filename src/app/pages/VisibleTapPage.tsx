@@ -7,7 +7,7 @@ const demos = [
     name: 'Classic iPhone',
     slug: 'classic-iphone',
     tag: 'Minimal / Direct',
-    summary: 'Minimalista, limpio y muy facil de entender. Hecho para cerrar contacto rapido sin friccion visual.',
+    summary: 'Minimalista, limpio y muy fácil de entender. Hecho para cerrar contacto rápido sin fricción visual.',
     audience: 'Ideal para Junior consultants, doctors, advisors',
     glow: 'from-slate-400/20'
   },
@@ -23,7 +23,7 @@ const demos = [
     name: 'Luxury Profile',
     slug: 'luxury-profile',
     tag: 'Warm / Aspirational',
-    summary: 'Aspiracional, calido y visualmente deseable. Dise�ado para negocios donde la imagen acelera la venta.',
+    summary: 'Aspiracional, cálido y visualmente deseable. Diseñado para negocios donde la imagen acelera la venta.',
     audience: 'Ideal para Beauty, wellness, personal brands',
     glow: 'from-rose-300/20'
   },
@@ -31,7 +31,7 @@ const demos = [
     name: 'Modern Business',
     slug: 'modern-business',
     tag: 'Sales / Bento',
-    summary: 'Mas directo a conversion. Acciones visibles, bento rhythm y claridad inmediata para networking y ventas.',
+    summary: 'Más directo a conversión. Acciones visibles, bento rhythm y claridad inmediata para networking y ventas.',
     audience: 'Ideal para Sales reps, networking, local business',
     glow: 'from-blue-400/20'
   }
@@ -106,7 +106,7 @@ export function VisibleTapPage() {
             transition={{ duration: 0.75, delay: 0.1 }}
             className="text-lg text-slate-500 max-w-2xl mt-6"
           >
-            Cada demo esta dise�ada psicologicamente para un perfil de cliente distinto. Toca, comparte y cierra el trato en segundos.
+            Cada demo está diseñada psicológicamente para un perfil de cliente distinto. Toca, comparte y cierra el trato en segundos.
           </motion.p>
         </section>
 

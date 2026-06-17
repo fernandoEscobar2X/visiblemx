@@ -44,10 +44,10 @@ export function EliteNavbar() {
     es: {
       nav: [
         { label: 'Sistemas', href: '#sistemas' },
-        { label: 'Filosofia', href: '#filosofia' },
+        { label: 'Filosofía', href: '#filosofia' },
         { label: 'Proceso', href: '#proceso' }
       ],
-      cta: 'Iniciar Proyecto'
+      cta: 'Iniciar proyecto'
     },
     en: {
       nav: [
@@ -67,7 +67,7 @@ export function EliteNavbar() {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        aria-label={language === 'es' ? 'Navegacion principal' : 'Main navigation'}
+        aria-label={language === 'es' ? 'Navegación principal' : 'Main navigation'}
         className="fixed inset-x-0 z-50 flex justify-center px-4 pointer-events-none"
         style={{ top: 'max(1rem, env(safe-area-inset-top))' }}
       >
@@ -109,7 +109,7 @@ export function EliteNavbar() {
           <div className="flex items-center gap-4">
             <button
               onClick={toggleLanguage}
-              aria-label={language === 'es' ? 'Cambiar idioma a ingles' : 'Switch language to Spanish'}
+              aria-label={language === 'es' ? 'Cambiar idioma a inglés' : 'Switch language to Spanish'}
               className="text-xs font-bold text-slate-500 hover:text-slate-900 transition-colors uppercase tracking-wider"
             >
               {language}
@@ -129,10 +129,10 @@ export function EliteNavbar() {
               aria-label={
                 isMenuOpen
                   ? language === 'es'
-                    ? 'Cerrar menu'
+                    ? 'Cerrar menú'
                     : 'Close menu'
                   : language === 'es'
-                    ? 'Abrir menu'
+                    ? 'Abrir menú'
                     : 'Open menu'
               }
             >

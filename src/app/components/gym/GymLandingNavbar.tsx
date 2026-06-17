@@ -21,8 +21,8 @@ export function GymLandingNavbar() {
       links: [
         { href: '#inicio', label: 'Inicio' },
         { href: '#servicios', label: 'Servicios' },
-        { href: '#metodo', label: 'Metodo' },
-        { href: '#membresias', label: 'Membresias' },
+        { href: '#metodo', label: 'Método' },
+        { href: '#membresias', label: 'Membresías' },
         { href: '#entrenadores', label: 'Entrenadores' },
         { href: '#contacto', label: 'Contacto' }
       ],
@@ -81,7 +81,7 @@ export function GymLandingNavbar() {
         <button
           type="button"
           className="inline-flex h-10 w-10 items-center justify-center border border-white/30 text-white md:hidden"
-          aria-label={menuOpen ? 'Cerrar menu' : 'Abrir menu'}
+          aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
           onClick={() => setMenuOpen((prev) => !prev)}
         >
           {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}

@@ -1,184 +1,196 @@
-import { useEffect, useRef } from 'react';
-import { motion, useScroll, useTransform } from 'motion/react';
+import { Fragment, type ComponentType } from 'react';
+import { motion, useReducedMotion } from 'motion/react';
+import {
+  ArrowRight,
+  BarChart3,
+  Globe,
+  MessageCircle,
+  PieChart,
+  Server,
+  Settings,
+  Target,
+  Users,
+  Workflow
+} from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
-import { ArrowRight } from 'lucide-react';
-import gsap from 'gsap';
+
+type IconType = ComponentType<{ className?: string }>;
+
+interface FlowNode {
+  title: string;
+  description: string;
+  Icon: IconType;
+}
+
+interface Chip {
+  label: string;
+  Icon: IconType;
+}
 
 export function AwwwardsHero() {
   const { language } = useLanguage();
-  const containerRef = useRef<HTMLDivElement>(null);
-  const title1Ref = useRef<HTMLHeadingElement>(null);
-  const title2Ref = useRef<HTMLHeadingElement>(null);
-  const subtitleRef = useRef<HTMLParagraphElement>(null);
-  const ctaRef = useRef<HTMLDivElement>(null);
-
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ['start start', 'end start']
-  });
-
-  const y = useTransform(scrollYProgress, [0, 1], [0, 200]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-
-  useEffect(() => {
-    const shouldSkipEntrance = window.matchMedia('(max-width: 1024px), (prefers-reduced-motion: reduce)').matches;
-    if (shouldSkipEntrance) {
-      gsap.set([title1Ref.current, title2Ref.current, subtitleRef.current, ctaRef.current], {
-        clearProps: 'all',
-        opacity: 1,
-        y: 0
-      });
-      return;
-    }
-
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        title1Ref.current,
-        { y: 36, opacity: 0.4 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.55,
-          ease: 'power3.out',
-          delay: 0
-        }
-      );
-
-      if (title2Ref.current) {
-        gsap.fromTo(
-          title2Ref.current,
-          { y: 36, opacity: 0.4 },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.55,
-            ease: 'power3.out',
-            delay: 0.06
-          }
-        );
-      }
-
-      gsap.fromTo(
-        subtitleRef.current,
-        { y: 16, opacity: 0.6 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.45,
-          ease: 'power3.out',
-          delay: 0.14
-        }
-      );
-
-      gsap.fromTo(
-        ctaRef.current,
-        { y: 14, opacity: 0.7 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.45,
-          ease: 'power3.out',
-          delay: 0.2
-        }
-      );
-    }, containerRef);
-
-    return () => ctx.revert();
-  }, [language]);
+  const reduce = useReducedMotion();
 
   const content = {
     es: {
-      overtitle: 'Agencia Digital',
-      title1: 'Software que',
-      title2: 'Impulsa Negocios',
-      subtitle: 'Transformamos tu presencia digital con soluciones web que generan resultados medibles. Sin distracciones. Solo impacto.',
-      cta: 'Ver Nuestro Proceso'
+      eyebrow: 'Estudio de software',
+      title: 'Sistemas digitales para vender más y operar con menos caos.',
+      subtitle:
+        'Creamos sitios web, CRM, dashboards y automatizaciones para negocios que quieren dejar atrás WhatsApp, Excel y procesos manuales.',
+      ctaPrimary: 'Iniciar proyecto',
+      ctaSecondary: 'Ver soluciones',
+      loop: 'Mejora continua',
+      chips: [
+        { label: 'Sitios web', Icon: Globe },
+        { label: 'Sistemas internos', Icon: Server },
+        { label: 'Automatización multicanal', Icon: Workflow },
+        { label: 'Dashboards', Icon: BarChart3 }
+      ] as Chip[],
+      nodes: [
+        { title: 'Web / WhatsApp', description: 'Captamos y centralizamos tus conversaciones y formularios.', Icon: MessageCircle },
+        { title: 'CRM', description: 'Organizamos contactos, oportunidades y actividades.', Icon: Users },
+        { title: 'Automatización', description: 'Disparadores y flujos que ahorran tiempo y evitan tareas manuales.', Icon: Settings },
+        { title: 'Dashboard', description: 'Métricas en tiempo real para entender y mejorar tu negocio.', Icon: PieChart },
+        { title: 'Decisiones', description: 'Información clara para decidir mejor y crecer con foco.', Icon: Target }
+      ] as FlowNode[]
     },
     en: {
-      overtitle: 'Digital Agency',
-      title1: 'Software that',
-      title2: 'Drives Business',
-      subtitle: 'We transform your digital presence with web solutions that generate measurable results. No distractions. Just impact.',
-      cta: 'See Our Process'
+      eyebrow: 'Software studio',
+      title: 'Digital systems to sell more and operate with less chaos.',
+      subtitle:
+        'We build websites, CRM, dashboards and automations for businesses ready to leave WhatsApp, spreadsheets and manual processes behind.',
+      ctaPrimary: 'Start project',
+      ctaSecondary: 'See solutions',
+      loop: 'Continuous improvement',
+      chips: [
+        { label: 'Websites', Icon: Globe },
+        { label: 'Internal systems', Icon: Server },
+        { label: 'Multichannel automation', Icon: Workflow },
+        { label: 'Dashboards', Icon: BarChart3 }
+      ] as Chip[],
+      nodes: [
+        { title: 'Web / WhatsApp', description: 'We capture and centralize your conversations and forms.', Icon: MessageCircle },
+        { title: 'CRM', description: 'We organize contacts, opportunities and activities.', Icon: Users },
+        { title: 'Automation', description: 'Triggers and flows that save time and remove manual work.', Icon: Settings },
+        { title: 'Dashboard', description: 'Real-time metrics to understand and improve your business.', Icon: PieChart },
+        { title: 'Decisions', description: 'Clear information to decide better and grow with focus.', Icon: Target }
+      ] as FlowNode[]
     }
   };
 
   const t = content[language];
 
+  const rise = (delay: number) =>
+    reduce
+      ? { initial: false as const }
+      : {
+          initial: { opacity: 0, y: 16 },
+          animate: { opacity: 1, y: 0 },
+          transition: { duration: 0.5, delay, ease: [0.22, 1, 0.36, 1] as const }
+        };
+
   return (
-    <section
-      ref={containerRef}
-      className="relative h-[100dvh] min-h-[800px] flex items-center justify-center overflow-hidden bg-white"
-    >
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-[-20%] left-[-10%] w-[70%] h-[70%] bg-gradient-to-br from-blue-100/20 to-transparent rounded-full blur-[120px] animate-pulse-slow" />
-        <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-gradient-to-tl from-slate-100/40 to-transparent rounded-full blur-[100px] animate-float" />
-        <div className="absolute top-[40%] left-[30%] w-[40%] h-[40%] bg-gradient-to-r from-emerald-50/30 to-transparent rounded-full blur-[80px] animate-pulse-slower" />
-      </div>
+    <section className="relative w-full overflow-hidden bg-gradient-to-b from-slate-50 to-white">
+      <div className="mx-auto grid max-w-[1400px] grid-cols-1 items-center gap-12 px-6 pb-16 pt-28 lg:min-h-[100svh] lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-16 lg:px-8 lg:py-0">
+        {/* Left: message + actions */}
+        <div className="max-w-2xl">
+          <motion.div {...rise(0)} className="mb-6 flex items-center gap-2.5">
+            <span className="h-2 w-2 rounded-full bg-emerald-500" />
+            <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-emerald-700">{t.eyebrow}</span>
+          </motion.div>
 
-      <div
-        className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay"
-        style={{
-          backgroundImage:
-            'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 400 400\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")'
-        }}
-      />
+          <motion.h1
+            {...rise(0.06)}
+            className="text-4xl font-black leading-[1.05] tracking-tight text-[#0A1128] sm:text-5xl lg:text-[3.5rem] xl:text-[4rem]"
+          >
+            {t.title}
+          </motion.h1>
 
-      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 lg:px-8 flex flex-col items-center text-center">
-        <motion.div style={{ y, opacity }} className="w-full">
-          <div className="mb-8 flex justify-center">
-            <div className="inline-flex items-center gap-3 px-3 py-1.5 rounded-full border border-slate-200 bg-white/50 backdrop-blur-sm">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              <span className="text-xs font-mono font-medium text-slate-500 uppercase tracking-widest">{t.overtitle}</span>
-            </div>
-          </div>
-
-          <div className="relative mb-8 lg:mb-12 leading-none">
-            <h1 ref={title1Ref} className="text-6xl sm:text-7xl lg:text-[7rem] xl:text-[9rem] font-black text-slate-900 tracking-tighter mb-2 lg:mb-4">
-              {t.title1}
-            </h1>
-
-            <h1
-              ref={title2Ref}
-              className="text-6xl sm:text-7xl lg:text-[7rem] xl:text-[9rem] font-black tracking-tighter"
-              style={{
-                WebkitTextStroke: '1.5px #0A1128',
-                color: 'transparent',
-                backgroundImage: 'linear-gradient(90deg, transparent 50%, #0A1128 50%)',
-                backgroundSize: '200% 100%',
-                backgroundClip: 'text',
-                WebkitBackgroundClip: 'text'
-              }}
-            >
-              {t.title2}
-            </h1>
-          </div>
-
-          <p ref={subtitleRef} className="text-xl lg:text-2xl text-slate-600 max-w-2xl mx-auto mb-12 font-light tracking-tight leading-relaxed">
+          <motion.p {...rise(0.12)} className="mt-6 max-w-xl text-lg leading-relaxed text-slate-600">
             {t.subtitle}
-          </p>
+          </motion.p>
 
-          <div ref={ctaRef} className="flex justify-center">
+          <motion.div {...rise(0.18)} className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
             <a
-              href="#proceso"
-              className="group relative inline-flex items-center gap-3 px-8 py-4 bg-slate-900 text-white rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-slate-900/20"
+              href="#contacto"
+              className="group inline-flex items-center justify-center gap-2 rounded-xl bg-[#0A1128] px-7 py-4 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-[#0A1128]/90"
             >
-              <span className="relative z-10 text-sm font-bold uppercase tracking-widest">{t.cta}</span>
-              <ArrowRight className="w-4 h-4 relative z-10 transition-transform duration-300 group-hover:translate-x-1" />
-              <div className="absolute inset-0 bg-gradient-to-r from-slate-800 to-black opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              {t.ctaPrimary}
+              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </a>
+            <a
+              href="#productos"
+              className="group inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-7 py-4 text-sm font-bold uppercase tracking-wide text-[#0A1128] transition-colors hover:border-[#0A1128]"
+            >
+              {t.ctaSecondary}
+              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </a>
+          </motion.div>
+
+          <motion.ul {...rise(0.24)} className="mt-8 flex flex-wrap gap-2.5">
+            {t.chips.map((chip) => (
+              <li
+                key={chip.label}
+                className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-sm font-semibold text-slate-700"
+              >
+                <chip.Icon className="h-4 w-4 text-emerald-600" />
+                {chip.label}
+              </li>
+            ))}
+          </motion.ul>
+        </div>
+
+        {/* Right: system flow (demonstrates the multichannel capability) */}
+        <motion.div {...rise(0.2)} className="relative" aria-label={language === 'es' ? 'Cómo conectamos tu operación' : 'How we connect your operation'}>
+          {/* Wide desktop: horizontal pipeline with connectors */}
+          <div className="hidden items-stretch xl:flex">
+            {t.nodes.map((node, index) => (
+              <Fragment key={node.title}>
+                <FlowCard node={node} />
+                {index < t.nodes.length - 1 ? (
+                  <div className="flex w-4 shrink-0 items-center" aria-hidden>
+                    <div className="relative h-px w-full bg-slate-200">
+                      <span className="absolute left-1/2 top-1/2 h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-emerald-500" />
+                    </div>
+                  </div>
+                ) : null}
+              </Fragment>
+            ))}
           </div>
+
+          {/* Wide desktop: continuous-improvement loop */}
+          <div className="relative mt-5 hidden h-9 xl:block" aria-hidden>
+            <div className="absolute left-[8%] top-0 h-4 w-px border-l border-dashed border-slate-300" />
+            <div className="absolute right-[8%] top-0 h-4 w-px border-r border-dashed border-slate-300" />
+            <div className="absolute left-[8%] right-[8%] top-4 border-t border-dashed border-slate-300" />
+            <span className="absolute left-1/2 top-4 -translate-x-1/2 -translate-y-1/2 bg-white px-3 font-mono text-[10px] uppercase tracking-[0.2em] text-slate-400">
+              {t.loop}
+            </span>
+          </div>
+
+          {/* Mobile, tablet and small desktop: stacked capability cards */}
+          <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:hidden">
+            {t.nodes.map((node) => (
+              <li key={node.title} className="contents">
+                <FlowCard node={node} />
+              </li>
+            ))}
+          </ul>
         </motion.div>
       </div>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1, y: [0, 10, 0] }}
-        transition={{ delay: 0.8, duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2"
-      >
-        <div className="w-[1px] h-16 bg-gradient-to-b from-slate-900 to-transparent" />
-      </motion.div>
     </section>
+  );
+}
+
+function FlowCard({ node }: { node: FlowNode }) {
+  const { Icon } = node;
+  return (
+    <article className="flex min-w-0 flex-1 flex-col rounded-2xl border border-slate-200 bg-white p-4 shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
+      <h3 className="text-sm font-bold text-[#0A1128]">{node.title}</h3>
+      <div className="mt-4 inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-100 bg-slate-50 text-slate-700">
+        <Icon className="h-5 w-5" />
+      </div>
+      <p className="mt-4 text-xs leading-relaxed text-slate-500">{node.description}</p>
+    </article>
   );
 }
