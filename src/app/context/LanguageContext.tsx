@@ -329,7 +329,21 @@ const translations = {
 };
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>('es');
+  const [language, setLanguageState] = useState<Language>(() => {
+    try {
+      const saved = localStorage.getItem('visiblemx_lang');
+      return (saved === 'en' || saved === 'es') ? saved : 'es';
+    } catch {
+      return 'es';
+    }
+  });
+
+  const setLanguage = (lang: Language) => {
+    try {
+      localStorage.setItem('visiblemx_lang', lang);
+    } catch {}
+    setLanguageState(lang);
+  };
 
   const toggleLanguage = () => {
     setLanguage(language === 'es' ? 'en' : 'es');
