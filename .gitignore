@@ -13,6 +13,9 @@ dist-ssr
 *.local
 /lh*.json
 
+# Lighthouse / audit artifacts (kept locally, not in the repo)
+audits/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
