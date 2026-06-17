@@ -85,7 +85,7 @@ Regla de oro: **primero se reposiciona VisibleMX (Fases 0–4 y 6), y la migraci
             *Hecho cuando:* mobile, tablet y desktop funcionen sin overflow, con motion reducido si el usuario lo solicita, sin animaciones pesadas y sin sacrificar SEO ni claridad.
             *Cerrada:* Auditoría global superada en todos los viewports. No hay bugs de overflow. Se documenta deuda técnica menor: animaciones GSAP legacy en MinimalProducts no respetan del todo prefers-reduced-motion. Fase 1 oficialmente cerrada.
 
-**Criterio de salida:** un visitante entiende en ~10 segundos que VisibleMX hace desde una landing hasta un sistema completo, y que el siguiente paso es un diagnóstico.
+**Criterio de salida:** un visitante entiende en ~10 segundos que VisibleMX hace desde una landing hasta un sistema completo, y que el siguiente paso es una cotización.
 
 ---
 
