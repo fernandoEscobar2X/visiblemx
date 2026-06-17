@@ -40,6 +40,9 @@ function DemoWrapper({ children }: { children: React.ReactNode }) {
 const ServicesPage = lazy(() =>
   import('./pages/ServicesPage').then((mod) => ({ default: mod.ServicesPage }))
 );
+const DigitalPresencePage = lazy(() =>
+  import('./pages/DigitalPresencePage').then((mod) => ({ default: mod.DigitalPresencePage }))
+);
 
 export const router = createBrowserRouter([
   {
@@ -49,6 +52,10 @@ export const router = createBrowserRouter([
   {
     path: '/servicios',
     element: withSuspense(<ServicesPage />)
+  },
+  {
+    path: '/presencia-digital',
+    element: withSuspense(<DigitalPresencePage />)
   },
   {
     path: '/demo/link',

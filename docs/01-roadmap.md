@@ -99,8 +99,9 @@ Regla de oro: **primero se reposiciona VisibleMX (Fases 0–4 y 6), y la migraci
 - [x] **2.2 Crear página `/servicios`**
       *Hecho cuando:* existe la ruta para Sistemas a Medida y Plataformas Multicanal, con su detalle comercial completo.
       *Cerrada:* Creado `ServicesPage.tsx` con H1 y copy de negocio, se reutilizaron las secciones de Fase 1, se integró navbar y footer con CTA funcional a `#contacto`. Rutas configuradas.
-- [ ] **2.3 Crear página `/presencia-digital`**
+- [x] **2.3 Crear página `/presencia-digital`**
       *Hecho cuando:* existe la ruta para las soluciones de entrada, alejando el concepto de "catálogo de productos".
+      *Cerrada:* Creado `DigitalPresencePage.tsx` con H1 y copy de negocio, se reutilizó MinimalProducts, CTA funcional a `#contacto`. Rutas configuradas y validadas.
 - [ ] **2.4 Compactar Home sin perder claridad comercial**
       *Hecho cuando:* la Home retiene el Hero, Narrativa, Manifiesto y Mapa de Arquitectura, enviando el contenido pesado a las rutas internas.
 - [ ] **2.5 Menú hamburguesa y navegación mobile**
