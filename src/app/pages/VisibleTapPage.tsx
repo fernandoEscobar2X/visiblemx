@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion, type Variants } from 'motion/react';
 import { ArrowLeft, ArrowRight, Smartphone, Waves } from 'lucide-react';
 import { Link } from 'react-router';
 
@@ -37,7 +37,7 @@ const demos = [
   }
 ];
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: {},
   show: {
     transition: {
@@ -46,7 +46,7 @@ const containerVariants = {
   }
 };
 
-const cardVariants = {
+const cardVariants: Variants = {
   hidden: { opacity: 0, y: 28 },
   show: {
     opacity: 1,

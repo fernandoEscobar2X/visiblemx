@@ -1,5 +1,5 @@
 ﻿import { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence, type Variants } from 'motion/react';
 import { Phone, Mail, Share2, Check, ArrowDownToLine } from 'lucide-react';
 
 interface ContactInfo {
@@ -80,7 +80,7 @@ END:VCARD`;
     }
   };
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -88,7 +88,7 @@ END:VCARD`;
     }
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 15 },
     visible: {
       opacity: 1,

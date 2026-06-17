@@ -106,7 +106,9 @@ function TelemetryArtifact() {
       }
     });
 
-    return () => tween.kill();
+    return () => {
+      tween.kill();
+    };
   }, []);
 
   return (

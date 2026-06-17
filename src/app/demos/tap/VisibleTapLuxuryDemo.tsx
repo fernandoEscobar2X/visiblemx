@@ -1,5 +1,5 @@
 ﻿import { useState } from 'react';
-import { motion } from 'motion/react';
+import { motion, type Variants } from 'motion/react';
 import { MessageCircle, Download, Share2, Mail, Check } from 'lucide-react';
 
 export function VisibleTapLuxuryDemo() {
@@ -54,7 +54,7 @@ export function VisibleTapLuxuryDemo() {
     }
   };
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -65,7 +65,7 @@ export function VisibleTapLuxuryDemo() {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 12 },
     visible: {
       opacity: 1,

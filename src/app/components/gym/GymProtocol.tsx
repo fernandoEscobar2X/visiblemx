@@ -16,7 +16,7 @@ export function GymProtocol() {
   const { language } = useLanguage();
   const viewportRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
-  const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
+  const cardRefs = useRef<Array<HTMLElement | null>>([]);
 
   const x = useMotionValue(0);
   const activeIndexRef = useRef(0);
