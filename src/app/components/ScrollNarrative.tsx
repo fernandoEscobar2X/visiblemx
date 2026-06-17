@@ -103,20 +103,45 @@ export function ScrollNarrative() {
 
               {/* System Dashboard Layer */}
               <motion.div style={{ opacity: sysOpacity, y: sysY }} className="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
-                <div className="w-[500px] h-[320px] bg-white rounded-2xl shadow-2xl border border-slate-200 p-6 flex flex-col gap-4">
+                <div className="w-[500px] h-[320px] bg-slate-900 rounded-2xl shadow-2xl shadow-slate-900/20 border border-slate-800 p-6 flex flex-col gap-4 text-left overflow-hidden">
                   {/* Fake UI Header */}
-                  <div className="flex justify-between items-center border-b border-slate-100 pb-4">
-                    <div className="w-32 h-5 bg-slate-100 rounded-md" />
-                    <div className="w-8 h-8 rounded-full bg-slate-100" />
+                  <div className="flex justify-between items-center border-b border-slate-800 pb-4">
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center">
+                        <Database className="w-4 h-4 text-emerald-400" />
+                      </div>
+                      <span className="font-semibold text-white text-sm">VisibleMX OS</span>
+                    </div>
+                    <div className="w-8 h-8 rounded-full bg-slate-800" />
                   </div>
                   {/* Fake UI Metrics */}
                   <div className="grid grid-cols-3 gap-4">
-                    <div className="h-20 bg-emerald-50/50 rounded-xl border border-emerald-100/50" />
-                    <div className="h-20 bg-blue-50/50 rounded-xl border border-blue-100/50" />
-                    <div className="h-20 bg-slate-50/50 rounded-xl border border-slate-100/50" />
+                    <div className="h-20 bg-slate-800/50 rounded-xl border border-slate-700/50 p-3 flex flex-col justify-between">
+                      <span className="text-[10px] font-medium text-slate-400 uppercase tracking-wider">Citas hoy</span>
+                      <span className="text-xl font-bold text-white">24</span>
+                    </div>
+                    <div className="h-20 bg-emerald-500/10 rounded-xl border border-emerald-500/20 p-3 flex flex-col justify-between">
+                      <span className="text-[10px] font-medium text-emerald-400/80 uppercase tracking-wider">Conversión</span>
+                      <span className="text-xl font-bold text-emerald-400">+18%</span>
+                    </div>
+                    <div className="h-20 bg-slate-800/50 rounded-xl border border-slate-700/50 p-3 flex flex-col justify-between">
+                      <span className="text-[10px] font-medium text-slate-400 uppercase tracking-wider">Leads</span>
+                      <span className="text-xl font-bold text-white">142</span>
+                    </div>
                   </div>
                   {/* Fake UI Chart */}
-                  <div className="flex-1 bg-slate-50/50 rounded-xl border border-slate-100/50 mt-2" />
+                  <div className="flex-1 bg-slate-800/30 rounded-xl border border-slate-700/30 mt-2 p-4 flex flex-col">
+                    <span className="text-xs font-medium text-slate-400 mb-4">Actividad semanal</span>
+                    <div className="flex-1 flex items-end justify-between gap-2 px-2">
+                      <div className="w-full bg-slate-700/50 rounded-t-sm h-[30%]" />
+                      <div className="w-full bg-emerald-500/40 rounded-t-sm h-[70%]" />
+                      <div className="w-full bg-slate-700/50 rounded-t-sm h-[40%]" />
+                      <div className="w-full bg-emerald-500/60 rounded-t-sm h-[90%]" />
+                      <div className="w-full bg-slate-700/50 rounded-t-sm h-[50%]" />
+                      <div className="w-full bg-slate-700/50 rounded-t-sm h-[60%]" />
+                      <div className="w-full bg-emerald-500/80 rounded-t-sm h-[100%]" />
+                    </div>
+                  </div>
                 </div>
               </motion.div>
 
@@ -175,17 +200,35 @@ export function ScrollNarrative() {
         >
            <h3 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-8 leading-tight">{t.phase3}</h3>
            <div className="flex justify-center">
-             <div className="w-full max-w-sm h-[240px] bg-white rounded-2xl shadow-xl border border-slate-200 p-5 flex flex-col gap-4">
-               <div className="flex justify-between items-center border-b border-slate-100 pb-3">
-                 <div className="w-24 h-4 bg-slate-100 rounded-md" />
-                 <div className="w-6 h-6 rounded-full bg-slate-100" />
-               </div>
-               <div className="grid grid-cols-2 gap-3">
-                 <div className="h-16 bg-emerald-50/50 rounded-xl border border-emerald-100/50" />
-                 <div className="h-16 bg-blue-50/50 rounded-xl border border-blue-100/50" />
-               </div>
-               <div className="flex-1 bg-slate-50/50 rounded-xl border border-slate-100/50 mt-1" />
-             </div>
+              <div className="w-full max-w-sm h-[240px] bg-slate-900 rounded-2xl shadow-xl shadow-slate-900/20 border border-slate-800 p-5 flex flex-col gap-4 text-left overflow-hidden">
+                <div className="flex justify-between items-center border-b border-slate-800 pb-3">
+                  <div className="flex items-center gap-2">
+                    <div className="w-6 h-6 rounded-md bg-emerald-500/20 flex items-center justify-center">
+                      <Database className="w-3 h-3 text-emerald-400" />
+                    </div>
+                    <span className="font-semibold text-white text-xs">VisibleMX OS</span>
+                  </div>
+                  <div className="w-6 h-6 rounded-full bg-slate-800" />
+                </div>
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="h-16 bg-slate-800/50 rounded-xl border border-slate-700/50 p-2 flex flex-col justify-between">
+                    <span className="text-[9px] font-medium text-slate-400 uppercase tracking-wider">Ventas</span>
+                    <span className="text-lg font-bold text-white">$12k</span>
+                  </div>
+                  <div className="h-16 bg-emerald-500/10 rounded-xl border border-emerald-500/20 p-2 flex flex-col justify-between">
+                    <span className="text-[9px] font-medium text-emerald-400/80 uppercase tracking-wider">Crecimiento</span>
+                    <span className="text-lg font-bold text-emerald-400">+24%</span>
+                  </div>
+                </div>
+                <div className="flex-1 bg-slate-800/30 rounded-xl border border-slate-700/30 mt-1 p-3 flex flex-col">
+                  <div className="flex-1 flex items-end justify-between gap-2 px-1">
+                    <div className="w-full bg-slate-700/50 rounded-t-sm h-[40%]" />
+                    <div className="w-full bg-emerald-500/40 rounded-t-sm h-[70%]" />
+                    <div className="w-full bg-slate-700/50 rounded-t-sm h-[50%]" />
+                    <div className="w-full bg-emerald-500/80 rounded-t-sm h-[100%]" />
+                  </div>
+                </div>
+              </div>
            </div>
         </motion.div>
 
