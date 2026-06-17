@@ -81,8 +81,9 @@ Regla de oro: **primero se reposiciona VisibleMX (Fases 0–4 y 6), y la migraci
       - [x] **1.8.4** Servicios como arquitectura visual.
             *Hecho cuando:* las secciones de servicios se sientan conectadas a una misma propuesta de sistema, no como cards aisladas genéricas.
             *Cerrada:* Se agregó `ServicesArchitecture.tsx` como mapa de navegación. Se reordenó el layout a 1,2,3 y se ajustaron los eyebrows. No se instaló nada, ni se rediseñó la home.
-      - [ ] **1.8.5** Pulido final, performance y accesibilidad.
+      - [x] **1.8.5** Pulido final, performance y accesibilidad.
             *Hecho cuando:* mobile, tablet y desktop funcionen sin overflow, con motion reducido si el usuario lo solicita, sin animaciones pesadas y sin sacrificar SEO ni claridad.
+            *Cerrada:* Auditoría global superada en todos los viewports. No hay bugs de overflow. Se documenta deuda técnica menor: animaciones GSAP legacy en MinimalProducts no respetan del todo prefers-reduced-motion. Fase 1 oficialmente cerrada.
 
 **Criterio de salida:** un visitante entiende en ~10 segundos que VisibleMX hace desde una landing hasta un sistema completo, y que el siguiente paso es un diagnóstico.
 
@@ -174,8 +175,8 @@ Regla de oro: **primero se reposiciona VisibleMX (Fases 0–4 y 6), y la migraci
 ## Estado actual
 
 - Fase 0: **completada**.
-- Fase 1: **en curso** — 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7 y 1.8.2 completadas.
-- Próxima tarea concreta a ejecutar: **1.8.3** (Scroll narrativo caos → sistema).
+- Fase 1: **completada**.
+- Próxima tarea concreta a ejecutar: **2.1** (Crear página/sección de servicios con: Presencia digital, Sistemas a medida, Plataformas multicanal).
 
 > Mantener esta sección “Estado actual” actualizada al cerrar cada tarea: apuntar siempre cuál es la siguiente `[ ]`.
 
