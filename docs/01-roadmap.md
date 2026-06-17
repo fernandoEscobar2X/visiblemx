@@ -72,8 +72,9 @@ Regla de oro: **primero se reposiciona VisibleMX (Fases 0–4 y 6), y la migraci
       - [x] **1.8.1** Definir dirección creativa y alcance técnico.
             *Hecho cuando:* quede documentado qué se va a construir, qué no se va a construir, qué interacción será prioritaria, qué librerías se justifican y cuál será el fallback mobile.
             *Cerrada:* definido en `docs/08-motion-concept.md`. La dirección creativa queda centrada en **“Lo invisible se vuelve visible”**: información dispersa → operación visible → sistema ordenado. Para `1.8.2` se prioriza un hero scanner/reveal sobrio, construido primero con React, TypeScript, Tailwind/CSS y SVG; `motion` solo si aporta microinteracciones claras. Quedan fuera del alcance inicial: rediseño total, 3D, Canvas, Lenis, Three.js/R3F/GLSL, Lottie y dependencias nuevas. Mobile tendrá fallback simple y `prefers-reduced-motion` debe estar contemplado.
-      - [ ] **1.8.2** Prototipo del hero scanner/reveal.
+      - [x] **1.8.2** Prototipo del hero scanner/reveal.
             *Hecho cuando:* exista una primera versión funcional y sobria del concepto “lo invisible se vuelve visible”, sin romper performance, responsive ni claridad comercial.
+            *Cerrada:* implementada la narrativa visual "caos → sistema" usando una máscara CSS (`mask-image`) controlada dinámicamente por Framer Motion. Se creó una capa base ("ChaosLayer") con elementos desordenados y se reveló el flujo del sistema mediante el escáner sobre el cursor en desktop, y mediante un auto-reveal accesible y amigable en mobile. Sin uso de WebGL, Canvas ni scroll hijacking, manteniendo el performance y la accesibilidad intactos.
       - [ ] **1.8.3** Scroll narrativo caos → sistema.
             *Hecho cuando:* los elementos dispersos se ordenen visualmente en una arquitectura de operación, usando motion solo si aporta a la narrativa.
       - [ ] **1.8.4** Servicios como arquitectura visual.
@@ -171,7 +172,8 @@ Regla de oro: **primero se reposiciona VisibleMX (Fases 0–4 y 6), y la migraci
 ## Estado actual
 
 - Fase 0: **completada**.
-- Fase 1: **en curso** — 1.1, 1.2, 1.3, 1.4, 1.5, 1.6 y 1.7 completadas.
-- Próxima tarea concreta a ejecutar: **1.8.2** (prototipo del hero scanner/reveal; ver `docs/08-motion-concept.md` antes de implementar UI).
+- Fase 1: **en curso** — 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7 y 1.8.2 completadas.
+- Próxima tarea concreta a ejecutar: **1.8.3** (Scroll narrativo caos → sistema).
 
 > Mantener esta sección “Estado actual” actualizada al cerrar cada tarea: apuntar siempre cuál es la siguiente `[ ]`.
+
