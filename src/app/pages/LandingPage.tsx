@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { AwwwardsHero } from '../components/AwwwardsHero';
+import { DemoStage } from '../components/DemoStage';
 import { InteractiveArtifacts } from '../components/InteractiveArtifacts';
 import { TheManifesto } from '../components/TheManifesto';
 import { ExternalCaseShowcase } from '../components/ExternalCaseShowcase';
@@ -63,6 +64,9 @@ export function LandingPage() {
 
         <main className="relative">
           <AwwwardsHero />
+          <div style={deferredSectionStyle}>
+            <DemoStage />
+          </div>
           <ScrollNarrative />
           <div style={deferredSectionStyle}>
             <InteractiveArtifacts />

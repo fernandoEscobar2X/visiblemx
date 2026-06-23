@@ -79,22 +79,20 @@ export function EliteNavbar() {
         <div
           className={`
             pointer-events-auto
-            relative flex items-center justify-between
-            h-16 px-6 sm:px-8
-            rounded-full transition-all duration-500 ease-out
+            mx-auto flex h-14 items-center justify-between rounded-full px-2 transition-all duration-500 ease-out 
             ${
               isScrolled
-                ? 'w-full max-w-5xl bg-white/80 backdrop-blur-2xl border border-slate-200/50 shadow-sm shadow-slate-900/5'
-                : 'w-full max-w-[95%] bg-transparent border border-transparent'
+                ? 'w-full max-w-5xl bg-white border border-slate-200 shadow-md'
+                : 'w-[calc(100%-2rem)] max-w-7xl bg-transparent'
             }
           `}
         >
           <Link to="/" onClick={(e) => handleHashLinkClick(e, '/')} className="group flex items-center gap-2">
-            <div className="w-8 h-8 bg-slate-900 rounded-lg flex items-center justify-center group-hover:scale-95 transition-transform duration-300">
-              <div className="w-3 h-3 bg-white rounded-sm" />
+            <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-300 group-hover:scale-95 ${isScrolled ? 'bg-slate-900' : 'bg-white'}`}>
+              <div className={`w-3 h-3 rounded-sm ${isScrolled ? 'bg-white' : 'bg-slate-900'}`} />
             </div>
-            <span className="font-bold tracking-tight text-lg text-slate-900">
-              VISIBLE<span className="text-slate-400">MX</span>
+            <span className={`font-bold tracking-tight text-lg transition-colors ${isScrolled ? 'text-slate-900' : 'text-white'}`}>
+              VISIBLE<span className={isScrolled ? 'text-slate-400' : 'text-slate-300'}>MX</span>
             </span>
           </Link>
 
@@ -104,10 +102,10 @@ export function EliteNavbar() {
                 key={item.href}
                 to={item.href}
                 onClick={(e) => handleHashLinkClick(e, item.href)}
-                className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors relative group"
+                className={`text-sm font-medium transition-colors relative group ${isScrolled ? 'text-slate-600 hover:text-slate-900' : 'text-slate-300 hover:text-white'}`}
               >
                 {item.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-px bg-slate-900 transition-all duration-300 group-hover:w-full" />
+                <span className={`absolute -bottom-1 left-0 w-0 h-px transition-all duration-300 group-hover:w-full ${isScrolled ? 'bg-slate-900' : 'bg-white'}`} />
               </Link>
             ))}
           </div>
@@ -116,7 +114,7 @@ export function EliteNavbar() {
             <button
               onClick={toggleLanguage}
               aria-label={language === 'es' ? 'Cambiar idioma a inglés' : 'Switch language to Spanish'}
-              className="text-xs font-bold text-slate-500 hover:text-slate-900 transition-colors uppercase tracking-wider"
+              className={`text-xs font-bold transition-colors uppercase tracking-wider ${isScrolled ? 'text-slate-500 hover:text-slate-900' : 'text-slate-300 hover:text-white'}`}
             >
               {language}
             </button>
@@ -124,14 +122,13 @@ export function EliteNavbar() {
             <Link
               to="/#contacto"
               onClick={(e) => handleHashLinkClick(e, '/#contacto')}
-              className="hidden sm:flex items-center gap-2 px-5 py-2.5 bg-slate-900 text-white text-xs font-bold uppercase tracking-wide rounded-full hover:bg-slate-800 hover:scale-105 active:scale-95 transition-all duration-300"
+              className={`hidden sm:flex items-center gap-2 px-5 py-2.5 text-xs font-bold uppercase tracking-wide rounded-full hover:scale-105 active:scale-95 transition-all duration-300 ${isScrolled ? 'bg-slate-900 text-white hover:bg-slate-800' : 'bg-white text-slate-900 hover:bg-slate-100'}`}
             >
-              <div className="w-1.5 h-1.5 bg-[#00E676] rounded-full animate-pulse" />
               {t.cta}
             </Link>
 
             <button
-              className="md:hidden p-2 text-slate-900"
+              className={`md:hidden p-2 transition-colors ${isScrolled ? 'text-slate-900' : 'text-white'}`}
               onClick={() => setIsMenuOpen((prev) => !prev)}
               aria-label={
                 isMenuOpen

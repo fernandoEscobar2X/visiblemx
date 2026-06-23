@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence, type Variants } from 'motion/react';
 import { Phone, Mail, Share2, Check, ArrowDownToLine } from 'lucide-react';
 
@@ -103,10 +103,9 @@ END:VCARD`;
         <div className="relative pb-16">
           <div className="flex justify-center px-7 pt-6">
             <div className="inline-flex items-center gap-2 rounded-full border border-[#D8C7A1]/15 bg-white/[0.04] px-3 py-1.5 backdrop-blur-xl">
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#D8C7A1]/50 opacity-60" />
-                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#D8C7A1]" />
-              </span>
+              <div className="relative flex h-2 w-2">
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-[#D8C7A1]" />
+              </div>
               <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#C8BC9D]">NFC</span>
             </div>
           </div>

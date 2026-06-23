@@ -87,7 +87,6 @@ export function VisibleTapPage() {
             transition={{ duration: 0.65 }}
             className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-600 text-xs font-bold tracking-widest uppercase mb-6"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
             Visible Tap
           </motion.div>
 
@@ -115,15 +114,16 @@ export function VisibleTapPage() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16 max-w-6xl mx-auto px-4"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16 max-w-[1400px] mx-auto px-4"
         >
-          {demos.map((demo) => (
+          {demos.map((demo, index) => (
             <motion.article
               key={demo.slug}
               variants={cardVariants}
-              className="bg-[#0A0F1C] rounded-[2.5rem] p-8 border border-white/5 shadow-2xl relative overflow-hidden group min-h-[320px] flex flex-col justify-between"
+              className={`bg-[#0A0F1C] rounded-[2.5rem] p-8 sm:p-10 border border-white/5 shadow-2xl relative overflow-hidden group min-h-[360px] flex flex-col justify-between ${
+                index % 3 === 0 ? 'md:col-span-2 lg:col-span-2' : 'col-span-1'
+              }`}
             >
-              <div className={`pointer-events-none absolute -right-10 -top-12 h-48 w-48 rounded-full bg-gradient-to-br ${demo.glow} to-transparent blur-3xl transition-transform duration-700 group-hover:translate-x-[-18px] group-hover:translate-y-[14px]`} />
               <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.04),transparent_38%,transparent_62%,rgba(255,255,255,0.03))] opacity-80" />
 
               <div className="relative z-10">

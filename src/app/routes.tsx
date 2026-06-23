@@ -32,6 +32,9 @@ const ServicesPage = lazy(() =>
 const DigitalPresencePage = lazy(() =>
   import('./pages/DigitalPresencePage').then((mod) => ({ default: mod.DigitalPresencePage }))
 );
+const OperationVisibleDemoPage = lazy(() =>
+  import('./pages/OperationVisibleDemoPage').then((mod) => ({ default: mod.OperationVisibleDemoPage }))
+);
 
 function RouteFallback() {
   return <div className="min-h-screen bg-[#0A1128]" />;
@@ -95,6 +98,10 @@ export const router = createBrowserRouter([
       {
         path: '/tap/demos/:slug',
         element: withSuspense(<VisibleTapDemoPage />)
+      },
+      {
+        path: '/demo/operacion-visible',
+        element: withSuspense(<OperationVisibleDemoPage />)
       }
     ]
   }

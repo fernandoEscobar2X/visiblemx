@@ -45,7 +45,7 @@ export function GymLandingNavbar() {
   return (
     <nav
       className={`fixed inset-x-0 top-0 z-[90] transition-all duration-300 ${
-        scrolled ? 'border-b border-white/10 bg-black/82 backdrop-blur-2xl' : 'bg-transparent'
+        scrolled ? 'border-b border-slate-900 bg-[#09090b]' : 'bg-transparent'
       }`}
       aria-label="Gym main navigation"
     >

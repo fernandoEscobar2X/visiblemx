@@ -1,4 +1,4 @@
-﻿import { useMemo, useRef } from 'react';
+import { useMemo, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { ArrowUpRight, Play, Zap } from 'lucide-react';
 import { useLanguage } from '../../context/LanguageContext';
@@ -89,7 +89,6 @@ export function GymHero() {
         <motion.div style={{ y: subtitleY }} className="mt-3 max-w-2xl will-change-transform">
           <p className="text-base text-[#E5E5E5]/78 md:text-lg">{t.subtitle}</p>
           <p className="mt-4 inline-flex items-center gap-2 font-space text-[11px] uppercase tracking-[0.22em] text-[#D7FF00]">
-            <span className="h-2 w-2 animate-pulse rounded-full bg-[#D7FF00]" />
             {t.micro}
           </p>
         </motion.div>

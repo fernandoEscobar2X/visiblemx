@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'motion/react';
 import {
   Phone,
@@ -35,10 +35,9 @@ const springConfig = { stiffness: 300, damping: 20 };
 function NFCIndicator() {
   return (
     <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1.5 shadow-[0_8px_25px_rgba(15,23,42,0.06)]">
-      <span className="relative flex h-2.5 w-2.5">
-        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-400 opacity-40" />
-        <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-blue-600" />
-      </span>
+      <div className="relative flex h-3 w-3">
+        <span className="relative inline-flex h-3 w-3 rounded-full bg-blue-500" />
+      </div>
       <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-slate-500">NFC</span>
     </div>
   );
