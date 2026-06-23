@@ -1,4 +1,4 @@
-﻿import { motion } from 'motion/react';
+import { motion } from 'motion/react';
 import { useEffect, useState } from 'react';
 
 export function PageLoader() {
@@ -36,10 +36,9 @@ export function PageLoader() {
       className="fixed inset-0 z-[200] bg-white flex flex-col items-center justify-center"
       initial={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.35, ease: 'easeInOut' }}
+      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
     >
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-slate-900/5 rounded-full blur-[150px]" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-slate-900/5 rounded-full blur-[150px]" />
+      <div className="absolute inset-0 bg-white pointer-events-none" />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}

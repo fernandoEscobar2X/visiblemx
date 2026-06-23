@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import { Suspense, lazy } from 'react';
-import { createBrowserRouter, Outlet } from 'react-router';
+import { createBrowserRouter, useLocation, useOutlet } from 'react-router';
+import { AnimatePresence, motion } from 'motion/react';
 import { LanguageProvider } from './context/LanguageContext';
 import { useHashScrollListener } from './hooks/useHashScroll';
 import { AppLayout } from './components/AppLayout';
@@ -44,12 +45,32 @@ function withSuspense(children: ReactNode) {
   return <Suspense fallback={<RouteFallback />}>{children}</Suspense>;
 }
 
+function AnimatedOutlet() {
+  const location = useLocation();
+  const element = useOutlet();
+
+  return (
+    <AnimatePresence mode="wait" initial={false}>
+      <motion.div
+        key={location.pathname}
+        initial={{ opacity: 0, filter: 'blur(10px)' }}
+        animate={{ opacity: 1, filter: 'blur(0px)' }}
+        exit={{ opacity: 0, filter: 'blur(10px)' }}
+        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+        className="min-h-screen"
+      >
+        {element}
+      </motion.div>
+    </AnimatePresence>
+  );
+}
+
 // Global Layout to handle Providers and centralized hooks
 function RootLayout() {
   useHashScrollListener();
   return (
     <LanguageProvider>
-      <Outlet />
+      <AnimatedOutlet />
     </LanguageProvider>
   );
 }

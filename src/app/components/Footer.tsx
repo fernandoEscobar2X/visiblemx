@@ -194,7 +194,6 @@ export function Footer() {
         </motion.div>
       </div>
 
-      <div className="absolute bottom-0 right-0 h-64 w-64 -translate-x-1/2 translate-y-1/2 border-[40px] border-white/5" />
     </footer>
   );
 }

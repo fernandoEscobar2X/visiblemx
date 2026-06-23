@@ -1,96 +1,66 @@
-﻿import { useEffect, useRef, useState } from 'react';
-import { motion, useSpring } from 'motion/react';
+import { useEffect, useState } from 'react';
+import { motion } from 'motion/react';
 
 export function CustomCursor() {
-  const [isPointer, setIsPointer] = useState(false);
-  const [isHidden, setIsHidden] = useState(false);
-  const pointerRef = useRef(false);
-  const hiddenRef = useRef(false);
-
-  const cursorX = useSpring(0, { stiffness: 500, damping: 28 });
-  const cursorY = useSpring(0, { stiffness: 500, damping: 28 });
+  const [mousePosition, setMousePosition] = useState({ x: -100, y: -100 });
+  const [isHovering, setIsHovering] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   useEffect(() => {
-    const moveCursor = (e: MouseEvent) => {
-      cursorX.set(e.clientX);
-      cursorY.set(e.clientY);
+    if (window.matchMedia('(pointer: coarse)').matches) {
+      setIsTouchDevice(true);
+      return;
+    }
 
+    const updateMousePosition = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+
+    const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      const isClickable =
-        target.tagName === 'A' ||
-        target.tagName === 'BUTTON' ||
-        target.closest('a') !== null ||
-        target.closest('button') !== null;
-
-      if (pointerRef.current !== isClickable) {
-        pointerRef.current = isClickable;
-        setIsPointer(isClickable);
+      if (
+        target.tagName.toLowerCase() === 'a' ||
+        target.tagName.toLowerCase() === 'button' ||
+        target.closest('a') ||
+        target.closest('button') ||
+        target.classList.contains('cursor-pointer') ||
+        window.getComputedStyle(target).cursor === 'pointer'
+      ) {
+        setIsHovering(true);
+      } else {
+        setIsHovering(false);
       }
     };
 
-    const handleMouseEnter = () => {
-      if (hiddenRef.current) {
-        hiddenRef.current = false;
-        setIsHidden(false);
-      }
-    };
-    const handleMouseLeave = () => {
-      if (!hiddenRef.current) {
-        hiddenRef.current = true;
-        setIsHidden(true);
-      }
-    };
-
-    window.addEventListener('mousemove', moveCursor, { passive: true });
-    document.addEventListener('mouseenter', handleMouseEnter);
-    document.addEventListener('mouseleave', handleMouseLeave);
+    window.addEventListener('mousemove', updateMousePosition);
+    window.addEventListener('mouseover', handleMouseOver);
 
     return () => {
-      window.removeEventListener('mousemove', moveCursor);
-      document.removeEventListener('mouseenter', handleMouseEnter);
-      document.removeEventListener('mouseleave', handleMouseLeave);
+      window.removeEventListener('mousemove', updateMousePosition);
+      window.removeEventListener('mouseover', handleMouseOver);
     };
-  }, [cursorX, cursorY]);
+  }, []);
+
+  if (isTouchDevice) return null;
 
   return (
     <>
+      <style>{`
+        body * { cursor: none !important; }
+      `}</style>
       <motion.div
-        className="fixed top-0 left-0 w-4 h-4 bg-slate-900 rounded-full pointer-events-none z-[9999] mix-blend-difference"
-        style={{
-          x: cursorX,
-          y: cursorY,
-          translateX: '-50%',
-          translateY: '-50%',
-          opacity: isHidden ? 0 : 1,
-          willChange: 'transform, opacity',
-          transform: 'translateZ(0)',
-        }}
+        className="pointer-events-none fixed top-0 left-0 z-[10000] mix-blend-difference bg-white rounded-full"
         animate={{
-          scale: isPointer ? 0.5 : 1,
+          x: mousePosition.x - (isHovering ? 24 : 8),
+          y: mousePosition.y - (isHovering ? 24 : 8),
+          width: isHovering ? 48 : 16,
+          height: isHovering ? 48 : 16,
         }}
         transition={{
-          scale: { duration: 0.2 }
-        }}
-      />
-
-      <motion.div
-        className="fixed top-0 left-0 w-10 h-10 border-2 border-slate-900 rounded-full pointer-events-none z-[9998] mix-blend-difference"
-        style={{
-          x: cursorX,
-          y: cursorY,
-          translateX: '-50%',
-          translateY: '-50%',
-          opacity: isHidden ? 0 : 0.5,
-          willChange: 'transform, opacity',
-          transform: 'translateZ(0)',
-        }}
-        animate={{
-          scale: isPointer ? 1.5 : 1,
-        }}
-        transition={{
-          scale: { duration: 0.3, ease: 'easeOut' },
-          x: { type: 'spring', stiffness: 200, damping: 20 },
-          y: { type: 'spring', stiffness: 200, damping: 20 }
+          type: 'spring',
+          stiffness: 800,
+          damping: 35,
+          mass: 0.1
         }}
       />
     </>
